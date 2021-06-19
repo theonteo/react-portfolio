@@ -14,7 +14,7 @@ import SignUp from "./Components/Pages/SignUp"
 function App() {
   return (
   <Router>
-   
+   <NavBar/>
       <Switch>
         <Route path ='/'exact  component = {Home}/>
         <Route path ='/services'exact  component = {Services}/>

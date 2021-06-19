@@ -19,6 +19,7 @@
 
 .btn--outline
 {
+    border-radius: 30px;
     background-color:transparent;
     color:#fff;
     padding:8px 20px;

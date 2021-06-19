@@ -1,0 +1,25 @@
+.render
+{  
+    position: relative;
+    display: flex;
+}
+.render-window
+{
+    position: relative;
+display: flex;
+}
+
+.render-container
+{
+    height:20%;
+    display: flex;
+    position: absolute;
+    margin-left:40%;
+    margin-top: 0vh;
+    bottom:0;
+    z-index: 999;
+}
+
+.play-button
+{
+}

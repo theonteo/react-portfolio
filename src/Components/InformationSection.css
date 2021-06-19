@@ -5,10 +5,11 @@
 
 .informationContainer
 {
-    display: flex;
+    display:inline-block;
+    
     flex-flow:column;
     background-color: rgb(109, 190, 190);
-    width: 30%;
+    width: 20%;
     margin-top: 40px;
     margin: 40px;
     font-size: 100px;
