@@ -1,13 +1,57 @@
+/*****************************************************************************/
+/*!
+\file Camera.js
+\author Theon Teo
+\par email: theonteo96@gmail.com
+\date 2021
+\brief
+This project contains portfolio / web-mobile responsive application
+\Not for distribution
+*/
+/*****************************************************************************/
 import React, { Component } from "react";
 import * as THREE from "three";
 import { MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import OrbitControls from "three-orbitcontrols";
 import './3DScene.css'
+
+import Camera from "./Camera";
+
+
+/******************************************************************************/
+/*!
+\brief  main 3d scene setup
+*/
+/******************************************************************************/
 class ThreeScene extends Component
  {
-  componentDidMount() {
+/******************************************************************************/
+/*!
+\brief  create new camera
+*/
+/******************************************************************************/
+  setCamera(width,height)
+  {
+    //add Camera
+    this.newCamera = 
+    new Camera({position: new THREE.Vector3(0,5,20),
+      width : width, height : height});
+           
+    //Camera Controls
+    const controls = new OrbitControls
+    (this.newCamera.threeCamera, this.renderer.domElement);
+
+  }
+/******************************************************************************/
+/*!
+\brief  component mounted - three.js
+*/
+/******************************************************************************/
+  componentDidMount()
+   {
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
+
     this.scene = new THREE.Scene();
 
     //Add Renderer
@@ -16,14 +60,8 @@ class ThreeScene extends Component
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
 
-    
     //add Camera
-    this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.z = 20;
-    this.camera.position.y = 5;
-
-    //Camera Controls
-    const controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.setCamera(width,height);
 
     //LIGHTS
     var lights = [];
@@ -45,7 +83,11 @@ class ThreeScene extends Component
     this.start();
   }
 
-
+/******************************************************************************/
+/*!
+\brief  add models
+*/
+/******************************************************************************/
   addModels() {
     // -----Step 1--------
     const geometry = new THREE.BoxGeometry(5, 5, 5);
@@ -104,11 +146,19 @@ class ThreeScene extends Component
       );
     });
   }
-
-  componentWillUnmount() {
+/******************************************************************************/
+/*!
+\brief  component unmounted - three.js
+*/
+/******************************************************************************/
+  componentWillUnmount()
+  {
     this.stop();
     this.mount.removeChild(this.renderer.domElement);
   }
+
+
+
   start = () => {
     if (!this.frameId) {
       this.frameId = requestAnimationFrame(this.animate);
@@ -124,12 +174,21 @@ class ThreeScene extends Component
     if (this.freedomMesh) this.freedomMesh.rotation.y += 0.01;
 
     this.renderScene();
+   
     this.frameId = window.requestAnimationFrame(this.animate);
   };
+
   renderScene = () => {
-    if (this.renderer) this.renderer.render(this.scene, this.camera);
+    if (this.renderer) 
+    this.renderer.render(this.scene, this.newCamera.threeCamera);
   };
 
+
+/******************************************************************************/
+/*!
+\brief  return - composite html
+*/
+/******************************************************************************/
   render() {
     return (
       <div className = 'render-window'
