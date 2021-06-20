@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /*!
-\file Camera.js
+\file ThreeScene.js
 \author Theon Teo
 \par email: theonteo96@gmail.com
 \date 2021
@@ -11,8 +11,11 @@ This project contains portfolio / web-mobile responsive application
 /*****************************************************************************/
 import React, { Component } from "react";
 import * as THREE from "three";
-import { MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import OrbitControls from "three-orbitcontrols";
+
+//renderer related
+import Model from "./Model";
+import Texture from "./Texture";
 
 import './3DScene.css'
 import Camera from "./Camera";
@@ -76,7 +79,7 @@ class ThreeScene extends Component
 
     //Simple Box with WireFrame
     this.addModels();
-
+ 
     this.renderScene();
     //start animation
     this.start();
@@ -97,82 +100,18 @@ class ThreeScene extends Component
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);
 
-    // -----Step 2--------
-    //LOAD TEXTURE and on completion apply it on SPHERE
-    new THREE.TextureLoader().load(
-      "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      texture => {
-        //Update Texture
-        this.cube.material.map = texture;
-        this.cube.material.needsUpdate = true;
-      },
-      xhr => {
-        //Download Progress
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-      },
-      error => {
-        //Error CallBack
-        console.log("An error happened" + error);
-      }
-    );
-    // instantiate a loader
-    const loader = new OBJLoader();
+    //cone test model
+    this.model = new Model({
+      link:'assets/Models/cone.obj',
+      position: new THREE.Vector3(0,3,0),
+      scale: new THREE.Vector3(2,2,2),
+      material : material,
+      scene : this.scene});
 
-    // load a resource
-    loader.load(
-      // resource URL
-      'assets/Models/cone.obj',
-      // called when resource is loaded
-      object => {
-        this.freedomMesh = object;
-        this.freedomMesh.position.setY(3); //or  this
-        this.freedomMesh.material = material;
-        this.freedomMesh.scale.set(2,2, 2);
-        this.scene.add(this.freedomMesh);
-      },
-      // called when loading is in progresses
-      function ( xhr ) {
-
-        console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-      },
-      // called when loading has errors
-      function ( error ) {
-
-        console.log( 'An error happened' );
-
-      }
-    );
-    //load mesh
-
-    /*
-    var mtlLoader = new MTLLoader();
-    mtlLoader.setBaseUrl("./Assets/Models");
-    mtlLoader.load("cone.mtl", materials => {
-      materials.preload();
-      console.log("Material loaded");
-      //Load Object Now and Set Material
-      var objLoader = new OBJLoader();
-      objLoader.setMaterials(materials);
-      objLoader.load(
-        "./Assets/Models/cone.obj",
-        object => {
-          this.freedomMesh = object;
-          this.freedomMesh.position.setY(3); //or  this
-          this.freedomMesh.material = material;
-          this.freedomMesh.scale.set(100, 100, 100);
-          this.scene.add(this.freedomMesh);
-        },
-        xhr => {
-          console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-        },
-        // called when loading has errors
-        error => {
-          console.log("An error happened" + error);
-        }
-      );
-    });
-    */
+    //test texture
+    this.tex = new Texture(
+        {link:"https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        mesh: this.model.mesh});
   }
 /******************************************************************************/
 /*!
@@ -186,6 +125,7 @@ class ThreeScene extends Component
   }
   start = () =>
    {
+     
     if (!this.frameId) 
       this.frameId = requestAnimationFrame(this.animate);
     
@@ -193,12 +133,28 @@ class ThreeScene extends Component
   stop = () => {
     cancelAnimationFrame(this.frameId);
   };
+
+  
+  checkLoad()
+  {
+    //check if resource is loaded
+    if(this.tex.loaded)
+    {
+      this.model.material.map = this.tex.texture;
+      this.model.material.needsUpdate = true;
+    }
+
+  }
+
+
   animate = () => {
+    
     // -----Step 3--------
     //Rotate Models
     if (this.cube) this.cube.rotation.y += 0.01;
     if (this.freedomMesh) this.freedomMesh.rotation.y += 0.01;
 
+    this.checkLoad();
     this.renderScene();
    
     this.frameId = window.requestAnimationFrame(this.animate);
@@ -209,8 +165,9 @@ class ThreeScene extends Component
 */
 /******************************************************************************/
   renderScene = () => {
+
     if (this.renderer) 
-    this.renderer.render(this.scene, this.newCamera.threeCamera);
+      this.renderer.render(this.scene, this.newCamera.threeCamera);
   };
 
 

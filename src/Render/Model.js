@@ -11,6 +11,8 @@ This project contains portfolio / web-mobile responsive application
 /*****************************************************************************/
 
 import * as THREE from "three";
+import { Object3D } from "three";
+import { OBJLoader } from "three-obj-mtl-loader";
 
 /******************************************************************************/
 /*!
@@ -26,7 +28,12 @@ export default class Model
 /******************************************************************************/
     constructor(_options)
     {
+        //set variables
         this.link = _options.link;
+        this.material = _options.material;
+        this.scene = _options.scene;
+
+
         this.loadModel();
     }
 /******************************************************************************/
@@ -45,18 +52,22 @@ export default class Model
         object => {
             this.mesh = object;
             this.mesh.position.setY(3); //or  this
-            this.mesh.material = material;
+            this.mesh.material = this.material;
             this.mesh.scale.set(2,2, 2);
-            this.container.add(this.mesh);
-            //this.scene.add(this.mesh);
+            this.scene.add(this.mesh);
+            //this.container = new Object3D();
+           // this.container.add(this.mesh);
         },
-        xhr => {
+        function ( xhr ) {
             console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-        },
-        error=> {
+          },
+          // called when loading has errors
+          function ( error )
+           {
             console.log( 'An error happened' );
-        }
+          }
         );
+
     }
 /******************************************************************************/
 /*!
