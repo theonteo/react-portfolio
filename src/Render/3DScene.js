@@ -13,10 +13,9 @@ import React, { Component } from "react";
 import * as THREE from "three";
 import { MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import OrbitControls from "three-orbitcontrols";
+
 import './3DScene.css'
-
 import Camera from "./Camera";
-
 
 /******************************************************************************/
 /*!
