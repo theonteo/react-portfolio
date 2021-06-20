@@ -102,7 +102,7 @@ class ThreeScene extends Component
 
     //cone test model
     this.model = new Model({
-      link:'assets/Models/cone.obj',
+      link:'assets/Models/room.obj',
       position: new THREE.Vector3(0,3,0),
       scale: new THREE.Vector3(2,2,2),
       material : material,
