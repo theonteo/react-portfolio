@@ -116,24 +116,52 @@ class ThreeScene extends Component
         console.log("An error happened" + error);
       }
     );
+    // instantiate a loader
+    const loader = new OBJLoader();
 
-    // -----Step 4--------
-    //Loading 3d Models
-    //Loading Material First
+    // load a resource
+    loader.load(
+      // resource URL
+      'assets/Models/cone.obj',
+      // called when resource is loaded
+      object => {
+        this.freedomMesh = object;
+        this.freedomMesh.position.setY(3); //or  this
+        this.freedomMesh.material = material;
+        this.freedomMesh.scale.set(2,2, 2);
+        this.scene.add(this.freedomMesh);
+      },
+      // called when loading is in progresses
+      function ( xhr ) {
+
+        console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+      },
+      // called when loading has errors
+      function ( error ) {
+
+        console.log( 'An error happened' );
+
+      }
+    );
+    //load mesh
+
+    /*
     var mtlLoader = new MTLLoader();
-    mtlLoader.setBaseUrl("./assets/");
-    mtlLoader.load("freedom.mtl", materials => {
+    mtlLoader.setBaseUrl("./Assets/Models");
+    mtlLoader.load("cone.mtl", materials => {
       materials.preload();
       console.log("Material loaded");
       //Load Object Now and Set Material
       var objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load(
-        "./assets/freedom.obj",
+        "./Assets/Models/cone.obj",
         object => {
           this.freedomMesh = object;
           this.freedomMesh.position.setY(3); //or  this
-          this.freedomMesh.scale.set(0.02, 0.02, 0.02);
+          this.freedomMesh.material = material;
+          this.freedomMesh.scale.set(100, 100, 100);
           this.scene.add(this.freedomMesh);
         },
         xhr => {
@@ -145,6 +173,7 @@ class ThreeScene extends Component
         }
       );
     });
+    */
   }
 /******************************************************************************/
 /*!
@@ -156,13 +185,11 @@ class ThreeScene extends Component
     this.stop();
     this.mount.removeChild(this.renderer.domElement);
   }
-
-
-
-  start = () => {
-    if (!this.frameId) {
+  start = () =>
+   {
+    if (!this.frameId) 
       this.frameId = requestAnimationFrame(this.animate);
-    }
+    
   };
   stop = () => {
     cancelAnimationFrame(this.frameId);
@@ -177,7 +204,11 @@ class ThreeScene extends Component
    
     this.frameId = window.requestAnimationFrame(this.animate);
   };
-
+/******************************************************************************/
+/*!
+\brief render final scene
+*/
+/******************************************************************************/
   renderScene = () => {
     if (this.renderer) 
     this.renderer.render(this.scene, this.newCamera.threeCamera);
