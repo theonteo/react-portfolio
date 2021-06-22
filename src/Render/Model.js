@@ -12,7 +12,7 @@ This project contains portfolio / web-mobile responsive application
 
 import * as THREE from "three";
 import { Object3D } from "three";
-import { OBJLoader } from "three-obj-mtl-loader";
+import {MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 
 /******************************************************************************/
 /*!
@@ -43,32 +43,62 @@ export default class Model
 /******************************************************************************/
     loadModel()
     {
-        const loader = new OBJLoader();
+        /*
+       // Model/material loading!
+	var mtlLoader = new MTLLoader();
+	mtlLoader.load("./assets/Models/room.mtl", materials=>{
+		
+		materials.preload();
         
-        //load mesh by obj loader
-        loader.load(
-            this.link,
+		var objLoader = new OBJLoader();
+		objLoader.setMaterials(materials);
+		
+		objLoader.load("./assets/Models/room.obj", mesh=>{
+		
+			mesh.traverse(function(node){
+				if( node instanceof THREE.Mesh ){
+					node.castShadow = true;
+					node.receiveShadow = true;
+				}
+			});
+		
+			this.scene.add(mesh);
+			mesh.position.set(0, 3, 0);
+			mesh.rotation.y = -Math.PI/4;
+		});
+		
+	});
+    */
+   
+    var mtlLoader = new MTLLoader();
 
+   // mtlLoader.setBaseUrl("./assets/Models");
+    mtlLoader.load("./assets/Models/room.mtl", materials => {
+      materials.preload();
+      console.log("Material loaded");
+      //Load Object Now and Set Material
+      var objLoader = new OBJLoader();
+      objLoader.setMaterials(materials);
+      objLoader.load(
+        "./assets/Models/room.obj",
         object => {
-            this.mesh = object;
-            this.mesh.position.setY(3); //or  this
-            this.mesh.material = this.material;
-            this.mesh.scale.set(2,2, 2);
-            this.scene.add(this.mesh);
-            //this.container = new Object3D();
-           // this.container.add(this.mesh);
+          this.freedomMesh = object;
+          this.freedomMesh.position.setY(3); //or  this
+          this.freedomMesh.scale.set(2, 2, 2);
+          this.scene.add(this.freedomMesh);
         },
-        function ( xhr ) {
-            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-          },
-          // called when loading has errors
-          function ( error )
-           {
-            console.log( 'An error happened' );
-          }
-        );
-
+        xhr => {
+          console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+        },
+        // called when loading has errors
+        error => {
+          console.log("An error happened" + error);
+        }
+      );
+    });
     }
+
+    
 /******************************************************************************/
 /*!
 \brief  set model material

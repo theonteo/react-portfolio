@@ -31,7 +31,7 @@ export default class Camera
       //new three.js camera
       this.threeCamera = 
       new THREE.PerspectiveCamera
-      (75,this.width/this.height, 0.1, 1000);
+      (35,this.width/this.height, 0.1, 1000);
       this.setPosition(this.position);
     }
     setPosition(vec)

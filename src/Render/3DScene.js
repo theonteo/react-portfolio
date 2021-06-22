@@ -67,6 +67,9 @@ class ThreeScene extends Component
 
     //LIGHTS
     var lights = [];
+    const ambient = new THREE.AmbientLight(0xf5e0ff
+      , 1.2, 0);
+    /*
     lights[0] = new THREE.PointLight(0x304ffe, 1, 0);
     lights[1] = new THREE.PointLight(0xffffff, 1, 0);
     lights[2] = new THREE.PointLight(0xffffff, 1, 0);
@@ -76,7 +79,8 @@ class ThreeScene extends Component
     this.scene.add(lights[0]);
     this.scene.add(lights[1]);
     this.scene.add(lights[2]);
-
+    */
+    this.scene.add(ambient);
     //Simple Box with WireFrame
     this.addModels();
  
@@ -105,13 +109,9 @@ class ThreeScene extends Component
       link:'assets/Models/room.obj',
       position: new THREE.Vector3(0,3,0),
       scale: new THREE.Vector3(2,2,2),
-      material : material,
       scene : this.scene});
 
-    //test texture
-    this.tex = new Texture(
-        {link:"https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        mesh: this.model.mesh});
+   
   }
 /******************************************************************************/
 /*!
@@ -137,13 +137,7 @@ class ThreeScene extends Component
   
   checkLoad()
   {
-    //check if resource is loaded
-    if(this.tex.loaded)
-    {
-      this.model.material.map = this.tex.texture;
-      this.model.material.needsUpdate = true;
-    }
-
+   
   }
 
 
