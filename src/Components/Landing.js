@@ -5,13 +5,11 @@ import './Landing.css'
 function Landing()
  {
     return (
-        <div className = "LandingContainer">
-            <div className = "SideBar">
-                <LandingTitle/>
-            </div>
             <div className = "RenderWindow">
                 <RenderWindow/>
-            </div>
+                    <div className = "SideBar">
+                <LandingTitle/>
+                </div>
         </div>
     )
 }

@@ -67,8 +67,9 @@ class ThreeScene extends Component
 
     //LIGHTS
     var lights = [];
-    const ambient = new THREE.AmbientLight(0xf5e0ff
-      , 1.2  , 0);
+    const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
+
+
     /*
     lights[0] = new THREE.PointLight(0x304ffe, 1, 0);
     lights[1] = new THREE.PointLight(0xffffff, 1, 0);

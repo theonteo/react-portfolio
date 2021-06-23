@@ -33,7 +33,7 @@ function NavBar() {
         <nav className = "navbar">
             <div className = "navbar-container">
                 <Link to="/" className="navbar-logo" onClick ={ closeMobileMenu}>
-                    .. /THEON/homepage
+                    THEON
                      <i className ='fab fa-typo3'></i>
                 </Link>
 
@@ -57,7 +57,7 @@ function NavBar() {
                     </li>
 
                 </ul>
-                {button && <Button buttonStyle='btn--outline'> Contact Me</Button> }
+                {button && <Button buttonStyle='btn--outline'> Contact</Button> }
 
             </div>
         </nav>
