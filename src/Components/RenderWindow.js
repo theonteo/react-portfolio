@@ -9,7 +9,7 @@ function RenderWindow() {
                 <ThreeScene/>
             </div>
             <div className = "render-container">
-                <Button buttonStyle='btn--outline' className = 'play-button'> <i className ='fas fa-mouse'></i> Click to play</Button>
+                <Button buttonStyle='btn--outline' className = 'play-button'> <i className ='fas fa-mouse'></i> Scroll to continue</Button>
 
             </div>
         </div>

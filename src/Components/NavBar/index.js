@@ -33,8 +33,7 @@ function NavBar() {
         <nav className = "navbar">
             <div className = "navbar-container">
                 <Link to="/" className="navbar-logo" onClick ={ closeMobileMenu}>
-                    THEON
-                     <i className ='fab fa-typo3'></i>
+                <i className ='fab fa-typo3'></i>                    
                 </Link>
 
                 <div className ='menu-icon' 
