@@ -27,12 +27,14 @@ export default class Camera
 
       //set position
       this.position = _options.position;
+      this.rotation = _options.rotation;
 
       //new three.js camera
       this.threeCamera = 
       new THREE.PerspectiveCamera
       (35,this.width/this.height, 0.1, 1000);
       this.setPosition(this.position);
+      this.setRotation(this.rotation);
     }
     setPosition(vec)
     {
@@ -40,5 +42,12 @@ export default class Camera
       this.threeCamera .position.x = this.position.x;
       this.threeCamera .position.y = this.position.y;
       this.threeCamera .position.z = this.position.z;
+    }
+    setRotation(vec)
+    {
+      this.rotation = vec;
+      this.threeCamera.rotation.x = this.rotation.x;
+      this.threeCamera .rotation.y = this.rotation.y;
+      this.threeCamera .rotation.z = this.rotation.z;
     }
 }

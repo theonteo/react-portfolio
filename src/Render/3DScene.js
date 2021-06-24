@@ -36,13 +36,15 @@ class ThreeScene extends Component
   {
     //add Camera
     this.newCamera = 
-    new Camera({position: new THREE.Vector3(0,5,20),
+    new Camera({
+      position: new THREE.Vector3(6,9,-9),
+      rotation: new THREE.Quaternion(0.3,2.7,-0.2),
       width : width, height : height});
            
     //Camera Controls
-    const controls = new OrbitControls
-    (this.newCamera.threeCamera, this.renderer.domElement);
-
+    //const controls = new OrbitControls
+    //(this.newCamera.threeCamera,
+    //   this.renderer.domElement);
   }
 /******************************************************************************/
 /*!
