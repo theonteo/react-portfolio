@@ -64,14 +64,18 @@ class ThreeScene extends Component
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
 
+    this.camY = 0;
     //add Camera
     this.setCamera(width,height);
 
     //LIGHTS
     var lights = [];
     const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
-
-
+    
+   
+    window.addEventListener('mousemove', event => {
+      this.camY+=event.deltaY;
+  });
     /*
     lights[0] = new THREE.PointLight(0x304ffe, 1, 0);
     lights[1] = new THREE.PointLight(0xffffff, 1, 0);
@@ -91,7 +95,11 @@ class ThreeScene extends Component
     //start animation
     this.start();
   }
+  onMouseWheel( event ) {
+    if(event.deltaY > 0)
+    this.camY +=1000;
 
+  }
 /******************************************************************************/
 /*!
 \brief  add models
@@ -143,15 +151,17 @@ class ThreeScene extends Component
    
   }
 
-
   animate = () => {
     
     // -----Step 3--------
     //Rotate Models
     if (this.cube) this.cube.rotation.y += 0.01;
     if (this.freedomMesh) this.freedomMesh.rotation.y += 0.01;
-
-    this.checkLoad();
+    //this.newCamera.setPosition(new THREE.Vector3(6,9+this.camY*10,-9));
+  //this.newCamera.setRotation(new THREE.Quaternion(0.3+this.camY,2.7,-0.2));
+  //this.newCamera.threeCamera.rotation.y += 0.01;
+  //this.newCamera.threeCamera.rotation.y = 2.7+this.camY;
+  this.checkLoad();
     this.renderScene();
    
     this.frameId = window.requestAnimationFrame(this.animate);
@@ -164,7 +174,8 @@ class ThreeScene extends Component
   renderScene = () => {
 
     if (this.renderer) 
-      this.renderer.render(this.scene, this.newCamera.threeCamera);
+      this.renderer.render
+      (this.scene, this.newCamera.threeCamera);
   };
 
 

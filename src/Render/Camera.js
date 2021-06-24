@@ -36,6 +36,7 @@ export default class Camera
       this.setPosition(this.position);
       this.setRotation(this.rotation);
     }
+    
     setPosition(vec)
     {
       this.position = vec;

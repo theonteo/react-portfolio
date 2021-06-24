@@ -4,20 +4,19 @@
 }
 .render-window-screen
 {
-
-    z-index:-100;
+ 
+    z-index:-900;
     height:100vh;
-
-    box-sizing: border-box;
+    
+    pointer-events: none;
+    box-sizing:content-box;
     align-content: center;
 }
 .render-window
 {
     
- z-index:-99;
+    z-index:-99;
     position:fixed;
-    
-    overflow-x:hidden;
     align-content: center;
 }
 
