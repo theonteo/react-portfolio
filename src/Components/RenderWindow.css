@@ -15,7 +15,7 @@
 .render-window
 {
     
-    z-index:-99;
+  
     position:fixed;
     align-content: center;
 }

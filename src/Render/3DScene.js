@@ -42,9 +42,9 @@ class ThreeScene extends Component
       width : width, height : height});
            
     //Camera Controls
-    //const controls = new OrbitControls
-    //(this.newCamera.threeCamera,
-    //   this.renderer.domElement);
+    const controls = new OrbitControls
+    (this.newCamera.threeCamera,
+       this.renderer.domElement);
   }
 /******************************************************************************/
 /*!
