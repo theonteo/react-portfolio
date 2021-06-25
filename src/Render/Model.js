@@ -70,15 +70,16 @@ export default class Model
    
     var mtlLoader = new MTLLoader();
 
-    mtlLoader.setBaseUrl("./assets/Models");
-    mtlLoader.load("../assets/Models/room.mtl", materials => {
+    
+    mtlLoader.load("../assets/models/room.mtl", materials => {
       materials.preload();
       console.log("Material loaded");
+      
       //Load Object Now and Set Material
       var objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load(
-        "../assets/Models/room.obj",
+        "../assets/models/room.obj",
         object => {
           this.freedomMesh = object;
           this.freedomMesh.position.setY(3); //or  this
