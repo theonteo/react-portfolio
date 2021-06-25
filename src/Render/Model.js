@@ -71,7 +71,7 @@ export default class Model
     var mtlLoader = new MTLLoader();
 
     
-    mtlLoader.load("../room.mtl", materials => {
+    mtlLoader.load('/room.mtl', materials => {
       materials.preload();
       console.log("Material loaded");
 
@@ -79,7 +79,7 @@ export default class Model
       var objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load(
-        "../room.obj",
+        '/room.obj',
         object => {
           this.freedomMesh = object;
           this.freedomMesh.position.setY(3); //or  this
