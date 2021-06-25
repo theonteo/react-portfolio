@@ -40,15 +40,15 @@ export default class Camera
     setPosition(vec)
     {
       this.position = vec;
-      this.threeCamera .position.x = this.position.x;
-      this.threeCamera .position.y = this.position.y;
-      this.threeCamera .position.z = this.position.z;
+      this.threeCamera.position.x = this.position.x;
+      this.threeCamera.position.y = this.position.y;
+      this.threeCamera.position.z = this.position.z;
     }
     setRotation(vec)
     {
       this.rotation = vec;
       this.threeCamera.rotation.x = this.rotation.x;
-      this.threeCamera .rotation.y = this.rotation.y;
-      this.threeCamera .rotation.z = this.rotation.z;
+      this.threeCamera.rotation.y = this.rotation.y;
+      this.threeCamera.rotation.z = this.rotation.z;
     }
 }

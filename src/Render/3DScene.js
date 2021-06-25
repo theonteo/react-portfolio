@@ -15,8 +15,6 @@ import OrbitControls from "three-orbitcontrols";
 
 //renderer related
 import Model from "./Model";
-import Texture from "./Texture";
-
 import './3DScene.css'
 import Camera from "./Camera";
 
@@ -42,7 +40,7 @@ class ThreeScene extends Component
       width : width, height : height});
            
     //Camera Controls
-    const controls = new OrbitControls
+   new OrbitControls
     (this.newCamera.threeCamera,
        this.renderer.domElement);
   }
@@ -69,7 +67,7 @@ class ThreeScene extends Component
     this.setCamera(width,height);
 
     //LIGHTS
-    var lights = [];
+    //var lights = [];
     const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
     
    

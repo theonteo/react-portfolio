@@ -10,8 +10,6 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 
-import * as THREE from "three";
-import { Object3D } from "three";
 import {MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 
 /******************************************************************************/
