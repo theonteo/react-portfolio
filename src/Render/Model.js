@@ -81,6 +81,7 @@ export default class Model
       objLoader.load(
         '/room.obj',
         object => {
+          console.log(" load!");
           this.freedomMesh = object;
           this.freedomMesh.position.setY(3); //or  this
           this.freedomMesh.scale.set(2, 2, 2);

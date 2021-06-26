@@ -31,6 +31,10 @@ class Scene extends Component
     //init variables
     this.container = [];
     this.pageLerp = 0;
+    this.scene = new THREE.Scene();
+
+    //add Camera
+     this.setCamera(1200,768);
   }
 /******************************************************************************/
 /*!
@@ -57,24 +61,15 @@ class Scene extends Component
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
 
-    this.scene = new THREE.Scene();
-
     //Add Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setClearColor("#263238");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
-    //add Camera
-    this.setCamera(width,height);
 
     //add lighting here
     const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
     this.scene.add(ambient);
-
-    //add mesh to scene
-    //this.addModels();
-
-  
   }
 
 
@@ -86,8 +81,10 @@ class Scene extends Component
 startRender()
 {
   //loop through all models and add to scene container
+
   this.container.forEach(function(item,index)
   {
+    console.log("added");
     this.scene.add(item);
   });
 
@@ -97,23 +94,7 @@ startRender()
   //start animation
   this.start();
 }
-/******************************************************************************/
-/*!
-\brief  add models
-*/
-/******************************************************************************/
-  addModels(model)
-  {
-    this.container.add(model);
-    //main test model
-    /*
-    this.model = new Model({
-      link:'assets/Models/room.obj',
-      position: new THREE.Vector3(0,3,0),
-      scale: new THREE.Vector3(2,2,2),
-      scene : this.scene});
-      */
-  }
+
 /******************************************************************************/
 /*!
 \brief  component unmounted - three.js
@@ -144,22 +125,24 @@ startRender()
   {
     //get page position and lerp camera 
     const t = document.body.getBoundingClientRect().top;
+    
     this.pageLerp = t * 0.0045;
 
-    //rotation animation
-    this.newCamera.setRotation(
-      this.newCamera.rotation.lerp(
-        new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
-
     //modify camera position
-    let disty = 9.0 + this.pageLerp * 1.5;
+    let disty = -9.0 + this.pageLerp * 1.5;
     let distx = 6.0 - this.pageLerp * 2;
     let distz = -9.0 + this.pageLerp * 2;
+    this.newCamera.position.y+=1;
 
     //position animation
     this.newCamera.setPosition
     (this.newCamera.position.lerp(
       new THREE.Vector3(distx,disty,distz),0.05));
+
+    //rotation animation
+    this.newCamera.setRotation(
+      this.newCamera.rotation.lerp(
+        new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
   }
 
   animate = () => {

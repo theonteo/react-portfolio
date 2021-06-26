@@ -13,7 +13,7 @@ import React, { Component } from "react";
 import * as THREE from "three";
 
 //renderer related
-import './Scene.css'
+import Model from "../../Render/Model";
 import Scene from "../../Render/Scene";
 
 
@@ -28,16 +28,15 @@ class Scene_1 extends Scene
     constructor(_options)
     {
         super(_options);
-
+  
         //add main room model
-        this.addModels(new Model({
+        new Model({
             link:'assets/Models/room.obj',
             position: new THREE.Vector3(0,3,0),
             scale: new THREE.Vector3(2,2,2),
-            scene : this.scene}));
-
-    
-    
+            scene : this.scene});
+        
+        this.startRender();
     }
 }
 
