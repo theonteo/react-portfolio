@@ -27,7 +27,8 @@ export default class Model
     constructor(_options)
     {
         //set variables
-        this.link = _options.link;
+        this.modelLink = _options.modelLink;
+        this.matLink = _options.matLink;
         this.material = _options.material;
         this.scene = _options.scene;
 
@@ -40,38 +41,11 @@ export default class Model
 */
 /******************************************************************************/
     loadModel()
-    {
-        /*
-       // Model/material loading!
-	var mtlLoader = new MTLLoader();
-	mtlLoader.load("./assets/Models/room.mtl", materials=>{
-		
-		materials.preload();
-        
-		var objLoader = new OBJLoader();
-		objLoader.setMaterials(materials);
-		
-		objLoader.load("./assets/Models/room.obj", mesh=>{
-		
-			mesh.traverse(function(node){
-				if( node instanceof THREE.Mesh ){
-					node.castShadow = true;
-					node.receiveShadow = true;
-				}
-			});
-		
-			this.scene.add(mesh);
-			mesh.position.set(0, 3, 0);
-			mesh.rotation.y = -Math.PI/4;
-		});
-		
-	});
-    */
-   
-    var mtlLoader = new MTLLoader();
+    {   
+      var mtlLoader = new MTLLoader();
 
     
-    mtlLoader.load('/room.mtl', materials => {
+      mtlLoader.load(this.matLink, materials => {
       materials.preload();
       console.log("Material loaded");
 
@@ -79,7 +53,7 @@ export default class Model
       var objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load(
-        '/room.obj',
+        this.modelLink,
         object => {
           console.log(" load!");
           this.freedomMesh = object;

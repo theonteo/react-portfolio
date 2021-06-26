@@ -31,7 +31,8 @@ class Scene_1 extends Scene
   
         //add main room model
         new Model({
-            link:'assets/Models/room.obj',
+            modelLink:'/room.obj',
+            matLink:'/room.mtl',
             position: new THREE.Vector3(0,3,0),
             scale: new THREE.Vector3(2,2,2),
             scene : this.scene});
