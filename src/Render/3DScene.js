@@ -24,7 +24,12 @@ import Camera from "./Camera";
 */
 /******************************************************************************/
 class ThreeScene extends Component
- {
+{
+
+  constructor(_options) {
+    super(_options);
+    this.camY = 0;
+  }
 /******************************************************************************/
 /*!
 \brief  create new camera
@@ -40,9 +45,9 @@ class ThreeScene extends Component
       width : width, height : height});
            
     //Camera Controls
-   new OrbitControls
-    (this.newCamera.threeCamera,
-       this.renderer.domElement);
+  // new OrbitControls
+  //  (this.newCamera.threeCamera,
+    //   this.renderer.domElement);
   }
 /******************************************************************************/
 /*!
@@ -61,8 +66,6 @@ class ThreeScene extends Component
     this.renderer.setClearColor("#263238");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
-
-    this.camY = 0;
     //add Camera
     this.setCamera(width,height);
 
@@ -72,31 +75,21 @@ class ThreeScene extends Component
     
    
     window.addEventListener('mousemove', event => {
-      this.camY+=event.deltaY;
+      //this.camY+=event.deltaY;
   });
-    /*
-    lights[0] = new THREE.PointLight(0x304ffe, 1, 0);
-    lights[1] = new THREE.PointLight(0xffffff, 1, 0);
-    lights[2] = new THREE.PointLight(0xffffff, 1, 0);
-    lights[0].position.set(0, 200, 0);
-    lights[1].position.set(100, 200, 100);
-    lights[2].position.set(-100, -200, -100);
-    this.scene.add(lights[0]);
-    this.scene.add(lights[1]);
-    this.scene.add(lights[2]);
-    */
+
+
+    
+    
+    //document.body.onscroll = moveCam;
+
     this.scene.add(ambient);
-    //Simple Box with WireFrame
+
     this.addModels();
- 
     this.renderScene();
+
     //start animation
     this.start();
-  }
-  onMouseWheel( event ) {
-    if(event.deltaY > 0)
-    this.camY +=1000;
-
   }
 /******************************************************************************/
 /*!
@@ -119,8 +112,6 @@ class ThreeScene extends Component
       position: new THREE.Vector3(0,3,0),
       scale: new THREE.Vector3(2,2,2),
       scene : this.scene});
-
-   
   }
 /******************************************************************************/
 /*!
@@ -148,18 +139,32 @@ class ThreeScene extends Component
   {
    
   }
-
-  animate = () => {
-    
-    // -----Step 3--------
-    //Rotate Models
+  Update()
+  {
     if (this.cube) this.cube.rotation.y += 0.01;
     if (this.freedomMesh) this.freedomMesh.rotation.y += 0.01;
-    //this.newCamera.setPosition(new THREE.Vector3(6,9+this.camY*10,-9));
-  //this.newCamera.setRotation(new THREE.Quaternion(0.3+this.camY,2.7,-0.2));
-  //this.newCamera.threeCamera.rotation.y += 0.01;
-  //this.newCamera.threeCamera.rotation.y = 2.7+this.camY;
-  this.checkLoad();
+   
+    window.addEventListener('scroll',()=>{
+    // const t = document.body.getBoundingClientRect().top;
+      this.camY = t * 0.0045;
+    });
+    const t = document.body.getBoundingClientRect().top;
+      this.camY = t * 0.0045;
+    let dist = 9.0 + this.camY;
+
+    this.newCamera.setRotation(this.newCamera.rotation.slerp
+      (new THREE.Quaternion(0.3+this.camY,2.7,-0.2)));
+    this.newCamera.setPosition
+    (this.newCamera.position.lerp(new THREE.Vector3(6,dist,-9),0.05));
+  }
+
+  animate = () => {
+    this.Update();
+    // -----Step 3--------
+    //Rotate Models
+  
+
+    this.checkLoad();
     this.renderScene();
    
     this.frameId = window.requestAnimationFrame(this.animate);
