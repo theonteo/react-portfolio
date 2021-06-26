@@ -28,7 +28,7 @@ export default class Camera
       //set position
       this.position = _options.position;
       this.rotation = _options.rotation;
-
+      this.euler = new THREE.Vector3(0,0,0);
       //new three.js camera
       this.threeCamera = 
       new THREE.PerspectiveCamera

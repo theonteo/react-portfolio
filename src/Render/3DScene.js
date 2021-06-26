@@ -39,7 +39,7 @@ class ThreeScene extends Component
     this.newCamera = 
     new Camera({
       position: new THREE.Vector3(6,9,-9),
-      rotation: new THREE.Quaternion(0.3,2.7,-0.2),
+      rotation: new THREE.Vector3(0.3,2.7,-0.2),
       width : width, 
       height : height});
   }
@@ -144,12 +144,21 @@ class ThreeScene extends Component
     });
     const t = document.body.getBoundingClientRect().top;
       this.camY = t * 0.0045;
-    let dist = 9.0 + this.camY;
+  
 
-    this.newCamera.setRotation(this.newCamera.rotation.slerp
-      (new THREE.Quaternion(0.3+this.camY,2.7,-0.2)));
+    //rotation animation
+    this.newCamera.setRotation(
+      this.newCamera.rotation.lerp(
+        new THREE.Vector3(0.3,2.7+ this.camY*0.2,-0.2),0.05));
+
+
+    let disty = 9.0 + this.camY*1.5;
+    let distx = 6.0 - this.camY * 2;
+    let distz = -9.0 + this.camY * 2;
+    //position animation
     this.newCamera.setPosition
-    (this.newCamera.position.lerp(new THREE.Vector3(6,dist,-9),0.05));
+    (this.newCamera.position.lerp(
+      new THREE.Vector3(distx,disty,distz),0.05));
   }
 
   animate = () => {
