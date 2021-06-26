@@ -10,14 +10,25 @@
 }
 .Title-subtext
 {
+    align-self: center;
     margin-top: 10px;
     font-size: 12px;
-  
     font-family: sans-serif;
     color:white;
+    width: 50%;
 }
+
+@media screen and (max-width: 960px) 
+{
+    .Title-subtext
+    {
+        position: relative;
+        width: 100%;
+    }
+}
+
+
 .fa-mouse {
 
     font-size: 1rem;
-  }
-  
+}

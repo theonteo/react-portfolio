@@ -24,7 +24,6 @@ import Camera from "./Camera";
 /******************************************************************************/
 class ThreeScene extends Component
 {
-
   constructor(_options) {
     super(_options);
     this.camY = 0;
@@ -41,12 +40,8 @@ class ThreeScene extends Component
     new Camera({
       position: new THREE.Vector3(6,9,-9),
       rotation: new THREE.Quaternion(0.3,2.7,-0.2),
-      width : width, height : height});
-           
-    //Camera Controls
-  // new OrbitControls
-  //  (this.newCamera.threeCamera,
-    //   this.renderer.domElement);
+      width : width, 
+      height : height});
   }
 /******************************************************************************/
 /*!
