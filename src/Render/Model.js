@@ -44,7 +44,6 @@ export default class Model
     {   
       var mtlLoader = new MTLLoader();
 
-    
       mtlLoader.load(this.matLink, materials => {
       materials.preload();
       console.log("Material loaded");
@@ -56,10 +55,10 @@ export default class Model
         this.modelLink,
         object => {
           console.log(" load!");
-          this.freedomMesh = object;
-          this.freedomMesh.position.setY(3); //or  this
-          this.freedomMesh.scale.set(2, 2, 2);
-          this.scene.add(this.freedomMesh);
+          this.Mesh = object;
+          this.Mesh.position.setY(3); //or  this
+          this.Mesh.scale.set(2, 2, 2);
+          this.scene.add(this.Mesh);
         },
         xhr => {
           console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
