@@ -24,9 +24,12 @@ import Camera from "./Camera";
 /******************************************************************************/
 class ThreeScene extends Component
 {
-  constructor(_options) {
+  constructor(_options)
+   {
     super(_options);
-    this.camY = 0;
+
+    //init variables
+    this.pageLerp = 0;
   }
 /******************************************************************************/
 /*!
@@ -63,23 +66,14 @@ class ThreeScene extends Component
     //add Camera
     this.setCamera(width,height);
 
-    //LIGHTS
-    //var lights = [];
+    //add lighting here
     const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
-    
-   
-    window.addEventListener('mousemove', event => {
-      //this.camY+=event.deltaY;
-  });
-
-
-    
-    
-    //document.body.onscroll = moveCam;
-
     this.scene.add(ambient);
 
+    //add mesh to scene
     this.addModels();
+
+    //render scene
     this.renderScene();
 
     //start animation
@@ -90,17 +84,9 @@ class ThreeScene extends Component
 \brief  add models
 */
 /******************************************************************************/
-  addModels() {
-    // -----Step 1--------
-    const geometry = new THREE.BoxGeometry(5, 5, 5);
-    const material = new THREE.MeshBasicMaterial({
-      color: "#0F0"
-    });
-    
-    this.cube = new THREE.Mesh(geometry, material);
-    this.scene.add(this.cube);
-
-    //cone test model
+  addModels()
+  {
+    //main test model
     this.model = new Model({
       link:'assets/Models/room.obj',
       position: new THREE.Vector3(0,3,0),
@@ -124,37 +110,31 @@ class ThreeScene extends Component
       this.frameId = requestAnimationFrame(this.animate);
     
   };
-  stop = () => {
+  stop = () => 
+  {
     cancelAnimationFrame(this.frameId);
   };
-
-  
-  checkLoad()
-  {
-   
-  }
+/******************************************************************************/
+/*!
+\brief  update per frame
+*/
+/******************************************************************************/
   Update()
   {
-    if (this.cube) this.cube.rotation.y += 0.01;
-    if (this.freedomMesh) this.freedomMesh.rotation.y += 0.01;
-   
-    window.addEventListener('scroll',()=>{
-    // const t = document.body.getBoundingClientRect().top;
-      this.camY = t * 0.0045;
-    });
+    //get page position and lerp camera 
     const t = document.body.getBoundingClientRect().top;
-      this.camY = t * 0.0045;
-  
+    this.pageLerp = t * 0.0045;
 
     //rotation animation
     this.newCamera.setRotation(
       this.newCamera.rotation.lerp(
-        new THREE.Vector3(0.3,2.7+ this.camY*0.2,-0.2),0.05));
+        new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
 
+    //modify camera position
+    let disty = 9.0 + this.pageLerp * 1.5;
+    let distx = 6.0 - this.pageLerp * 2;
+    let distz = -9.0 + this.pageLerp * 2;
 
-    let disty = 9.0 + this.camY*1.5;
-    let distx = 6.0 - this.camY * 2;
-    let distz = -9.0 + this.camY * 2;
     //position animation
     this.newCamera.setPosition
     (this.newCamera.position.lerp(
@@ -162,15 +142,12 @@ class ThreeScene extends Component
   }
 
   animate = () => {
+    //main scene update function
     this.Update();
-    // -----Step 3--------
-    //Rotate Models
-  
-
-    this.checkLoad();
     this.renderScene();
    
-    this.frameId = window.requestAnimationFrame(this.animate);
+    this.frameId = 
+    window.requestAnimationFrame(this.animate);
   };
 /******************************************************************************/
 /*!
@@ -200,4 +177,5 @@ class ThreeScene extends Component
     );
   }
 }
+
 export default ThreeScene;
