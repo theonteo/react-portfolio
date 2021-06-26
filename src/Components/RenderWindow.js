@@ -1,12 +1,12 @@
 import React from 'react'
 import './RenderWindow.css'
 import { Button } from './NavBar/Button'
-import ThreeScene from '../Render/3DScene'
+import Scene from '../Render/Scene'
 function RenderWindow() {
     return (
         <div  className= 'render'>
             <div className= 'render-window'>
-                <ThreeScene/>
+                <Scene/>
             </div>
             <div className= 'render-window-screen'>
             </div>

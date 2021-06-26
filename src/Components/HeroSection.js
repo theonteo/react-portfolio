@@ -3,6 +3,7 @@ import '../App.css'
 import { Button } from './NavBar/Button'
 import './HeroSection.css'
 import videoH from '../videos/video-1.mp4'
+
 function HeroSection() {
     return (
       <div className='hero-container'>
