@@ -11,7 +11,6 @@ This project contains portfolio / web-mobile responsive application
 /*****************************************************************************/
 import React, { Component } from "react";
 import * as THREE from "three";
-import OrbitControls from "three-orbitcontrols";
 
 //renderer related
 import Model from "./Model";
