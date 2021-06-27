@@ -1,7 +1,7 @@
 import React from 'react'
 import './RenderWindow.css'
 import { Button } from './NavBar/Button'
-import Scene_1 from './Scenes/Scene_1'
+import Scene_1 from './Scenes/Scene1'
 
 
 function RenderWindow()
