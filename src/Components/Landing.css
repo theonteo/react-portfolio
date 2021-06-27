@@ -9,9 +9,11 @@
 }
 .landingContainer
 {
+    background-color: black;
 }
 .RenderWindow
 {
+    padding:0%;
     overflow-y: hidden;
     position:relative;
     text-align: center;
