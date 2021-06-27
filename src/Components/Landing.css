@@ -24,6 +24,7 @@
 {
     .SideBar
     {
+        overflow-y: hidden;
         margin-left: 0%;
         position:absolute;
         margin: 10%;

@@ -4,7 +4,7 @@
 }
 .render-window-screen
 {
- 
+    overflow-y: hidden;
     z-index:-900;
     height:100vh;
     
@@ -15,13 +15,14 @@
 .render-window
 {
     
-  
+    overflow-y: hidden;
     position:fixed;
     align-content: center;
 }
 
 .render-container
 {   
+    overflow-y: hidden;
     height:20%;
     display: flex;
     position: absolute;

@@ -1,6 +1,7 @@
 
 .Title-heading
 {
+    overflow-y: hidden;
     font-size:60px;
     font-family: Roboto;
     font-weight: bold;
@@ -10,6 +11,7 @@
 }
 .Title-subtext
 {
+    overflow-y: hidden;
     align-self: center;
     margin-top: 10px;
     font-size: 12px;
