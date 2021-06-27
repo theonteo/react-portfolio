@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /*!
-\file Scene_1.js
+\file Scene_3.js
 \author Theon Teo
 \par email: theonteo96@gmail.com
 \date 2021
@@ -21,7 +21,7 @@ import Scene from "../../Render/Scene";
 \brief  main 3d scene setup
 */
 /******************************************************************************/
-class Scene_1 extends Scene
+class Scene_3 extends Scene
 {
     //constructor
     constructor(_options)
@@ -40,4 +40,4 @@ class Scene_1 extends Scene
     }
 }
 
-export default Scene_1
+export default Scene_3

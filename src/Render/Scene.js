@@ -13,7 +13,6 @@ import React, { Component } from "react";
 import * as THREE from "three";
 
 //renderer related
-import Model from "./Model";
 import './Scene.css'
 import Camera from "./Camera";
 
@@ -67,6 +66,8 @@ class Scene extends Component
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
 
+    //add Camera
+    this.setCamera( width,height);
     //add lighting here
     const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
     this.scene.add(ambient);

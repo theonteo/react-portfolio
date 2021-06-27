@@ -29,6 +29,7 @@ export default class Camera
       this.position = _options.position;
       this.rotation = _options.rotation;
       this.euler = new THREE.Vector3(0,0,0);
+      
       //new three.js camera
       this.threeCamera = 
       new THREE.PerspectiveCamera
@@ -36,7 +37,12 @@ export default class Camera
       this.setPosition(this.position);
       this.setRotation(this.rotation);
     }
-    
+    setScreenResolution(width,height)
+    {
+      this.threeCamera = 
+      new THREE.PerspectiveCamera
+      (35,width/height, 0.1, 1000);
+    }
     setPosition(vec)
     {
       this.position = vec;
