@@ -38,6 +38,36 @@ class Scene3 extends Scene
         
         this.startRender();
     }
+/******************************************************************************/
+/*!
+\brief  update per frame
+*/
+/******************************************************************************/
+Update()
+{
+  //get page position and lerp camera 
+  const t = document.body.getBoundingClientRect().top;
+  
+  this.pageLerp = t * 0.0045;
+
+  //modify camera position
+  let disty = -9.0 + this.pageLerp * 1.5;
+  let distx = 6.0 - this.pageLerp * 2;
+  let distz = -9.0 + this.pageLerp * 2;
+  this.newCamera.position.y+=1;
+
+  //position animation
+  this.newCamera.setPosition
+  (this.newCamera.position.lerp(
+    new THREE.Vector3(distx,disty,distz),0.05));
+
+  //rotation animation
+  this.newCamera.setRotation(
+    this.newCamera.rotation.lerp(
+      new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
+  this.Update = this.Update;
+  }
+
 }
 
 export default Scene3
