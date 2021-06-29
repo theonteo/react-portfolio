@@ -37,9 +37,7 @@
     width: 100%;
     box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
-    filter: drop-shadow(0 6px 20px #387dff04);
-    -webkit-filter:blur(10px);
-    background-color: rgb(184, 184, 184);
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
@@ -100,13 +98,13 @@
     line-height: 24px;
   }
   
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 1200px) {
     .content__blog__container {
       width: 84%;
     }
   }
   
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 1024px) {
     .cards__items {
       display: flex;
     }

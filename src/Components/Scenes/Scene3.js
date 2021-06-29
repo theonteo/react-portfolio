@@ -51,9 +51,9 @@ Update()
   this.pageLerp = t * 0.0045;
 
   //modify camera position
-  let disty = -9.0 + this.pageLerp * 1.5;
-  let distx = 6.0 - this.pageLerp * 2;
-  let distz = -9.0 + this.pageLerp * 2;
+  let disty = -9.0 + this.pageLerp * 0.5;
+  let distx = 6.0 - this.pageLerp * 0.2;
+  let distz = -9.0 + this.pageLerp * 0.2;
   this.newCamera.position.y+=1;
 
   //position animation
@@ -64,7 +64,7 @@ Update()
   //rotation animation
   this.newCamera.setRotation(
     this.newCamera.rotation.lerp(
-      new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
+      new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.02,-0.2),0.05));
   }
 
 }
