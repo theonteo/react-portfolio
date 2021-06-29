@@ -65,7 +65,6 @@ Update()
   this.newCamera.setRotation(
     this.newCamera.rotation.lerp(
       new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
-  this.Update = this.Update;
   }
 
 }

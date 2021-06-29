@@ -1,0 +1,23 @@
+.AboutContainer
+{
+    display:flex;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+.LeftPanel
+{
+   
+    color: rgb(255, 255, 255);
+}
+
+
+.Title
+{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+.SubText
+{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
