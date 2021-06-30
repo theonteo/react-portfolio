@@ -51,10 +51,10 @@ class Scene1 extends Scene
     this.pageLerp = t * 0.0045;
 
     //modify camera position
-    //let disty = -9.0 + this.pageLerp * 1.5;
-   // let distx = 6.0 - this.pageLerp * 2;
+    let disty = -9.0 + this.pageLerp * 1.5;
+    //let distx = 6.0 - this.pageLerp * 2;
    //let distz = -9.0 + this.pageLerp * 2;
-   let disty = -9.0 ;
+   //let disty = -9.0 ;
    let distx = 6.0;
    let distz = -9.0;
 
