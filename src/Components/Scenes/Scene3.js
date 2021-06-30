@@ -66,7 +66,15 @@ Update()
     this.newCamera.rotation.lerp(
       new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.02,-0.2),0.05));
   }
-
+  render() {
+    return (
+      <div className = 'render-window-project'
+        ref={mount => {
+          this.mount = mount;
+        }}
+      />
+    );
+  }
 }
 
 export default Scene3
