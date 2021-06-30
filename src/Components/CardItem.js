@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './Cards.css'
-function CardsItem(props) {
+function CardsItem(props)
+{
     return (
         <>
             <li className = 'cards__item'>
@@ -13,7 +14,6 @@ function CardsItem(props) {
                         </img>
                     </figure>
                     <div className = "cards__item__info">
-
                         <h5 className = "cards__item__text">
                             {props.text}
                         </h5>
@@ -25,7 +25,6 @@ function CardsItem(props) {
                         </div>
                     </div>
                 </Link>
-
             </li>
         </>
     )

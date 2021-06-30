@@ -1,9 +1,12 @@
 .SideBar
 {
+    display: flex;
     overflow-y: hidden;
-    margin: 20%;
+    width: 90%;
+    margin: 0%;
     position:absolute;
-    bottom: 0vh;
+    justify-content: center;
+    align-content: center;
     text-align: left;
 }
 .Projects
@@ -16,8 +19,6 @@
     justify-content: center;
     align-content: center;
     width: 100%;
-    height: 100%;
-    bottom: 0%;
  
 }
 .landingContainer
@@ -27,28 +28,20 @@
 }
 .RenderWindow
 {
-    padding:0%;
+    display: flex;
+   
     overflow-y: hidden;
     position:relative;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100%;
+    
     background-color: rgba(128, 128, 128, 0);
     width:100%;
+    height:100%;
 }
 
 @media screen and (max-width: 960px) 
 {
-    .SideBar
-    {
-        overflow-y: hidden;
-        margin-left: 0%;
-        position:absolute;
-        margin: 10%;
-        display:flex;
-        align-content: center;
-        justify-content: center;
-        text-align: center;
-    } 
+
 }

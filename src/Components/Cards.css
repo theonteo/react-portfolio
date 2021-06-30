@@ -47,7 +47,7 @@
     filter: drop-shadow(0 6px 20px #387dff04);
    
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.698);
     
     border-radius: 10px;
     overflow: hidden;
@@ -132,11 +132,11 @@
     flex-flow: left;
   }
 
-  .cards__item__icon 
+  .fa-github
   {
-   
-    width:30px;
-    height:30px;
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
   }
 
 
