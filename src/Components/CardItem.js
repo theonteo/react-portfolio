@@ -20,7 +20,9 @@ function CardsItem(props) {
                         <h5 className = "cards__item__information">
                             {props.information}
                         </h5>
-
+                        <div className = "cards__item__icon__container">
+                            <i class={ props.icon1 }></i>
+                        </div>
                     </div>
                 </Link>
 
