@@ -1,4 +1,12 @@
-
+.Title-colored
+{
+    color: rgb(255, 123, 0);
+    font-size:16px;
+    font-weight: 500;
+    font-family: Roboto;
+    text-align: left;
+    letter-spacing: 4px;
+}
 .Title-heading
 {
     overflow-y: hidden;
@@ -6,18 +14,31 @@
     font-family: Roboto;
     font-weight: bold;
     color:rgba(255, 255, 255, 0.876);
-    letter-spacing: 20px;
+    letter-spacing: 0px;
+    line-height: 0.9em;
+}
+.Title-SubHeading
+{
+    overflow-y: hidden;
+    font-size:14px;
+    font-family: Calibri;
+   
+    color:rgba(255, 255, 255, 0.644);
+    margin-top: 10px;
+    letter-spacing: 1px;
     line-height: 0.9em;
 }
 .Title-subtext
 {
     overflow-y: hidden;
     align-self: center;
-    margin-top: 10px;
-    font-size: 12px;
-    font-family: sans-serif;
+    margin-top: 30px;
+    font-size: 15px;
+    font-family:Calibri;
+    font-weight:500;
     color:white;
     width: 50%;
+    line-height: 1.5em;
 }
 
 @media screen and (max-width: 960px) 
