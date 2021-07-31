@@ -1,3 +1,14 @@
+.text-bold {
+    font-weight: bold;
+   }
+   
+   .text-bold i {
+    font-weight: normal;
+   }
+.Title-group
+{
+    width: 60%;
+}
 .Title-colored
 {
     color: rgb(255, 123, 0);
@@ -10,7 +21,7 @@
 .Title-heading
 {
     overflow-y: hidden;
-    font-size:60px;
+    font-size:75px;
     font-family: Roboto;
     font-weight: bold;
     color:rgba(255, 255, 255, 0.876);
@@ -30,10 +41,12 @@
 }
 .Title-subtext
 {
+    flex-direction: row;
+    flex-wrap: wrap;
     overflow-y: hidden;
     align-self: center;
     margin-top: 30px;
-    font-size: 15px;
+    font-size: 18px;
     font-family:Calibri;
     font-weight:500;
     color:white;
