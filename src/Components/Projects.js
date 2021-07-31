@@ -5,8 +5,19 @@ import CardImg from '../images/img-9.jpg'
 import CardImg2 from '../images/img-8.jpg'
 import CardItem from "./CardItem"
 import './Cards.css'
+
+import ProjectCard from "./ProjectCard";
+
 function Projects()
 {
+    return (
+        <>
+        <ProjectCard>
+
+        </ProjectCard>
+        </>
+    );
+    /*
     return (
     <>
         <div className = "cards_container">
@@ -36,6 +47,7 @@ function Projects()
                 </div>
         </div>
     </>);
+    */
 }
 
 export default Projects;
