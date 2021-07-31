@@ -1,19 +1,14 @@
-.text-bold {
-    font-weight: bold;
-   }
-   
-   .text-bold i {
-    font-weight: normal;
-   }
+
 .Title-group
 {
-    width: 60%;
+    width: 70%;
 }
 .Title-colored
 {
     color: rgb(255, 123, 0);
     font-size:16px;
     font-weight: 500;
+    padding-bottom: 25px;
     font-family: Roboto;
     text-align: left;
     letter-spacing: 4px;
@@ -23,8 +18,18 @@
     overflow-y: hidden;
     font-size:75px;
     font-family: Roboto;
-    font-weight: bold;
-    color:rgba(255, 255, 255, 0.876);
+    font-weight: 550;
+    color:rgba(255, 255, 255, 0.8);
+    letter-spacing: 0px;
+    line-height: 0.9em;
+}
+.Title-heading2
+{
+    overflow-y: hidden;
+    font-size:75px;
+    font-family: Roboto;
+    font-weight: 550;
+    color:rgba(255, 255, 255, 0.3);
     letter-spacing: 0px;
     line-height: 0.9em;
 }
@@ -41,8 +46,7 @@
 }
 .Title-subtext
 {
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 66%;
     overflow-y: hidden;
     align-self: center;
     margin-top: 30px;
@@ -50,7 +54,7 @@
     font-family:Calibri;
     font-weight:500;
     color:white;
-    width: 50%;
+
     line-height: 1.5em;
 }
 
