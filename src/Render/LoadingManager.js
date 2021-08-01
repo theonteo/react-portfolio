@@ -22,7 +22,7 @@ class LoadingManager extends Component
 
     state = {
         progressWidth:"10%",
-        hideScreen:false
+        hideScreen : true
     }
     constructor(_options)
     {
@@ -59,6 +59,13 @@ class LoadingManager extends Component
             this.setState({
                 progressWidth: (itemsLoaded/itemsTotal*100)+"%"
             });
+            if(itemsLoaded/itemsTotal>0.99)
+            {
+                this.setState({
+                    hideScreen:false
+                });
+            }
+
                 console.log
                 ( 'Loading file: ' + url + '.\nLoaded ' + 
                 itemsLoaded + ' of ' + itemsTotal + ' files.' );
@@ -74,15 +81,13 @@ class LoadingManager extends Component
            
     }
     render() {
-        var t  = this.progressWidth;
-
         return ( 
             <>
-            <div className = 'loading-container'>
+            <div className = 'loading-container' style={{  zIndex: this.state.hideScreen ?999 :-999  }}>
                 <div className = 'loading-background'>
                     <div className = 'progress'> 
                         <div className = 'progress2'
-                         style={{ width: this.state.progressWidth }} >
+                         style={{ width: this.state.progressWidth}} >
                         </div>
                     </div>
                 </div>
