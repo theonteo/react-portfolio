@@ -1,10 +1,8 @@
 import {React} from 'react'
-
 import './LandingTitle.css'
 import './font.css'
 function LandingTitle()
  {
-     
     return (
         
         <div className = 'Title-group'>

@@ -26,9 +26,10 @@ function Landing()
                 </div>
             </div>
             <div className = "RenderProjects">
-                <Scene3/>
-                <div className = "Projects">
-                    <Projects/>
+                <div className = "render-blank">
+                    <div className = "Projects">
+                        <Projects/>
+                        </div>
                 </div>
             </div>
         </div>
