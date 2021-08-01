@@ -10,42 +10,85 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 import * as THREE from 'three';
-
+import React, { Component } from "react";
+import './LoadingManager.css'
 /******************************************************************************/
 /*!
 \brief  main 3d camera
 */
 /******************************************************************************/
-function LoadingManager()
- {
-    THREE.DefaultLoadingManager.onStart = function ( url, itemsLoaded, itemsTotal ) {
+class LoadingManager extends Component
+{
 
-            console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-        
-        };
-        THREE.DefaultLoadingManager.onLoad = function ( ) {
-        
-            console.log( 'Loading Complete!');
-        
-        };
-        
-        
-        THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-        
-            console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-        
-        };
-        
-        THREE.DefaultLoadingManager.onError = function ( url ) {
-        
-            console.log( 'There was an error loading ' + url );
-        
-        };
-        return ( 
-        <>
-        <div>
+    state = {
+        progressWidth:"10%",
+        hideScreen:false
+    }
+    constructor(_options)
+    {
+
+        super(_options);
+        this.setState({
+            progressWidth: "30%"
+        });
+        //this.progressWidth ="80%";
+        this.update();
+    }
+
+    update()
+    {
+       
+        THREE.DefaultLoadingManager.onStart =
+         function ( url, itemsLoaded, itemsTotal )
+        {
+
+                console.log
+                ( 'Started loading file: ' + url + '.\nLoaded ' +
+                itemsLoaded + ' of ' + itemsTotal + ' files.' );
             
-        </div>
-        </>);
+        };
+            THREE.DefaultLoadingManager.onLoad = function ( )
+            {
+                console.log( 'Loading Complete!');
+            };
+            
+            THREE.DefaultLoadingManager.onProgress =
+           ( url, itemsLoaded, itemsTotal )=> {
+
+               
+            this.setState({
+                progressWidth: (itemsLoaded/itemsTotal*100)+"%"
+            });
+                console.log
+                ( 'Loading file: ' + url + '.\nLoaded ' + 
+                itemsLoaded + ' of ' + itemsTotal + ' files.' );
+            };
+            
+            THREE.DefaultLoadingManager.onError = function ( url ) 
+            {
+            
+                console.log
+                ( 'There was an error loading ' + url );
+            
+            };
+           
+    }
+    render() {
+        var t  = this.progressWidth;
+
+        return ( 
+            <>
+            <div className = 'loading-container'>
+                <div className = 'loading-background'>
+                    <div className = 'progress'> 
+                        <div className = 'progress2'
+                         style={{ width: this.state.progressWidth }} >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </>);
+    
+      }
 }
 export default LoadingManager;
