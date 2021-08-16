@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './NavBar.css'
-import {Button} from './Button'
+
 
 
 function NavBar() {
@@ -56,7 +56,7 @@ function NavBar() {
                     </li>
 
                 </ul>
-                {button && <Button buttonStyle='btn--outline'> Contact</Button> }
+               
 
             </div>
         </nav>

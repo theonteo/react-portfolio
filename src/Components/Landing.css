@@ -2,14 +2,14 @@
 {
     display: flex;
     overflow-y: hidden;
-    width: 66%;
+    width:80%;
 
    
     margin: 0%;
     position:absolute;
     justify-content: center;
     align-content: center;
-    text-align: left;
+    text-align: center;
 }
 .Projects
 {
@@ -38,7 +38,7 @@
     text-align: center;
     
     background-color: rgba(128, 128, 128, 0);
-    width:100%;
+
     
 }
 
@@ -59,7 +59,7 @@
     display: flex;
    
     overflow-y: hidden;
-    position:relative;
+ 
     justify-content: center;
     align-items: center;
     text-align: center;

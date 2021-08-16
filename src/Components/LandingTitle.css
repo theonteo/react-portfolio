@@ -5,29 +5,29 @@
 }
 .Title-colored
 {
-    color: rgb(255, 123, 0);
+    color:  #64ffda;
     font-size:16px;
     font-weight: 500;
     padding-bottom: 25px;
-    font-family: Roboto;
-    text-align: left;
-    letter-spacing: 4px;
+    font-family: monospace;
+    text-align: center;
+
 }
 .Title-heading
 {
     overflow-y: hidden;
     font-size:75px;
-    font-family: Roboto;
     font-weight: 550;
     color:rgba(255, 255, 255, 0.8);
     letter-spacing: 0px;
     line-height: 0.9em;
+    font-family: monospace;
 }
 .Title-heading2
 {
     overflow-y: hidden;
     font-size:75px;
-    font-family: Roboto;
+   
     font-weight: 550;
     color:rgba(255, 255, 255, 0.3);
     letter-spacing: 0px;
@@ -37,7 +37,7 @@
 {
     overflow-y: hidden;
     font-size:14px;
-    font-family: Calibri;
+
    
     color:rgba(255, 255, 255, 0.644);
     margin-top: 10px;
@@ -46,14 +46,16 @@
 }
 .Title-subtext
 {
-    width: 66%;
+    
     overflow-y: hidden;
-    align-self: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-top: 30px;
-    font-size: 18px;
-    font-family:Calibri;
-    font-weight:500;
-    color:white;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(170, 170, 170, 0.726);
+   
 
     line-height: 1.5em;
 }
