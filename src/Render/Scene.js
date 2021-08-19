@@ -62,7 +62,7 @@ class Scene extends Component
 
     //Add Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor("#263238");
+    this.renderer.setClearColor("#1a1a1a");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
 
