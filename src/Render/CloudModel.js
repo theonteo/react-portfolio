@@ -13,7 +13,7 @@ This project contains portfolio / web-mobile responsive application
 import {MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import * as THREE from "three";
 import img from "../images/img-8.jpg"
-import { Vector2, Vector3 } from "three";
+import { MathUtils, Vector2, Vector3 } from "three";
 /******************************************************************************/
 /*!
 \brief  Store/load model data
@@ -29,12 +29,14 @@ export default class CloudModel
     constructor(_options)
     {
         this.mouse = new Vector2(0,0);
+        this.lateMouse = new Vector2(0,0);
+
         this.time = 0.0;
         this.loaded = false;
         //set variables
         this.texture = _options.texture;
         this.scene = _options.scene;
-
+        this.lastUpdate = Date.now();
         this.loadShader();
         this.loadModel();
         this.loadListener();
@@ -50,33 +52,54 @@ export default class CloudModel
         window.addEventListener("mousemove",
         (e)=>{
            
-           this.mouse.x = e.clientX;
+           this.mouse.x =e.clientX;
             this.mouse.y = e.clientY;
            
           });
     }
+   
     updateModel()
     {
+
+
+        var now = Date.now();
+        this.dt = now - this.lastUpdate;
+        this.lastUpdate = now;
+        this.lateMouse.x =MathUtils.lerp( this.lateMouse.x, this.mouse.x,1/this.dt * 0.5);
+        this.lateMouse.y =MathUtils.lerp( this.lateMouse.y,  this.mouse.y,1/this.dt * 0.5);
+
         //this.positionsRunTime;
         //this.colorsRunTime =  this.colors;
        // this.sizesRunTime =  this.sizes;
         this.time += 0.025;
-        var mousex = ((this.mouse.x/window.innerWidth)*900)-450;
-        var mousey =450- ((this.mouse.y/window.innerHeight)*900);
+        var mousex = ((this.lateMouse.x/window.innerWidth)*900)-450;
+        var mousey =450- ((this.lateMouse.y/window.innerHeight)*900);
         for(var i = 0;i<this.pointCount;++i)
         {
-
-
+            const distPoint = 30;
+            
             var dir = new Vector2(mousex- this.positions[i*3]  ,mousey-this.positions[i*3+1] );
             var dirLength = dir.length();
             //if(i == 100)
               //  console.log(dirLength);
+            if(dirLength> distPoint)
+            {
+                this.positionsRunTime[i*3] = MathUtils.lerp( this.positionsRunTime[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8* 0.1,
+                this.positions[i*3], 1/this.dt *0.1);
 
-            this.positionsRunTime[i*3] =  
-            (this.positions[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8)
-            +( dirLength<100?100:0);
+                this.positionsRunTime[i*3+1] = MathUtils.lerp( this.positionsRunTime[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4* 0.1,
+                this.positions[i*3+1], 1/this.dt *0.1);
+            }else{
 
-            this.positionsRunTime[i*3+1] =this.positions[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4;
+            this.positionsRunTime[i*3] = (this.positions[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8)
+            -( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().x:0) * 0.1;
+
+            this.positionsRunTime[i*3+1] = (this.positions[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4)
+                -( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().y:0) * 0.1;
+            }
+
+
+
             //positions[i*3+2] = points[i].z;
            // colors[i*3+2] =this.colors[i*3 +1] + Math.cos(this.time + positions[i*3+1]*0.01 ) * 0.1;
             //colors[i*3+1] = cols[i].y;
