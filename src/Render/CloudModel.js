@@ -13,7 +13,7 @@ This project contains portfolio / web-mobile responsive application
 import {MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import * as THREE from "three";
 import img from "../images/img-8.jpg"
-import { Vector3 } from "three";
+import { Vector2, Vector3 } from "three";
 /******************************************************************************/
 /*!
 \brief  Store/load model data
@@ -28,6 +28,7 @@ export default class CloudModel
 /******************************************************************************/
     constructor(_options)
     {
+        this.mouse = new Vector2(0,0);
         this.time = 0.0;
         this.loaded = false;
         //set variables
@@ -36,22 +37,46 @@ export default class CloudModel
 
         this.loadShader();
         this.loadModel();
+        this.loadListener();
     }
 /******************************************************************************/
 /*!
 \brief  load model 
 */
 /******************************************************************************/
+    loadListener()
+    {
+       
+        window.addEventListener("mousemove",
+        (e)=>{
+           
+           this.mouse.x = e.clientX;
+            this.mouse.y = e.clientY;
+           
+          });
+    }
     updateModel()
     {
-        var positions = this.positions;
-        var colors =  this.colors;
-        var sizes =  this.sizes;
+        //this.positionsRunTime;
+        //this.colorsRunTime =  this.colors;
+       // this.sizesRunTime =  this.sizes;
         this.time += 0.025;
+        var mousex = ((this.mouse.x/window.innerWidth)*900)-450;
+        var mousey =450- ((this.mouse.y/window.innerHeight)*900);
         for(var i = 0;i<this.pointCount;++i)
         {
-            positions[i*3] =  this.positions[i*3]+ Math.cos(this.time+positions[i*3+1]*0.01 ) * 0.04;
-            positions[i*3+1] =this.positions[i*3+1]+ Math.sin(this.time+positions[i*3]*0.005 ) * 0.2;
+
+
+            var dir = new Vector2(mousex- this.positions[i*3]  ,mousey-this.positions[i*3+1] );
+            var dirLength = dir.length();
+            //if(i == 100)
+              //  console.log(dirLength);
+
+            this.positionsRunTime[i*3] =  
+            (this.positions[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8)
+            +( dirLength<100?100:0);
+
+            this.positionsRunTime[i*3+1] =this.positions[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4;
             //positions[i*3+2] = points[i].z;
            // colors[i*3+2] =this.colors[i*3 +1] + Math.cos(this.time + positions[i*3+1]*0.01 ) * 0.1;
             //colors[i*3+1] = cols[i].y;
@@ -60,10 +85,10 @@ export default class CloudModel
         }
 
 
-        this.geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        this.geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-        this.geometry.setAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
-        this.geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+        this.geometry.setAttribute('position', new THREE.BufferAttribute( this.positionsRunTime, 3));
+        this.geometry.setAttribute('color', new THREE.BufferAttribute(this.colors, 3));
+        this.geometry.setAttribute( 'customColor', new THREE.BufferAttribute( this.colors, 3 ) );
+        this.geometry.setAttribute('size', new THREE.BufferAttribute(this.sizes, 1));
     }
     loadShader()
     {
@@ -205,7 +230,8 @@ loader.load(
 
         var geometry = new THREE.BufferGeometry();
         this.sizes = new Float32Array( points.length);
-        this.positions = new Float32Array( points.length * 3); // 3 vertices per point
+        this.positions = new Float32Array( points.length * 3);
+        this.positionsRunTime = new Float32Array( points.length * 3);
         this.colors = new Float32Array(points.length * 3); // 3 colors per point
         
         for(var i = 0;i<points.length;++i)
@@ -213,11 +239,13 @@ loader.load(
            this.positions[i*3] =points[i].x;
            this.positions[i*3+1] =points[i].y;
            this.positions[i*3+2] =points[i].z;
+           this.positionsRunTime[i*3] =points[i].x;
+           this.positionsRunTime[i*3+1] =points[i].y;
+           this.positionsRunTime[i*3+2] =points[i].z;
            this.colors[i*3] = cols[i].x;
            this.colors[i*3+1] = cols[i].y;
            this.colors[i*3+2] = cols[i].z;
            this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*20;
-            
         }
       
         geometry.setAttribute('position', new THREE.BufferAttribute( this.positions, 3));
