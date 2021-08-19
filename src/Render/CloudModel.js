@@ -28,11 +28,13 @@ export default class CloudModel
 /******************************************************************************/
     constructor(_options)
     {
+        this.time = 0.0;
         this.loaded = false;
         //set variables
         this.texture = _options.texture;
         this.scene = _options.scene;
 
+        this.loadShader();
         this.loadModel();
     }
 /******************************************************************************/
@@ -42,23 +44,79 @@ export default class CloudModel
 /******************************************************************************/
     updateModel()
     {
-        var positions = this.geometry.attributes.position.array;
-        var colors =  this.geometry.attributes.color.array;
-
+        var positions = this.positions;
+        var colors =  this.colors;
+        var sizes =  this.sizes;
+        this.time += 0.025;
         for(var i = 0;i<this.pointCount;++i)
         {
-            positions[i*3] = positions[i*3]+0.1;
-            //positions[i*3+1] = positions[i].y;
+            positions[i*3] =  this.positions[i*3]+ Math.cos(this.time+positions[i*3+1]*0.01 ) * 0.04;
+            positions[i*3+1] =this.positions[i*3+1]+ Math.sin(this.time+positions[i*3]*0.005 ) * 0.2;
             //positions[i*3+2] = points[i].z;
-           // colors[i*3] = cols[i].x;
+           // colors[i*3+2] =this.colors[i*3 +1] + Math.cos(this.time + positions[i*3+1]*0.01 ) * 0.1;
             //colors[i*3+1] = cols[i].y;
-           // colors[i*3+2] = cols[i].z;
+            //colors[i*3+2] = cols[i].z;
             
         }
 
 
         this.geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         this.geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        this.geometry.setAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
+        this.geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+    }
+    loadShader()
+    {
+        var uniforms = {
+            color:     { value: new THREE.Color( 0xffffff ) },
+            texture:   { value: new THREE.TextureLoader().load("http://i.imgur.com/HMjPT3I.png") }
+    
+        };
+       this.material = new THREE.RawShaderMaterial( {
+
+            uniforms:       uniforms,
+            vertexShader:   `
+            precision highp float;
+        
+            uniform mat4 modelViewMatrix;
+            uniform mat4 projectionMatrix;
+        
+            attribute vec3 position;
+        
+            attribute float size;
+            attribute vec3 customColor;
+            attribute vec3 offset;
+            attribute float alpha;
+        
+            varying float vAlpha;
+            varying vec3 vColor;
+        
+            void main() {
+              vColor = customColor;
+              vAlpha = alpha;
+              vec3 newPosition = position + offset;
+              vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 );
+              gl_PointSize = size * ( 300.0 / -mvPosition.z );
+              gl_Position = projectionMatrix * mvPosition;
+        
+            }`,
+            fragmentShader: `
+            precision highp float;
+            uniform vec3 color;
+            uniform sampler2D texture;
+        
+            varying vec3 vColor;
+       
+            void main() {
+            gl_FragColor = vec4( color * vColor,1 );
+            gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
+            }`,
+        
+            blending:       THREE.AdditiveBlending,
+            depthTest:      false,
+            transparent:    true
+        
+        });
     }
     loadModel()
     {  
@@ -115,11 +173,7 @@ loader.load(
 	// onLoad callback
     (texture )=> {
         console.log("loadeddddddddddddddddddddddddd");
-        var tmaterial = new THREE.PointsMaterial({
-            size: 7.5,
-            opacity: 1,
-            vertexColors: THREE.VertexColors
-          });
+
         this.texture = texture;
 
         console.log(texture.image.width);
@@ -136,8 +190,8 @@ loader.load(
                 //if (col.b >200) {
     
                     var vertex = new THREE.Vector3();
-                    vertex.x = (x - this.texture.image.width/2)/4 ;
-                    vertex.y = (-y +this.texture.image.height /2)/4;
+                    vertex.x = (x - this.texture.image.width/2)/2 ;
+                    vertex.y = (-y +this.texture.image.height /2)/2;
                     //vertex.z = -Math.random()*500;
                     vertex.z = 0;
                     //vertex.speed = Math.random() / speed + 0.015;
@@ -150,24 +204,29 @@ loader.load(
         }
 
         var geometry = new THREE.BufferGeometry();
-        var positions = new Float32Array( points.length * 3); // 3 vertices per point
-        var colors = new Float32Array(points.length * 3); // 3 colors per point
+        this.sizes = new Float32Array( points.length);
+        this.positions = new Float32Array( points.length * 3); // 3 vertices per point
+        this.colors = new Float32Array(points.length * 3); // 3 colors per point
+        
         for(var i = 0;i<points.length;++i)
         {
-           positions[i*3] =points[i].x;
-           positions[i*3+1] =points[i].y;
-           positions[i*3+2] =points[i].z;
-            colors[i*3] = cols[i].x;
-            colors[i*3+1] = cols[i].y;
-            colors[i*3+2] = cols[i].z;
+           this.positions[i*3] =points[i].x;
+           this.positions[i*3+1] =points[i].y;
+           this.positions[i*3+2] =points[i].z;
+           this.colors[i*3] = cols[i].x;
+           this.colors[i*3+1] = cols[i].y;
+           this.colors[i*3+2] = cols[i].z;
+           this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*20;
             
         }
       
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        geometry.setAttribute('position', new THREE.BufferAttribute( this.positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute( this.colors, 3));
+        geometry.setAttribute( 'customColor', new THREE.BufferAttribute( this.colors, 3 ) );
+        geometry.setAttribute('size', new THREE.BufferAttribute( this.sizes, 1));
         this.pointCount = points.length;
         this.geometry = geometry;
-        this.particles = new THREE.Points(geometry, tmaterial);
+        this.particles = new THREE.Points(geometry, this.material);
         console.log("cloud loaded");
         this.scene.add(this.particles);
         this.loaded = true;
