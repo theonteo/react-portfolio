@@ -110,11 +110,14 @@ a {
   
   .project-img 
   {
-
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.01));
+    filter: drop-shadow(0 6px 20px #00000004);
     position: relative;
     z-index: 1;
     background-color: #64ffda;
     background: linear-gradient(0.4turn, #64ffda, #64ff8d);
+    
     border-radius: 10px;
     grid-column: 6 / -1;
     grid-row: 1 / -1;
