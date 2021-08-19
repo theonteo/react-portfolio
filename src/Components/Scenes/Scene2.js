@@ -67,7 +67,8 @@ Update()
   //this.newCamera.setRotation(
    // this.newCamera.rotation.lerp(
      // new THREE.Vector3(0.0,0),0.00));
-
+    if(this.cloud.loaded)
+      this.cloud.updateModel();
     this.newCamera.threeCamera.lookAt(new Vector3(0,0,0));
   }
 
