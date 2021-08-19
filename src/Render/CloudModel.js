@@ -61,12 +61,14 @@ export default class CloudModel
     updateModel()
     {
 
-
+        const distPoint = 75;
+        const healSpeed = 0.025;
+        const mouseLagSpeed = 0.75;
         var now = Date.now();
         this.dt = now - this.lastUpdate;
         this.lastUpdate = now;
-        this.lateMouse.x =MathUtils.lerp( this.lateMouse.x, this.mouse.x,1/this.dt * 0.5);
-        this.lateMouse.y =MathUtils.lerp( this.lateMouse.y,  this.mouse.y,1/this.dt * 0.5);
+        this.lateMouse.x =MathUtils.lerp( this.lateMouse.x, this.mouse.x,1/this.dt * mouseLagSpeed);
+        this.lateMouse.y =MathUtils.lerp( this.lateMouse.y,  this.mouse.y,1/this.dt *mouseLagSpeed);
 
         //this.positionsRunTime;
         //this.colorsRunTime =  this.colors;
@@ -76,27 +78,21 @@ export default class CloudModel
         var mousey =450- ((this.lateMouse.y/window.innerHeight)*900);
         for(var i = 0;i<this.pointCount;++i)
         {
-            const distPoint = 30;
+           
             
             var dir = new Vector2(mousex- this.positions[i*3]  ,mousey-this.positions[i*3+1] );
             var dirLength = dir.length();
             //if(i == 100)
               //  console.log(dirLength);
-            if(dirLength> distPoint)
-            {
+            
+
                 this.positionsRunTime[i*3] = MathUtils.lerp( this.positionsRunTime[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8* 0.1,
-                this.positions[i*3], 1/this.dt *0.1);
+                this.positions[i*3], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().x:0) * 0.1;
 
                 this.positionsRunTime[i*3+1] = MathUtils.lerp( this.positionsRunTime[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4* 0.1,
-                this.positions[i*3+1], 1/this.dt *0.1);
-            }else{
-
-            this.positionsRunTime[i*3] = (this.positions[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8)
-            -( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().x:0) * 0.1;
-
-            this.positionsRunTime[i*3+1] = (this.positions[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4)
-                -( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().y:0) * 0.1;
-            }
+                this.positions[i*3+1], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().y:0) * 0.1;
+                this.sizesRunTime[i] = dirLength< distPoint?dirLength/distPoint*this.sizes[i]: this.sizes[i] ;
+          
 
 
 
@@ -111,7 +107,7 @@ export default class CloudModel
         this.geometry.setAttribute('position', new THREE.BufferAttribute( this.positionsRunTime, 3));
         this.geometry.setAttribute('color', new THREE.BufferAttribute(this.colors, 3));
         this.geometry.setAttribute( 'customColor', new THREE.BufferAttribute( this.colors, 3 ) );
-        this.geometry.setAttribute('size', new THREE.BufferAttribute(this.sizes, 1));
+        this.geometry.setAttribute('size', new THREE.BufferAttribute(this.sizesRunTime, 1));
     }
     loadShader()
     {
@@ -253,6 +249,7 @@ loader.load(
 
         var geometry = new THREE.BufferGeometry();
         this.sizes = new Float32Array( points.length);
+        this.sizesRunTime = new Float32Array( points.length);
         this.positions = new Float32Array( points.length * 3);
         this.positionsRunTime = new Float32Array( points.length * 3);
         this.colors = new Float32Array(points.length * 3); // 3 colors per point
@@ -268,7 +265,8 @@ loader.load(
            this.colors[i*3] = cols[i].x;
            this.colors[i*3+1] = cols[i].y;
            this.colors[i*3+2] = cols[i].z;
-           this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*20;
+           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*20;
+           
         }
       
         geometry.setAttribute('position', new THREE.BufferAttribute( this.positions, 3));
