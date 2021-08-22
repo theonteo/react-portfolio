@@ -33,7 +33,7 @@
     display: flex;
     flex-flow: column;
     width: 100%;
-    box-shadow: 0 6px 20px rgba(161, 161, 161, 0.17);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     filter: drop-shadow(0 6px 20px #387dff04);
    
@@ -55,6 +55,8 @@
   }
   
   .fade-img {
+    background: linear-gradient(0.4turn, #64ffda, #64ff8d);
+    
     animation-name: fade-img;
     animation-duration: 2s;
   }
@@ -62,6 +64,8 @@
 
   .cards__item__img
    {
+    background: linear-gradient(0.4turn, #64ffda, #64ff8d);
+    
     position: absolute;
     top: 0;
     right: 0;
