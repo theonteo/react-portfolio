@@ -45,13 +45,13 @@ function NavBar() {
                 <ul className = {click?'nav-menu active':'nav-menu'}>
                     <li className = 'nav-item'>
                         <Link to='/' className = 'nav-links' onClick = {closeMobileMenu}>
-                            Home
+                            1. Home.
                         </Link>
                     </li>
 
                     <li className = 'nav-item'>
                         <Link to='/services' className = 'nav-links' onClick = {closeMobileMenu}>
-                            Projects
+                            2. Projects.
                         </Link>
                     </li>
 

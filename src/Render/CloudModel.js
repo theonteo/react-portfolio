@@ -264,9 +264,9 @@ loader.load(
            this.positionsRunTime[i*3] =points[i].x;
            this.positionsRunTime[i*3+1] =points[i].y;
            this.positionsRunTime[i*3+2] =points[i].z;
-           this.colors[i*3] = cols[i].x;
-           this.colors[i*3+1] = cols[i].y;
-           this.colors[i*3+2] = cols[i].z;
+           this.colors[i*3] = cols[i].x+0.25;
+           this.colors[i*3+1] = cols[i].y+0.25;
+           this.colors[i*3+2] = cols[i].z+0.25;
            this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z) * 8;
            
         }

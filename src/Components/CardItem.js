@@ -19,6 +19,7 @@ function CardsItem(props)
                         <h5 className = "project-title">
                             {props.text}
                         </h5>
+                        <div class="project-line"></div>
                         <h5 className = "cards__item__information">
                             {props.information}
                         </h5>

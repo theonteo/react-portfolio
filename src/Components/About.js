@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-
+import {Button} from '../Components/NavBar/Button'
 
 
 function About()
@@ -11,6 +11,7 @@ function About()
 
             <div className = 'LeftPanel'>
                 <div className = 'Title'>About</div>
+                <div class="line"></div>
                 <div className = 'SubText'>Hi I am Theon! Currently a Computer Science Undergraduate in DigiPen Singapore.
 
 Starting out from game development, I am currently pursuing software engineering and development with a focus in front-end aspects.
@@ -24,7 +25,7 @@ During my free-time from schoolwork, I enjoy exploring the different aspects of 
 <div className = 'SubText'>
 Feel free to reach out to me as I am open to networking with like-minded peers and improving my technical skills!
 </div>
-
+<Button buttonStyle='btn--outline'> Get In Touch</Button>
 
             </div>
             <div className = 'RightPanel'>

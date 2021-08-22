@@ -16,6 +16,7 @@ function Projects()
         </ProjectCard>
         <div class="project-label">A collection of</div>
       <h4 class="project-title">Noteworthy Projects</h4> 
+      <div class="project-line"></div>
         <div className = "cards_container">
             <div className = 'cards__wrapper'>
                     <ul className='cards__items'>
