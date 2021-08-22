@@ -43,7 +43,7 @@ export default class CloudModel
     }
 /******************************************************************************/
 /*!
-\brief  load model 
+\brief  load listener
 */
 /******************************************************************************/
     loadListener()
@@ -267,7 +267,7 @@ loader.load(
            this.colors[i*3] = cols[i].x+0.25;
            this.colors[i*3+1] = cols[i].y+0.25;
            this.colors[i*3+2] = cols[i].z+0.25;
-           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z) * 8;
+           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z) * 7;
            
         }
       

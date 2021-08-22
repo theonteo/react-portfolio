@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './NavBar.css'
+import logo from '../../images/logo.png'
+
 
 
 
@@ -33,7 +35,7 @@ function NavBar() {
         <nav className = "navbar">
             <div className = "navbar-container">
                 <Link to="/" className="navbar-logo" onClick ={ closeMobileMenu}>
-                <i className ='fab fa-typo3'></i>                    
+                <img src = {logo} className = "logo"></img>        
                 </Link>
 
                 <div className ='menu-icon' 
@@ -51,9 +53,10 @@ function NavBar() {
 
                     <li className = 'nav-item'>
                         <Link to='/services' className = 'nav-links' onClick = {closeMobileMenu}>
-                            2. Projects.
+                            2. Resume.
                         </Link>
                     </li>
+                   
 
                 </ul>
                

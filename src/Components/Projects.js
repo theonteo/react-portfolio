@@ -48,6 +48,36 @@ function Projects()
                          </ul>
                          
                 </div>
+                <div className = 'cards__wrapper'>
+                    <ul className='cards__items'>
+
+                        <CardItem 
+                        src={CardImg}
+                        text='Multiplayer UDP P2P'
+                        information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
+                        label='Personal'
+                        path='/services'
+                        icon1='fab fa-github'
+                         />
+                          <CardItem 
+                        src={CardImg2}
+                        text='Project2'
+                        information=''
+                        label='Personal'
+                        path='/services'
+                        icon1='fab fa-github'
+                         /> 
+                          <CardItem 
+                        src={CardImg3}
+                        text='Project3'
+                        information=''
+                        label='Personal'
+                        path='/services'
+                        icon1='fab fa-github'
+                         /> 
+                         </ul>
+                         
+                </div>
         </div>
         </>
     );
