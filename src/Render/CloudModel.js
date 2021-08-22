@@ -30,13 +30,21 @@ export default class CloudModel
     {
         this.mouse = new Vector2(0,0);
         this.lateMouse = new Vector2(0,0);
-
+        this.dirTemp = new Vector2(0,0);
         this.time = 0.0;
         this.loaded = false;
         //set variables
         this.texture = _options.texture;
         this.scene = _options.scene;
         this.lastUpdate = Date.now();
+
+        this.bufferPosition = new THREE.BufferAttribute( this.positionsRunTime, 3);
+        this.bufferColor = new THREE.BufferAttribute(this.colors, 3);
+        this.bufferCustomColor= new THREE.BufferAttribute( this.colors, 3 );
+        this.bufferSize = new THREE.BufferAttribute(this.sizesRunTime, 1);
+
+
+
         this.loadShader();
         this.loadModel();
         this.loadListener();
@@ -78,36 +86,21 @@ export default class CloudModel
         var mousey =450- ((this.lateMouse.y/window.innerHeight)*900);
         for(var i = 0;i<this.pointCount;++i)
         {
-           
-            
-            var dir = new Vector2(mousex- this.positions[i*3]  ,mousey-this.positions[i*3+1] );
-            var dirLength = dir.length();
-            //if(i == 100)
-              //  console.log(dirLength);
-            
+            this.dirTemp.set (mousex- this.positions[i*3]  ,mousey-this.positions[i*3+1] );
+            var dirLength = this.dirTemp.length();
 
-                this.positionsRunTime[i*3] = MathUtils.lerp( this.positionsRunTime[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.15* 0.1,
-                this.positions[i*3], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().x:0) * 0.1;
-
-                this.positionsRunTime[i*3+1] = MathUtils.lerp( this.positionsRunTime[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 1.5* 0.1,
-                this.positions[i*3+1], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().y:0) * 0.1;
-                this.sizesRunTime[i] = dirLength< distPoint?dirLength/distPoint*this.sizes[i]: this.sizes[i] ;
-          
-
-
-
-            //positions[i*3+2] = points[i].z;
-           // colors[i*3+2] =this.colors[i*3 +1] + Math.cos(this.time + positions[i*3+1]*0.01 ) * 0.1;
-            //colors[i*3+1] = cols[i].y;
-            //colors[i*3+2] = cols[i].z;
-            
+            this.positionsRunTime[i*3] = MathUtils.lerp( this.positionsRunTime[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.15* 0.1,
+            this.positions[i*3], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * this.dirTemp.normalize().x:0) * 0.1;
+            this.positionsRunTime[i*3+1] = MathUtils.lerp( this.positionsRunTime[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 1.5* 0.1,
+            this.positions[i*3+1], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * this.dirTemp.normalize().y:0) * 0.1;
+            this.sizesRunTime[i] = dirLength< distPoint?dirLength/distPoint*this.sizes[i]: this.sizes[i] ;            
         }
+        this.geometry.attributes.position.array = this.positionsRunTime;
+        this.geometry.attributes.size.array = this.sizesRunTime;
 
-
-        this.geometry.setAttribute('position', new THREE.BufferAttribute( this.positionsRunTime, 3));
-        this.geometry.setAttribute('color', new THREE.BufferAttribute(this.colors, 3));
-        this.geometry.setAttribute( 'customColor', new THREE.BufferAttribute( this.colors, 3 ) );
-        this.geometry.setAttribute('size', new THREE.BufferAttribute(this.sizesRunTime, 1));
+        //buffer needs updating
+        this.geometry.attributes.position.needsUpdate = true;
+        this.geometry.attributes.size.needsUpdate = true;
     }
     loadShader()
     {

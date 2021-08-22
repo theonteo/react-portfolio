@@ -41,6 +41,7 @@ class Scene1 extends Scene
         this.camDirection = new Vector3(0,0,0);
         this.camSide = new Vector3(0,0,0);
         this.camPos =  new Vector3(0,0,0);
+        this.camRot =  new Vector3(0,0,0);
 
         //add main room model
         new Model({
@@ -89,11 +90,6 @@ loadListener()
     this.pageLerp = t * 0.0045;
 
     //modify camera position
-  
-    //let distx = 6.0 - this.pageLerp * 2;
-   //let distz = -9.0 + this.pageLerp * 2;
-   //let disty = -9.0 ;
- 
     this.newCamera.threeCamera.getWorldDirection( this.camDirection);
     this.camSide.crossVectors( this.camDirection,  this.newCamera.threeCamera.up);
     this.camPos.set(6.0, -9.0 + this.pageLerp * 1.5,-9.0);
@@ -111,10 +107,17 @@ loadListener()
     (this.newCamera.position.lerp(
       this.camPos  ,0.05));
 
+    const rotAmount = 0.3;
+    //default rotation value
+    this.camRot.set(0.3 + this.lerpedMouse.y*rotAmount,2.7- this.lerpedMouse.x*rotAmount,-0.2);
+  
+
+
+
     //rotation animation
       this.newCamera.setRotation(
         this.newCamera.rotation.lerp(
-          new THREE.Vector3(0.3,2.7,-0.2),0.05));
+          this.camRot,0.05));
     }
 }
 
