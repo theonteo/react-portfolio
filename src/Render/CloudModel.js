@@ -61,9 +61,9 @@ export default class CloudModel
     updateModel()
     {
 
-        const distPoint = 75;
-        const healSpeed = 0.025;
-        const mouseLagSpeed = 0.75;
+        const distPoint = 60;
+        const healSpeed = 0.35;
+        const mouseLagSpeed = 1.75;
         var now = Date.now();
         this.dt = now - this.lastUpdate;
         this.lastUpdate = now;
@@ -86,10 +86,10 @@ export default class CloudModel
               //  console.log(dirLength);
             
 
-                this.positionsRunTime[i*3] = MathUtils.lerp( this.positionsRunTime[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.8* 0.1,
+                this.positionsRunTime[i*3] = MathUtils.lerp( this.positionsRunTime[i*3]+ Math.cos(this.time+this.positions[i*3+1]*0.01 ) * 0.15* 0.1,
                 this.positions[i*3], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().x:0) * 0.1;
 
-                this.positionsRunTime[i*3+1] = MathUtils.lerp( this.positionsRunTime[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 4* 0.1,
+                this.positionsRunTime[i*3+1] = MathUtils.lerp( this.positionsRunTime[i*3+1]+ Math.sin(this.time+this.positions[i*3]*0.005 ) * 1.5* 0.1,
                 this.positions[i*3+1], 1/this.dt *healSpeed)+( dirLength< distPoint?( distPoint-dirLength) * dir.normalize().y:0) * 0.1;
                 this.sizesRunTime[i] = dirLength< distPoint?dirLength/distPoint*this.sizes[i]: this.sizes[i] ;
           
@@ -226,16 +226,18 @@ loader.load(
 
         var imagedata = getImageData( this.texture.image ); //<-- error occurs here
 
-        for (var y = 0, y2 =this.texture.image.height; y < y2; y += 20) {
-            for (var x = 0, x2 = this.texture.image.width; x < x2; x += 20) {
-
+        for (var y = 0, y2 =this.texture.image.height; y < y2; y += 4) {
+            for (var x = 0, x2 = this.texture.image.width; x < x2; x += 4) {
                 var col = getPixel(imagedata, x , y );
+                if(col.r+col.g+col.b>25)
+                {
+               
                 //console.log(( getPixel(imagedata,x * 4 , y * 4 ).r));
                 //if (col.b >200) {
     
                     var vertex = new THREE.Vector3();
-                    vertex.x = (x - this.texture.image.width/2)/2 ;
-                    vertex.y = (-y +this.texture.image.height /2)/2;
+                    vertex.x = (x - this.texture.image.width/2) ;
+                    vertex.y = (-y +this.texture.image.height /2);
                     //vertex.z = -Math.random()*500;
                     vertex.z = 0;
                     //vertex.speed = Math.random() / speed + 0.015;
@@ -243,7 +245,7 @@ loader.load(
                    // this.scene.add(new THREE.Mesh( vertex, material));
                     cols.push(new Vector3(col.r/255,col.g/255,col.b/255));
                     points.push( vertex);
-                //}
+                }
             }
         }
 
@@ -262,10 +264,10 @@ loader.load(
            this.positionsRunTime[i*3] =points[i].x;
            this.positionsRunTime[i*3+1] =points[i].y;
            this.positionsRunTime[i*3+2] =points[i].z;
-           this.colors[i*3] = cols[i].x;
-           this.colors[i*3+1] = cols[i].y;
-           this.colors[i*3+2] = cols[i].z;
-           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*20;
+           this.colors[i*3] = cols[i].x*10;
+           this.colors[i*3+1] = cols[i].y*10;
+           this.colors[i*3+2] = cols[i].z*10;
+           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*12;
            
         }
       

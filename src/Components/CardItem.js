@@ -7,14 +7,15 @@ function CardsItem(props)
         <>
             <li className = 'cards__item'>
                 <Link className = 'cards__item__link' to= {props.path} >
-                    <figure className = 'cards__item__pic-wrap' data-category = {props.label}>
+                    <figure className = 'cards__item__pic-wrap'>
                         <img 
                         src = {props.src}
                         className = "cards__item__img">
                         </img>
-                    </figure>
+                    </figure>      
+                    
                     <div className = "cards__item__info">
-                        <h5 className = "cards__item__text">
+                        <h5 className = "project-title">
                             {props.text}
                         </h5>
                         <h5 className = "cards__item__information">

@@ -4,7 +4,6 @@ import react from "react";
 import CardImg from '../images/img-9.jpg'
 import CardImg2 from '../images/img-8.jpg'
 import CardItem from "./CardItem"
-import './Cards.css'
 
 import ProjectCard from "./ProjectCard";
 
@@ -13,22 +12,17 @@ function Projects()
     return (
         <>
         <ProjectCard>
-
         </ProjectCard>
-        </>
-    );
-    /*
-    return (
-    <>
+        <div class="project-label">A collection of</div>
+      <h4 class="project-title">Noteworthy Projects</h4> 
         <div className = "cards_container">
             <div className = 'cards__wrapper'>
                     <ul className='cards__items'>
 
                         <CardItem 
                         src={CardImg}
-                        text='Project1'
-                        information='Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                         Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+                        text='Multiplayer UDP P2P'
+                        information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
                         label='Personal'
                         path='/services'
                         icon1='fab fa-github'
@@ -36,8 +30,15 @@ function Projects()
                           <CardItem 
                         src={CardImg}
                         text='Project2'
-                        information='Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+                        information=''
+                        label='Personal'
+                        path='/services'
+                        icon1='fab fa-github'
+                         /> 
+                          <CardItem 
+                        src={CardImg}
+                        text='Project3'
+                        information=''
                         label='Personal'
                         path='/services'
                         icon1='fab fa-github'
@@ -46,6 +47,12 @@ function Projects()
                          
                 </div>
         </div>
+        </>
+    );
+    /*
+    return (
+    <>
+        
     </>);
     */
 }

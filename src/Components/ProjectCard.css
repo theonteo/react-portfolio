@@ -13,6 +13,7 @@ a {
   
   ul,
   ol {
+    
     padding: 0;
     margin: 0;
     list-style: none;
@@ -26,7 +27,7 @@ a {
   
   img {
     width: 100%;
-    max-width: 100%;
+  
     vertical-align: middle;
     border-radius: 10px;
     position: relative;
@@ -37,7 +38,7 @@ a {
   
   .project-container {
     z-index: 2;
-    max-width: 1000px;
+   
     margin: 50px auto;
   }
   
@@ -62,6 +63,7 @@ a {
   }
   
   .project-content {
+    
     z-index: 2;
     position: relative;
     grid-column: 1 / 7;
@@ -69,11 +71,13 @@ a {
   }
   
     .project-label {
+      padding-top: 3%;
       color: #64ffda;
       font-family: monospace;
     }
     .project-title {
-        font-weight: bold;
+      padding-bottom: 3%;
+      font-weight: bold;
       font-size: 2rem;
       margin: 10px 0 30px;
       color: #eee;
@@ -84,11 +88,28 @@ a {
       line-height: 1.5;
       color: #aaa;
     }
+    .project-list {
+      font-weight: 9000;
+      font-size: 100px;
+      font-family: monospace;
+      grid-auto-flow: columns;
+      display:grid;
+      margin-inline: 200px;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-rows: repeat(3, minmax(40px, 1fr));
+      padding-top: 50px;
+
+      color: #defff79a;
+
+    }
+    .project-item {
+      font-family: monospace;
+    }
     p {
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.507);
         -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
         filter: drop-shadow(0 6px 20px #00000004);
-       
+       text-align: left;
         border-radius: 10px;
         background-color: #252525;
         padding: 20px 25px;
@@ -97,11 +118,13 @@ a {
   
     ul 
     {
+   
         display: flex;
         margin-top: 20px;
     }
     li 
     {
+    
           margin-right: 20px;
           color: #aaa;
           font-family: monospace;

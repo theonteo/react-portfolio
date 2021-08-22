@@ -2,7 +2,7 @@
 {
     display: flex;
     overflow-y: hidden;
-    width:80%;
+    width:60%;
 
    
     margin: 0%;
@@ -13,17 +13,12 @@
 }
 .Projects
 {
-    display:grid;
-    
-    overflow-y: hidden;
-    position:absolute;
-    justify-content: center;
-    align-content: center;
-    width: 80%;
+    width:70%;
 
 }
 .landingContainer
 {
+  
     overflow-y: hidden;
     background-color: black;
 }
@@ -44,9 +39,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;
+  
     display:flex;
-    height: 250vh;
+    height: 325vh;
     background: linear-gradient(0.4turn, #0c0c0c, #363636);
     
 }
@@ -63,11 +58,7 @@
     text-align: center;
    
     background-color: rgba(128, 128, 128, 0);
-    width:100%;
+
     height:300%;
     
-}
-@media screen and (max-width: 960px) 
-{
-
 }
