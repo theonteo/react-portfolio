@@ -90,7 +90,6 @@ a {
     }
     .project-list {
       font-weight: 9000;
-      font-size: 100px;
       font-family: monospace;
       grid-auto-flow: columns;
       display:grid;

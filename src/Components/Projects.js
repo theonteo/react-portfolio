@@ -1,8 +1,9 @@
 import react from "react";
 
 //store project related images
-import CardImg from '../images/img-9.jpg'
-import CardImg2 from '../images/img-8.jpg'
+import CardImg from '../images/img-2.jpg'
+import CardImg2 from '../images/img-3.jpg'
+import CardImg3 from '../images/img-4.jpg'
 import CardItem from "./CardItem"
 
 import ProjectCard from "./ProjectCard";
@@ -28,7 +29,7 @@ function Projects()
                         icon1='fab fa-github'
                          />
                           <CardItem 
-                        src={CardImg}
+                        src={CardImg2}
                         text='Project2'
                         information=''
                         label='Personal'
@@ -36,7 +37,7 @@ function Projects()
                         icon1='fab fa-github'
                          /> 
                           <CardItem 
-                        src={CardImg}
+                        src={CardImg3}
                         text='Project3'
                         information=''
                         label='Personal'
