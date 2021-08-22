@@ -236,8 +236,8 @@ loader.load(
                 //if (col.b >200) {
     
                     var vertex = new THREE.Vector3();
-                    vertex.x = (x - this.texture.image.width/2) ;
-                    vertex.y = (-y +this.texture.image.height /2);
+                    vertex.x = (x - this.texture.image.width/2)*1.15 ;
+                    vertex.y = (-y +this.texture.image.height /2)*1.15;
                     //vertex.z = -Math.random()*500;
                     vertex.z = 0;
                     //vertex.speed = Math.random() / speed + 0.015;
@@ -264,10 +264,10 @@ loader.load(
            this.positionsRunTime[i*3] =points[i].x;
            this.positionsRunTime[i*3+1] =points[i].y;
            this.positionsRunTime[i*3+2] =points[i].z;
-           this.colors[i*3] = cols[i].x*10;
-           this.colors[i*3+1] = cols[i].y*10;
-           this.colors[i*3+2] = cols[i].z*10;
-           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z)*12;
+           this.colors[i*3] = cols[i].x;
+           this.colors[i*3+1] = cols[i].y;
+           this.colors[i*3+2] = cols[i].z;
+           this.sizesRunTime[i] = this.sizes[i] = (cols[i].x+cols[i].y+cols[i].z) * 8;
            
         }
       
