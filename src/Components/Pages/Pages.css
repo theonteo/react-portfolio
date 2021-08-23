@@ -1,0 +1,14 @@
+.page-label
+ {
+    padding-top: 3%;
+    color: #64ffda;
+    font-family: monospace;
+  }
+  .page-title
+   {
+   
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 10px 0 10px;
+    color: rgb(255, 255, 255);
+  }
