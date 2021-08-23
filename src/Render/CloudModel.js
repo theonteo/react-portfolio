@@ -66,7 +66,7 @@ export default class CloudModel
           });
     }
    
-    updateModel()
+    updateModel(documentPosition)
     {
 
         const distPoint = 60;
@@ -75,8 +75,9 @@ export default class CloudModel
         var now = Date.now();
         this.dt = now - this.lastUpdate;
         this.lastUpdate = now;
+        //console.log( this.mouse.y-documentPosition);
         this.lateMouse.x =MathUtils.lerp( this.lateMouse.x, this.mouse.x,1/this.dt * mouseLagSpeed);
-        this.lateMouse.y =MathUtils.lerp( this.lateMouse.y,  this.mouse.y,1/this.dt *mouseLagSpeed);
+        this.lateMouse.y =MathUtils.lerp( this.lateMouse.y,  this.mouse.y-documentPosition - window.innerHeight,1/this.dt *mouseLagSpeed);
 
         //this.positionsRunTime;
         //this.colorsRunTime =  this.colors;

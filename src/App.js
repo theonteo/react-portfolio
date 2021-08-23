@@ -10,7 +10,6 @@ import Services from "./Components/Pages/Services"
 import Products from "./Components/Pages/Products"
 import SignUp from "./Components/Pages/SignUp"
 import Test from "./Components/Pages/Test"
-import LoadingManager from "./Render/LoadingManager";
 
 //renders html
 function App() {
@@ -18,7 +17,7 @@ function App() {
 
   <Router>
    <NavBar/>
-   <LoadingManager/>
+  
       <Switch>
         <Route path ='/'exact  component = {Home}/>
         <Route path ='/services'exact  component = {Services}/>
