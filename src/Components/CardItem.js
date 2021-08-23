@@ -11,7 +11,7 @@ function CardsItem(props)
                     <figure className = 'cards__item__pic-wrap'>
                         <img 
                         src = {props.src}
-                        className = "cards__item__img">
+                        className = "cards__item__img" alt="">
                         </img>
                     </figure>      
                     </div>

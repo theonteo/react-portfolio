@@ -54,7 +54,6 @@ class LoadingManager extends Component
             
             THREE.DefaultLoadingManager.onProgress =
            ( url, itemsLoaded, itemsTotal )=> {
-
                
             this.setState({
                 progressWidth: (itemsLoaded/itemsTotal*100)+"%"

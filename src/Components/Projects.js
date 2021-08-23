@@ -1,5 +1,3 @@
-import react from "react";
-
 //store project related images
 import CardImg from '../images/img-2.jpg'
 import CardImg2 from '../images/img-3.jpg'

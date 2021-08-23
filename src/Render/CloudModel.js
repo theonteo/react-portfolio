@@ -9,8 +9,6 @@ This project contains portfolio / web-mobile responsive application
 \Not for distribution
 */
 /*****************************************************************************/
-
-import {MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import * as THREE from "three";
 import img from "../images/img-8.jpg"
 import { MathUtils, Vector2, Vector3 } from "three";

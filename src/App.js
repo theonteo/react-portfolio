@@ -10,7 +10,7 @@ import Services from "./Components/Pages/Services"
 import Products from "./Components/Pages/Products"
 import SignUp from "./Components/Pages/SignUp"
 import Test from "./Components/Pages/Test"
-
+import ProjectSimple from "./Components/Pages/Project-Simple"
 //renders html
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path ='/products'exact  component = {Products}/>
         <Route path ='/sign-up'exact  component = {SignUp}/>
         <Route path ='/test'exact  component = {Test}/>
+        <Route path ='/project-simple'exact  component = {ProjectSimple}/>
       </Switch>
      
   </Router>

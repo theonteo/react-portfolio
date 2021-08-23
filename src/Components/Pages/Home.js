@@ -8,10 +8,9 @@ function Home()
 {
     return (
         <>
-      
-<LoadingManager/>
-          <Landing/>
-          <Footer/>
+            <LoadingManager/>
+            <Landing/>
+            <Footer/>
         </>
     );
 }

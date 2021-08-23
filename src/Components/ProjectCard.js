@@ -9,9 +9,7 @@ import imgEngine from '../images/img-engine.jpg'
 
 function ProjectCard()
  {
-     
     return (
-
     <div class="project-container">
       <div class="project-label">A showcase of</div>
       <h4 class="project-title">Various Projects</h4> 
@@ -38,14 +36,10 @@ For the engine I primarily focused on Graphics , Technical Art , Tools and Edito
           </div>
           <Button buttonStyle='btn--outline'> Explore...</Button>
         </div>
-        
         <div class="project-img">
           <img src={imgEngine} alt="" />
         </div>
       </div>
-
-
-
       <div class="invert">
         <div class="project">
         <div class="project-img">
@@ -68,7 +62,6 @@ For the engine I primarily focused on Graphics , Technical Art , Tools and Edito
           </div> 
         </div>
       </div>
-
       <div class="project">
         <div class="project-content">
           <div class="project-label">Frontend Development</div>
@@ -95,17 +88,11 @@ For the assets of the website - arnold renderer is being used for lights mapping
                 </div>
               </div>
           </div>
-       
         </div>
-        
         <div class="project-img">
           <img src="https://cdn.vox-cdn.com/thumbor/w-IFN0FWpN4BGfhZaV9EYqs4nLo=/51x0:977x617/1200x800/filters:focal(51x0:977x617)/cdn.vox-cdn.com/uploads/chorus_image/image/50017015/Screen_Shot_2016-07-04_at_12.37.15_PM.0.0.png" alt="" />
         </div>
       </div>
-
-
-      
-
     </div>  
     )
 }
