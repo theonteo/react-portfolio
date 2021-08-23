@@ -56,7 +56,7 @@ function Projects()
                         text='Multiplayer UDP P2P'
                         information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
                         label='Personal'
-                        path='/services'
+                        path='/project-simple'
                         icon1='fab fa-github'
                          />
                           <CardItem 
