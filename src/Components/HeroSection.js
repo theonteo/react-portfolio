@@ -5,6 +5,7 @@ import './HeroSection.css'
 import videoH from '../videos/video-1.mp4'
 
 function HeroSection() {
+	
     return (
       <div className='hero-container'>
        <video src={videoH} autoPlay loop muted />
