@@ -21,7 +21,7 @@ import Scene from "../../Render/Scene";
 \brief  main 3d scene setup
 */
 /******************************************************************************/
-class Scene_2 extends Scene
+class Scene2 extends Scene
 {
     //constructor
     constructor(_options)
@@ -40,4 +40,4 @@ class Scene_2 extends Scene
     }
 }
 
-export default Scene_2
+export default Scene2
