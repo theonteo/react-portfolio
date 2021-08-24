@@ -24,6 +24,7 @@
 }
 .landingContainer
 {
+    object-fit: contain;
     overflow-y: hidden;
     background-color: black;
 }
