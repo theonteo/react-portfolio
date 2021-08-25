@@ -1,10 +1,11 @@
 import {React} from 'react'
 import './LandingTitle.css'
 import './font.css'
-//import {Button} from '../Components/NavBar/Button'
+import {Button} from '../Components/NavBar/Button'
 function LandingTitle()
  {
     return (
+        /*
         <div>
         <div className = 'Title-heading'>
             TITLE 
@@ -17,7 +18,8 @@ function LandingTitle()
 
         </div>
     </div>
-        /*
+    */
+
         <div className = 'Title-group'>
             <div className = 'Title-heading'>
                 ../TheonTeo/
@@ -29,7 +31,6 @@ function LandingTitle()
           
             <Button buttonStyle='btn--outline'> Contact</Button>
         </div>
-        */
     )
 }
 
