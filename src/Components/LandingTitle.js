@@ -5,15 +5,16 @@ import {Button} from '../Components/NavBar/Button'
 function LandingTitle()
  {
     return (
-        
         <div>
         <div className = 'Title-heading'>
-        ../TheonTeo/
+        Theon
         </div>
-
+       
+        <div className = 'Title-subtext'>
+        Lorem Ipsum 
+        </div>
         <div className = 'Title-subtext'>
         <Button buttonStyle='btn--outline'> Contact</Button>
-
         </div>
     </div>
     

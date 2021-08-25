@@ -22,9 +22,10 @@
 {
     .SideBar
     {
+        width: 100%;
         margin-left: 0%;
         position:absolute;
-        margin: 10%;
+     
         display:flex;
         align-content: center;
         justify-content: center;
