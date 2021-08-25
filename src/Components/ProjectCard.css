@@ -37,8 +37,10 @@ a {
   
   
   .project-container {
+    background:linear-gradient(0.1turn, #131313, #292929);
+    background-color:linear-gradient(0.1turn, #131313, #292929);
+    text-align: center;
     z-index: 2;
-   
     margin: 50px auto;
   }
   
@@ -158,3 +160,11 @@ a {
     grid-column: 6 / -1;
     grid-row: 1 / -1;
   }  
+  @media screen and (max-width: 960px) 
+{
+  .project {
+   
+    display: flex;
+    flex-direction:column;
+  }
+}
