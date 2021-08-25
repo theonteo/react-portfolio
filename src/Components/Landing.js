@@ -21,7 +21,7 @@ function Landing()
             </div>
             <div className = "RenderWindow">
                 <Scene2/>
-                <div className = "SideBar">
+                <div className = "SideBarAbout">
                     <About/>
                 </div>
             </div>

@@ -1,11 +1,23 @@
 .SideBar
 {
-    margin: 20%;
-    margin-left: 10%;
-    position:absolute;
-    bottom: 0vh;
-    text-align: left;
+    width: 100%;
+
+        position:absolute;
+     
+        display:flex;
+        align-content: center;
+        justify-content: center;
+        bottom: 40vh;
 }
+.SideBarAbout
+{  
+    margin-left: 10%;
+    top: 20%;
+    position:absolute;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+} 
 .landingContainer
 {
 }
@@ -13,9 +25,7 @@
 {
     position:relative;
     text-align: center;
-    height: 100%;
     background-color: rgba(128, 128, 128, 0);
-    width:100%;
 }
 
 @media screen and (max-width: 960px) 
@@ -23,13 +33,24 @@
     .SideBar
     {
         width: 100%;
-        margin-left: 0%;
+
         position:absolute;
      
         display:flex;
         align-content: center;
         justify-content: center;
-        bottom: 40vh;
-        text-align: center;
+        bottom: 40vh; 
     } 
+    .SideBarAbout
+    {
+        margin-left: 0%;
+        width: 100%;
+        display: flex;
+        overflow-y: hidden;
+
+        padding-left: 10%;
+        padding-right: 10%;
+        top: 20%;
+    }
+
 }

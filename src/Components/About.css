@@ -34,3 +34,18 @@
     padding-bottom: 20px;
     font-size: 17px;
 }
+@media screen and (max-width: 960px) 
+{
+    .line 
+    {
+      
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .AboutContainer
+    {
+        grid-template-columns:auto;
+        display: grid;
+        text-align: center;
+    }
+}
