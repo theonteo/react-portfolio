@@ -12,12 +12,15 @@ function Projects()
         <>
         <ProjectCard>
         </ProjectCard>
-        <div class="project-label">A collection of</div>
-      <h4 class="project-title">Noteworthy Projects</h4> 
-      <div class="project-line"></div>
+       
+        
+
         <div className = "cards_container">
+        <div class="project-label">A collection of</div>
+        <h4 class="project-title">Noteworthy Projects</h4> 
+        <div class="project-line"></div>
             <div className = 'cards__wrapper'>
-                    <ul className='cards__items'>
+                    <div className='cards__items'>
 
                         <CardItem 
                         src={CardImg}
@@ -43,11 +46,11 @@ function Projects()
                         path='/services'
                         icon1='fab fa-github'
                          /> 
-                         </ul>
+                         </div>
                          
                 </div>
                 <div className = 'cards__wrapper'>
-                    <ul className='cards__items'>
+                    <div className='cards__items'>
 
                         <CardItem 
                         src={CardImg}
@@ -73,7 +76,7 @@ function Projects()
                         path='/services'
                         icon1='fab fa-github'
                          /> 
-                         </ul>
+                         </div>
                          
                 </div>
         </div>
