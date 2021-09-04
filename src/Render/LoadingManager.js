@@ -21,8 +21,8 @@ class LoadingManager extends Component
 {
 
     state = {
-        progressWidth:"10%",
-        hideScreen : true
+        progressWidth: "10%",
+        hideScreen: true
     }
     constructor(_options)
     {
@@ -37,62 +37,64 @@ class LoadingManager extends Component
 
     update()
     {
-       
+
         THREE.DefaultLoadingManager.onStart =
-         function ( url, itemsLoaded, itemsTotal )
+            function (url, itemsLoaded, itemsTotal)
+            {
+
+                console.log
+                    ('Started loading file: ' + url + '.\nLoaded ' +
+                        itemsLoaded + ' of ' + itemsTotal + ' files.');
+
+            };
+        THREE.DefaultLoadingManager.onLoad = function ()
+        {
+            console.log('Loading Complete!');
+        };
+
+        THREE.DefaultLoadingManager.onProgress =
+            (url, itemsLoaded, itemsTotal) =>
+            {
+
+                this.setState({
+                    progressWidth: (itemsLoaded / itemsTotal * 100) + "%"
+                });
+                if (itemsLoaded / itemsTotal > 0.99)
+                {
+                    this.setState({
+                        hideScreen: false
+                    });
+                }
+
+                console.log
+                    ('Loading file: ' + url + '.\nLoaded ' +
+                        itemsLoaded + ' of ' + itemsTotal + ' files.');
+            };
+
+        THREE.DefaultLoadingManager.onError = function (url) 
         {
 
-                console.log
-                ( 'Started loading file: ' + url + '.\nLoaded ' +
-                itemsLoaded + ' of ' + itemsTotal + ' files.' );
-            
-        };
-            THREE.DefaultLoadingManager.onLoad = function ( )
-            {
-                console.log( 'Loading Complete!');
-            };
-            
-            THREE.DefaultLoadingManager.onProgress =
-           ( url, itemsLoaded, itemsTotal )=> {
-               
-            this.setState({
-                progressWidth: (itemsLoaded/itemsTotal*100)+"%"
-            });
-            if(itemsLoaded/itemsTotal>0.99)
-            {
-                this.setState({
-                    hideScreen:false
-                });
-            }
+            console.log
+                ('There was an error loading ' + url);
 
-                console.log
-                ( 'Loading file: ' + url + '.\nLoaded ' + 
-                itemsLoaded + ' of ' + itemsTotal + ' files.' );
-            };
-            
-            THREE.DefaultLoadingManager.onError = function ( url ) 
-            {
-            
-                console.log
-                ( 'There was an error loading ' + url );
-            
-            };
-           
+        };
+
     }
-    render() {
-        return ( 
+    render()
+    {
+        return (
             <>
-            <div className = 'loading-container' >
-                <div className = 'loading-background'style={{  background:! this.state.hideScreen ?   "rgba(21, 21, 21,0)": "rgb(21, 21, 21) " }}>
-                    <div className = 'progress'style={{ zIndex: this.state.hideScreen ?999 :-999 , background: !this.state.hideScreen ? "rgba(51, 51, 51,0)": "rgb(51, 51, 51) " }} > 
-                        <div className = 'progress2'
-                         style={{zIndex: this.state.hideScreen ?999 :-999 ,  width: this.state.progressWidth, background:! this.state.hideScreen ?  "rgba(0, 255, 128,0) ": "rgb(0, 255, 128) " }} >
+                <div className='loading-container' >
+                    <div className='loading-background' style={{ background: !this.state.hideScreen ? "rgba(21, 21, 21,0)" : "rgb(21, 21, 21) " }}>
+                        <div className='progress' style={{ zIndex: this.state.hideScreen ? 999 : -999, background: !this.state.hideScreen ? "rgba(51, 51, 51,0)" : "rgb(51, 51, 51) " }} >
+                            <div className='progress2'
+                                style={{ zIndex: this.state.hideScreen ? 999 : -999, width: this.state.progressWidth, background: !this.state.hideScreen ? "rgba(0, 255, 128,0) " : "rgb(0, 255, 128) " }} >
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </>);
-    
-      }
+
+    }
 }
 export default LoadingManager;

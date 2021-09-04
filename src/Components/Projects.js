@@ -16,7 +16,7 @@ function Projects()
 
 
         <div class="project-container">
-          <div className="cards_container">
+         
             <div class="project-label">A collection of</div>
             <h4 class="project-title">Noteworthy Projects</h4>
             <div class="project-line"></div>
@@ -32,7 +32,7 @@ function Projects()
                   icon1='fab fa-github'
                 />
                 <CardItem
-
+ src={CardImg}
                   text=''
                   information=''
                   label=''
@@ -40,7 +40,7 @@ function Projects()
                   icon1=''
                 />
                 <CardItem
-
+ src={CardImg}
                   text=''
                   information=''
                   label=''
@@ -49,7 +49,7 @@ function Projects()
                 />
               </div>
             </div>
-          </div>
+         
         </div>
       </div>
     </>
