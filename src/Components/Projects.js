@@ -1,7 +1,7 @@
 //store project related images
-import CardImg from '../images/img-2.jpg'
-import CardImg2 from '../images/img-3.jpg'
-import CardImg3 from '../images/img-4.jpg'
+import CardImg from '../images/img-default.jpg'
+import CardNetworking from '../images/img-networking.jpg'
+import CardExterior from '../images/img-exterior.jpg'
 import CardItem from "./CardItem"
 
 import ProjectCard from "./ProjectCard";
@@ -16,40 +16,40 @@ function Projects()
 
 
         <div class="project-container">
-         
-            <div class="project-label">A collection of</div>
-            <h4 class="project-title">Noteworthy Projects</h4>
-            <div class="project-line"></div>
-            <div className='cards__wrapper'>
-              <div className='cards__items'>
 
-                <CardItem
-                  src={CardImg}
-                  text='Multiplayer UDP P2P'
-                  information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
-                  label='Personal'
-                  path='/services'
-                  icon1='fab fa-github'
-                />
-                <CardItem
- src={CardImg}
-                  text=''
-                  information=''
-                  label=''
-                  path=''
-                  icon1=''
-                />
-                <CardItem
- src={CardImg}
-                  text=''
-                  information=''
-                  label=''
-                  path=''
-                  icon1=''
-                />
-              </div>
+          <div class="project-label">A collection of</div>
+          <h4 class="project-title">Noteworthy Projects</h4>
+          <div class="project-line"></div>
+          <div className='cards__wrapper'>
+            <div className='cards__items'>
+
+              <CardItem
+                src={CardNetworking}
+                text='Winsock Networking'
+                information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
+                label='Personal'
+                path='/services'
+                icon1='fab fa-github'
+              />
+              <CardItem
+                src={CardExterior}
+                text='3D Based Website'
+                information=''
+                label=''
+                path='https://inspiring-mcnulty-668b0a.netlify.app/'
+                icon1=''
+              />
+              <CardItem
+                src={CardImg}
+                text='More coming up...'
+                information=''
+                label=''
+                path=''
+                icon1=''
+              />
             </div>
-         
+          </div>
+
         </div>
       </div>
     </>

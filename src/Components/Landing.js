@@ -19,14 +19,14 @@ function Landing()
 
                 </div>
             </div>
-            <div className='contentContainer'>
+           
                 <div className="RenderWindow2">
                     <Scene2 />
                     <div className="SideBarAbout">
                         <About />
                     </div>
                 </div>
-
+                <div className='contentContainer'>
                 <div className="RenderProjects">
                     <div className="render-blank">
                         <div className="Projects">

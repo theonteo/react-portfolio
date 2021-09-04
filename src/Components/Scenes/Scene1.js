@@ -67,9 +67,9 @@ class Scene1 extends Scene
     this.currPointLerped = new Vector3(0, 0, 0);
     this.currPointLookAtLerped = new Vector3(0, 0, 0);
     this.currPointLerped.set
-      (this.points[0].x - 10, this.points[0].y - 10, this.points[0].z - 10);
+      (0.75, 2.879, -0.125);
     this.currPointLookAtLerped.set
-      (this.points[0].x, this.points[0].y, this.points[0].z);
+      (-2.717, 2.819, -0.256);
   }
 
   generateCamCurve()
@@ -77,9 +77,9 @@ class Scene1 extends Scene
     //position points
     var posPoints = [];
 
-    posPoints.push(new THREE.Vector3(0.75, 2.879, -0.175));
+    posPoints.push(new THREE.Vector3(0.75, 2.879, -0.25));
     posPoints.push(new THREE.Vector3(2.524, 2.819, -0.256));
-    posPoints.push(new THREE.Vector3(4.000, 2.819, -0.256));
+    posPoints.push(new THREE.Vector3(4.000, 3.771, -2.23));
     this.spline = new THREE.CatmullRomCurve3(posPoints);
     this.points = this.spline.getPoints(200);
 
@@ -125,6 +125,7 @@ class Scene1 extends Scene
 
     this.pageLerp = t * 0.001;
     this.pageLerp2 = t * 0.1;
+    this.pageLerp3 = t;
 
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection(this.camDirection);
@@ -132,12 +133,12 @@ class Scene1 extends Scene
     this.camSide.crossVectors(this.camDirection, this.newCamera.threeCamera.up);
     this.camUp.crossVectors(this.camSide, this.newCamera.threeCamera.up);
 
-    this.camPos.set(0.0,0.0, 0.0);
+    this.camPos.set(0.0, 0.0, 0.0);
     this.camLookAt.set(0.0, 0, 0);
 
-    this.camDirection.multiplyScalar(-this.lerpedMouse.y * (1.0 + this.pageLerp));
-    this.camSide.multiplyScalar(this.lerpedMouse.x * (1.0+ this.pageLerp));
-    this.camUp.multiplyScalar(-this.lerpedMouse.y * (1.0 + this.pageLerp));
+    this.camDirection.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.05, 1) * -this.lerpedMouse.y * (2.0 - this.pageLerp));
+    this.camSide.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.05, 1) * this.lerpedMouse.x * (2.0 - this.pageLerp));
+    this.camUp.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.05, 1) * -this.lerpedMouse.y * (3.0 - this.pageLerp));
 
     var index = MathUtils.clamp(-this.pageLerp2, 0.0, 200.0);
 

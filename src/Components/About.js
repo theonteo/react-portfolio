@@ -18,12 +18,12 @@ Starting out from game development, I am currently pursuing software engineering
 </div>
 <div className = 'SubText'> My interests are in Front-End Graphics Rendering , Technical Art and Full-stack development.
 
-During my free-time from schoolwork, I enjoy exploring the different aspects of frontend web/app development, and trying out various frameworks , languages or API such as combining 3D rendering in a 2D based website.
+During my free-time from schoolwork.
 
 </div>
 
 <div className = 'SubText'>
-Feel free to reach out to me as I am open to networking with like-minded peers and improving my technical skills!
+I enjoy exploring the different aspects of frontend web/app development, and trying out various frameworks , languages or API such as combining 3D rendering in a 2D based website.
 </div>
 <Button buttonStyle='btn--outline'> Get In Touch</Button>
 
