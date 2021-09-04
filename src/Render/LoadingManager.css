@@ -1,12 +1,13 @@
 .loading-container
 {
+   
     pointer-events: none;
     position:fixed;
     z-index: 999;
 }
 .loading-background
-{
-  
+{ 
+    transition:all 2.0s ease-out;
     display:flex;
     align-content: center;
     align-items: center;
@@ -18,7 +19,7 @@
 
 }
 .progress {
-  
+    transition:all 0.4s ease-out;
     background: rgb(51, 51, 51);
     border-radius: 13px;
     height: 5px;
@@ -26,6 +27,7 @@
 }
 
 .progress2 {
+    transition:all 0.4s ease-out;
     content: '';
     display: block;
     background: rgb(0, 255, 128);
