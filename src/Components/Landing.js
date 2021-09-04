@@ -5,8 +5,6 @@ import Projects from './Projects'
 import About from './About'
 import './Landing.css'
 
-
-
 function Landing()
 {
     return (
@@ -14,7 +12,6 @@ function Landing()
             <div className="RenderIntro">
                 <div className="RenderWindow1">
                     <Scene1 />
-
                 </div>
             </div>
             <div className='contentContainer'>
@@ -34,30 +31,6 @@ function Landing()
                 </div>
             </div>
         </div>
-        /*
-                <div className = 'landingContainer'>
-            <div className = "RenderWindow">
-                <Scene1/>
-                <div className = "SideBar">
-                    <LandingTitle/>
-                </div>
-            </div>
-            <div className = "RenderWindow">
-                <Scene2/>
-                <div className = "SideBar">
-                    <About/>
-                </div>
-            </div>
-            <div className = "RenderProjects">
-                <div className = "render-blank">
-                    <div className = "Projects">
-                        <Projects/>
-                        </div>
-                </div>
-            </div>
-            
-        </div>
-        */
     )
 }
 

@@ -35,7 +35,7 @@ function ProjectCard()
                 </div>
               </div>
             </div>
-            <Button buttonStyle='btn--outline'> Explore...</Button>
+            <Button buttonStyle='btn--outline' path= '/project-simple'> Explore...</Button>
           </div>
           <div class="project-img">
             <img src={imgEngine} alt="" />

@@ -36,7 +36,9 @@
   color: #fff;
   font-size: 100px;
 }
-
+.main {
+background: black;
+}
 .sign-up {
 
   background-position: center;
