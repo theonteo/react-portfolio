@@ -10,30 +10,32 @@ import './Landing.css'
 
 
 function Landing()
- {
+{
     return (
-        <div className = 'landingContainer'>
-            <div className = "RenderWindow">
-                <Scene1/>
-                <div className = "SideBar">
-                    <LandingTitle/>
+        <div className='landingContainer'>
+            <div className="RenderIntro">
+                <div className="RenderWindow1">
+                    <Scene1 />
+
                 </div>
             </div>
-            <div className = "RenderWindow">
-                <Scene2/>
-                <div className = "SideBarAbout">
-                    <About/>
+            <div className='contentContainer'>
+                <div className="RenderWindow2">
+                    <Scene2 />
+                    <div className="SideBarAbout">
+                        <About />
+                    </div>
                 </div>
-            </div>
-           
-            <div className = "RenderProjects">
-                <div className = "render-blank">
-                    <div className = "Projects">
-                        <Projects/>
+
+                <div className="RenderProjects">
+                    <div className="render-blank">
+                        <div className="Projects">
+                            <Projects />
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         /*
                 <div className = 'landingContainer'>
             <div className = "RenderWindow">

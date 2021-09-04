@@ -18,17 +18,30 @@
     align-content: center;
     text-align: center;
 } 
-.landingContainer
+.contentContainer
 {
+    background: #111111be;
+    backdrop-filter: grayscale(0.95) blur(5px);
 }
-.RenderWindow
+.RenderIntro
+{
+    display:flex;
+    height:300vh;
+}
+.RenderWindow1
+{
+    position:fixed;
+  
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0);
+}
+.RenderWindow2
 {
     position:relative;
     height:auto;
     text-align: center;
     background-color: rgba(128, 128, 128, 0);
 }
-
 @media screen and (max-width: 960px) 
 {
     .SideBar

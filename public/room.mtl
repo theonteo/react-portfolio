@@ -4,6 +4,13 @@ Kd 0.24 0.24 0.24
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd room.jpg
+Ni 1.00
 newmtl lambert3SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -52,10 +59,36 @@ Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 Ni 0.00
-newmtl lambert16SG
+newmtl lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl lambert20SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl lambert21SG
 illum 4
 Kd 1.00 1.00 1.00
-Ka 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd room.jpg
+Ni 1.00
+newmtl lambert22SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd room.jpg
+Ni 1.00
+newmtl lambert23SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd room.jpg
 Ni 1.00
