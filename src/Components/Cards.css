@@ -3,8 +3,7 @@
   background: #fff;
 }
 .cards_container {
-background:linear-gradient(0.1turn, #131313, #292929);
-background-color:linear-gradient(0.1turn, #131313, #292929);
+
 }
 
 h1 {
@@ -13,21 +12,17 @@ h1 {
 
 .cards__container {
 
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  max-width: 1120px;
-  width: 90%;
-  margin: 0 auto;
+
+
 }
 
 .cards__wrapper {
   position: relative;
-  margin: 50px 0 45px;
+  padding: 0px 0 100px;
 }
 
 .cards__items {
-  margin-bottom: 24px;
+  
 }
 .cards__item {
   display: flex;

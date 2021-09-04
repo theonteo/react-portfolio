@@ -82,11 +82,11 @@ class LoadingManager extends Component
     render() {
         return ( 
             <>
-            <div className = 'loading-container' style={{  zIndex: this.state.hideScreen ?999 :-999  }}>
-                <div className = 'loading-background'>
-                    <div className = 'progress'> 
+            <div className = 'loading-container' >
+                <div className = 'loading-background'style={{  background:! this.state.hideScreen ?   "rgba(21, 21, 21,0)": "rgb(21, 21, 21) " }}>
+                    <div className = 'progress'style={{ zIndex: this.state.hideScreen ?999 :-999 , background: !this.state.hideScreen ? "rgba(51, 51, 51,0)": "rgb(51, 51, 51) " }} > 
                         <div className = 'progress2'
-                         style={{ width: this.state.progressWidth}} >
+                         style={{zIndex: this.state.hideScreen ?999 :-999 ,  width: this.state.progressWidth, background:! this.state.hideScreen ?  "rgba(0, 255, 128,0) ": "rgb(0, 255, 128) " }} >
                         </div>
                     </div>
                 </div>

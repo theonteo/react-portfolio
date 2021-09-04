@@ -7,30 +7,16 @@ function LandingTitle()
     return (
         <div>
         <div className = 'Title-heading'>
-        Theon
+        Theon Teo 
         </div>
        
         <div className = 'Title-subtext'>
-        Lorem Ipsum 
+        Software Engineer
         </div>
         <div className = 'Title-subtext'>
         <Button buttonStyle='btn--outline'> Contact</Button>
         </div>
     </div>
-    
-        /*
-        <div className = 'Title-group'>
-            <div className = 'Title-heading'>
-                ../TheonTeo/
-            </div>
-            <div className = 'Title-colored'>
-               
-                 Software Engineer
-            </div>
-          
-            <Button buttonStyle='btn--outline'> Contact</Button>
-        </div>
-        */
     )
 }
 

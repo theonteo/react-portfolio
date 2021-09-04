@@ -12,9 +12,9 @@
 }
 .page-container
 {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 15%;
 }
 .page-label
 {
@@ -27,6 +27,8 @@
   line-height: 30px;
   font-size: 1.1rem;
   color: #ffffff;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .page-title
