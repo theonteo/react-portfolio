@@ -68,9 +68,7 @@ img {
   grid-row: 1 / -1;
 }
 
-.project-bg {
- 
-}
+.project-bg {}
 
 .project-label {
   text-align: center;
@@ -156,6 +154,11 @@ li {
 }
 
 @media screen and (max-width: 960px) {
+  .project-container {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
   .project {
     display: flex;
     flex-direction: column;
