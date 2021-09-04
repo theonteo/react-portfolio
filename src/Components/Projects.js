@@ -28,7 +28,7 @@ function Projects()
                 text='Winsock Networking'
                 information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
                 label='Personal'
-                path='/services'
+                path='/'
                 icon1='fab fa-github'
               />
               <CardItem
@@ -36,7 +36,7 @@ function Projects()
                 text='3D Based Website'
                 information=''
                 label=''
-                path='https://inspiring-mcnulty-668b0a.netlify.app/'
+                path='/'
                 icon1=''
               />
               <CardItem
@@ -44,7 +44,7 @@ function Projects()
                 text='More coming up...'
                 information=''
                 label=''
-                path=''
+                path='/'
                 icon1=''
               />
             </div>

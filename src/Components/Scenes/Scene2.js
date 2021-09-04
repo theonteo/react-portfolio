@@ -46,14 +46,16 @@ class Scene2 extends Scene
   Update()
   {
     //get page position and lerp camera 
-    const t = document.body.getBoundingClientRect().top;
+    //compensate initial intro height - 3.25
+    const t = document.body.getBoundingClientRect().top + window.innerHeight * 2.25;
+    const t2 = document.body.getBoundingClientRect().top + window.innerHeight * 3;
 
     this.pageLerp = t * 0.0045;
-
+    this.pageLerp2 = t2 * 0.045;
     //modify camera position
 
     let distx = 0;
-    let disty = 0;
+    let disty = -t2 * 0.5;
     let distz = 1000;
 
     //position animation

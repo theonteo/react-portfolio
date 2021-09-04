@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 function Footer()
- {
+{
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
@@ -13,35 +13,15 @@ function Footer()
           Wanna get in touch?
         </p>
 
-            <Button buttonStyle='btn--outline'>Contact Me</Button>
-         
+        <Button buttonStyle='btn--outline'>Contact Me</Button>
+
       </section>
-      <div class='footer-links'>
-        <div className='footer-link-wrapper'>
-         
-          <div class='footer-link-items'>
-            <h2>Contact Me</h2>
-            <Link to='/'>LinkedIn</Link>
-            <Link to='/'>GitHub</Link>
-          </div>
-        </div>
-        <div className='footer-link-wrapper'>
-          <div class='footer-link-items'>
-            <h2>Navigate</h2>
-            <Link to='/'>Home</Link>
-            <Link to='/'>Projects</Link>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Resume</Link>
-          </div>
-          
-        </div>
-      </div>
+
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              THEON
-              <i class='fab fa-typo3' />
+              Theon
             </Link>
           </div>
           <small class='website-rights'>Theon © 2021</small>

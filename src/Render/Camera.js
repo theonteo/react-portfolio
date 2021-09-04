@@ -45,7 +45,7 @@ export default class Camera
   {
     this.threeCamera =
       new THREE.PerspectiveCamera
-        (35, width / height, 0.1, 1000);
+        (35, width / height, 0.1, 5000);
   }
   addListener()
   {

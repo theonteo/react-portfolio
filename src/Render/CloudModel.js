@@ -74,12 +74,12 @@ export default class CloudModel
     updateModel(documentPosition)
     {
 
-        const distPoint = 60;
+        const distPoint = 150;
         const healSpeed = 0.35;
-        const mouseLagSpeed = 1.75;
+        const mouseLagSpeed = 2.75;
 
         var now = Date.now();
-        
+
         this.dt = now - this.lastUpdate;
         this.lastUpdate = now;
 
