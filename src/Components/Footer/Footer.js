@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './NavBar/Button'
+import { Button } from "../NavBar/Button"
 import './Footer.css'
 import { Link } from 'react-router-dom'
 

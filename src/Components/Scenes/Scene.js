@@ -14,7 +14,7 @@ import * as THREE from "three";
 
 //renderer related
 import './Scene.css'
-import Camera from "./Camera";
+import Camera from "../../Render/Camera";
 
 /******************************************************************************/
 /*!

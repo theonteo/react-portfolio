@@ -13,7 +13,7 @@ import * as THREE from "three";
 
 //renderer related
 import CloudModel from "../../Render/CloudModel";
-import Scene from "../../Render/Scene";
+import Scene from "../Scenes/Scene";
 
 
 import { Vector3 } from "three";

@@ -14,7 +14,7 @@ import { MathUtils, Vector2, Vector3 } from "three";
 
 //renderer related
 import Model from "../../Render/Model";
-import Scene from "../../Render/Scene";
+import Scene from "../Scenes/Scene";
 
 
 /******************************************************************************/

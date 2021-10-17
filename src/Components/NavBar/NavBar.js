@@ -4,10 +4,7 @@ import './NavBar.css'
 import logo from '../../images/logo.png'
 
 
-
-
 function NavBar() {
-
     const [click,setClick] = useState(false);
     const [button,setButton] = useState(true);
     const handleClick = () =>setClick(!click);
