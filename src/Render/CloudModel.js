@@ -10,7 +10,7 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 import * as THREE from "three";
-import img from "../images/img-8.jpg"
+import img from "../Images/img-profile.jpg"
 import { MathUtils, Vector2, Vector3 } from "three";
 /******************************************************************************/
 /*!
@@ -112,7 +112,7 @@ export default class CloudModel
     {
         var uniforms = {
             color: { value: new THREE.Color(0xffffff) },
-            texture: { value: new THREE.TextureLoader().load("http://i.imgur.com/HMjPT3I.png") }
+            texture: { value: new THREE.TextureLoader().load(img) }
 
         };
         this.material = new THREE.RawShaderMaterial({
@@ -237,18 +237,10 @@ export default class CloudModel
                         var col = getPixel(imagedata, x, y);
                         if (col.r + col.g + col.b > 25)
                         {
-
-                            //console.log(( getPixel(imagedata,x * 4 , y * 4 ).r));
-                            //if (col.b >200) {
-
                             var vertex = new THREE.Vector3();
                             vertex.x = (x - this.texture.image.width / 2) * 1.15;
                             vertex.y = (-y + this.texture.image.height / 2) * 1.15;
-                            //vertex.z = -Math.random()*500;
                             vertex.z = 0;
-                            //vertex.speed = Math.random() / speed + 0.015;
-
-                            // this.scene.add(new THREE.Mesh( vertex, material));
                             cols.push(new Vector3(col.r / 255, col.g / 255, col.b / 255));
                             points.push(vertex);
                         }
