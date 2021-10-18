@@ -45,8 +45,8 @@ class Scene extends Component
     //add Camera
     this.newCamera =
       new Camera({
-        position: new THREE.Vector3(6, 9, -9),
-        rotation: new THREE.Vector3(0.3, 2.7, -0.2),
+        position: new THREE.Vector3(0, 0, 0),
+        rotation: new THREE.Vector3(0, 0, 0),
         width: width,
         height: height
       });

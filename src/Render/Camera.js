@@ -65,17 +65,9 @@ export default class Camera
   setRotation(vec)
   {
     this.rotation = vec;
-    //this.threeCamera.setRotationFromQuaternion( = this.rotation.x;
-    //this.threeCamera.rotation.x = this.rotation.x;
-    //this.threeCamera.rotation.y = this.rotation.y;
-  //this.threeCamera.rotation.z = this.rotation.z;
     this.quat.x = this.rotation.x;
     this.quat.y = this.rotation.y;
     this.quat.z = this.rotation.z;
     this.threeCamera.setRotationFromEuler(this.quat);
-
-  
-
-
   }
 }

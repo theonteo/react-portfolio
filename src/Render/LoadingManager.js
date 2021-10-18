@@ -31,7 +31,6 @@ class LoadingManager extends Component
         this.setState({
             progressWidth: "30%"
         });
-        //this.progressWidth ="80%";
         this.update();
     }
 
