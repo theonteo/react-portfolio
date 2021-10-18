@@ -1,7 +1,7 @@
 //store project related images
-import CardImg from '../../images/img-default.jpg'
-import CardNetworking from '../../images/img-networking.jpg'
-import CardExterior from '../../images/img-exterior.jpg'
+import CardImg from '../../Images/img-default.jpg'
+import CardNetworking from '../../Images/img-networking.jpg'
+import CardExterior from '../../Images/img-exterior.jpg'
 import CardItem from "../Cards/CardItem"
 
 import ProjectCard from "./ProjectCard";
