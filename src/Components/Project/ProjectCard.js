@@ -4,8 +4,8 @@ import './ProjectCard.css'
 import '.././font.css'
 import { Button } from '../NavBar/Button'
 
-import imgEngine from '../../images/img-engine.jpg'
-import imgPortfolio from '../../images/img-portfolio.jpg'
+import imgEngine from '../../Images/img-engine.jpg'
+import imgPortfolio from '../../Images/img-portfolio.jpg'
 
 function ProjectCard()
 {
