@@ -53,12 +53,25 @@ export default function ProjectSimple()
                     <div className='page-text'>
                         Through the project duration,there are multiple attempt to build unique features that will enhance fidelity of the environment.
                     </div>
+
                     <div className='page-text'>
                         Such features would include:
                         <li>Mesh Painting</li>
                         <li>Complex Material Shading</li>
                         <li>Reflection Probes</li>
                     </div>
+                    <div className='page-bold'>
+                        Mesh Painting
+                    </div>
+                    <iframe width src="https://www.youtube.com/embed/oV1LBBaEWfA"></iframe>
+                    <div className='page-bold'>
+                        Shading and Lighting
+                    </div>
+                    <iframe width src="https://www.youtube.com/embed/0BT9SjFj0OU"></iframe>
+                    <div className='page-bold'>
+                        Technical Art
+                    </div>
+                    <iframe width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
                 </div>
             </div>
         </>

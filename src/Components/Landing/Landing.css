@@ -18,7 +18,7 @@
 
 .contentContainer {
     background: #111111be;
-    backdrop-filter: grayscale(0.95) blur(5px);
+    backdrop-filter: grayscale(0.99) ;
 }
 
 .RenderIntro {
