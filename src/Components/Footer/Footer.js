@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Footer()
 {
+  
   const goToContact = () =>
   {
     var email = "theonteo96@gmail.com";
