@@ -2,7 +2,7 @@ import { React } from 'react'
 
 import './ProjectCard.css'
 import '.././font.css'
-import { Button } from '../NavBar/Button'
+import { Button } from '../Interaction/Button'
 import imgEngine from '../../Images/img-engine.jpg'
 import imgPortfolio from '../../Images/img-portfolio.jpg'
 

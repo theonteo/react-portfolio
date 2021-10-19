@@ -13,7 +13,7 @@ function NavBar()
     const closeMobileMenu = () => 
     {
         document.documentElement.scrollTop = 0;
-        setClick(false)
+        setClick(false);
     };
 
     const showButton = () =>
@@ -30,7 +30,7 @@ function NavBar()
     useEffect(() =>
     {
         showButton();
-    }, []);
+    }, [button]);
 
     window.addEventListener('resize', showButton);
 
@@ -39,7 +39,7 @@ function NavBar()
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        <img src={logo} className="logo"></img>
+                        <img src={logo} alt = '' className="logo"></img>
                     </Link>
 
                     <div className='menu-icon'

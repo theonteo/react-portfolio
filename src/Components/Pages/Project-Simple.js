@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css'
 import './Pages.css'
-import { Button } from '../NavBar/Button'
+import { Button } from '../Interaction/Button'
 import ImgSimple from '../../Images/img-engine.jpg'
 import ImgBeauty from '../../Images/img-beauty.jpg'
 

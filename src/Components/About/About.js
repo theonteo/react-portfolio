@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import {Button} from '../NavBar/Button'
+import {Button} from '../Interaction/Button'
 
 
 function About()

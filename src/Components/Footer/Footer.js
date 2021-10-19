@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router'
-import { Button } from "../NavBar/Button"
+import { Button } from "../Interaction/Button"
 import './Footer.css'
 import { Link } from 'react-router-dom'
 
