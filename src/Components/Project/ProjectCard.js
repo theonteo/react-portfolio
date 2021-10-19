@@ -3,12 +3,17 @@ import { React } from 'react'
 import './ProjectCard.css'
 import '.././font.css'
 import { Button } from '../NavBar/Button'
-
 import imgEngine from '../../Images/img-engine.jpg'
 import imgPortfolio from '../../Images/img-portfolio.jpg'
 
 function ProjectCard()
 {
+  const goToTop = ()=>{
+    document.documentElement.scrollTop = 0;
+  };
+
+
+
   return (
 
       <div class="project-container">
@@ -35,7 +40,7 @@ function ProjectCard()
                 </div>
               </div>
             </div>
-            <Button buttonStyle='btn--outline' path= '/project-simple'> Explore...</Button>
+            <Button buttonStyle='btn--outline' path= '/project-simple' onClick={goToTop} > Explore...</Button>
           </div>
           <div class="project-img">
             <img src={imgEngine} alt="" />

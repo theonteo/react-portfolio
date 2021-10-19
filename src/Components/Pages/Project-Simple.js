@@ -1,13 +1,15 @@
 import React from 'react'
 import '../../App.css'
 import './Pages.css'
-
+import { Button } from '../NavBar/Button'
 import ImgSimple from '../../Images/img-engine.jpg'
-
+import ImgBeauty from '../../Images/img-beauty.jpg'
 
 export default function ProjectSimple()
 {
-
+    const goToTop = ()=>{
+        document.documentElement.scrollTop = 0;
+      };
     return (
         <>
             <div className='page-background'>
@@ -32,7 +34,7 @@ export default function ProjectSimple()
                         Editor interface of Simple Engine 2020.
                     </div>
                     <div className='page-bold'>
-                        Simple Beginnings
+                        Simple Engine Technical Showcase 2021
                     </div>
                     <iframe width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
                     <div className='page-image-tag'>
@@ -43,12 +45,23 @@ export default function ProjectSimple()
                     </div>
                     <div className='page-bold'>
                         Features of Simple Engine
-                        <li>AI</li>
-                        <li>Graphics</li>
                         <li>Entity Component System</li>
+                        <li>Navigation Mesh and A* Pathfinding</li>
+                        <li>Complex Material Shading and Lighting</li>
+                        <li>Skinned Animations and Interpolation</li>
+                        <li>Finite State Machine Editor</li>
+                        <li>C# Scripting</li>
+                        <li>FMOD Integration</li>
+                        <li>And More...</li>
                     </div>
                     <div className='page-bold'>
-                        Graphics and Technical Art
+                        Own developed features for the engine
+                    </div>
+                    <div class="project-img">
+                        <img src={ImgBeauty} alt="" />
+                    </div>
+                    <div className='page-image-tag'>
+                       Test render in engine.
                     </div>
                     <div className='page-text'>
                         Through the project duration,there are multiple attempt to build unique features that will enhance fidelity of the environment.
@@ -63,6 +76,17 @@ export default function ProjectSimple()
                     <div className='page-bold'>
                         Mesh Painting
                     </div>
+
+                    <div className='page-text'>
+                        To speed up environment creation, mesh painting brush features were added to complement existing graphical features.
+                        </div> 
+                        <div className='page-text'>
+                        Such painting features would include:
+                        <li>Vertex Position Painting</li>
+                        <li>Vertex Color Painting</li>
+                        <li>Mesh geometry painting</li>
+                        Mesh Painting demo video below.
+                    </div> 
                     <iframe width src="https://www.youtube.com/embed/oV1LBBaEWfA"></iframe>
                     <div className='page-bold'>
                         Shading and Lighting
@@ -72,6 +96,9 @@ export default function ProjectSimple()
                         Technical Art
                     </div>
                     <iframe width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
+                    <div className='page-text'>Want to see more?</div>
+                    <Button buttonStyle='btn--outline' path='/'  onClick={goToTop} > Return to Home Page</Button>
+                    <div className='page-text'></div>
                 </div>
             </div>
         </>

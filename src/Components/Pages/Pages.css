@@ -13,6 +13,7 @@ iframe {
   border-radius: 10px;
   border:none;
   position: relative;
+  box-shadow: 0 6px 20px #00000036;
 }
 
 .page-background {

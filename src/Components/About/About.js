@@ -5,27 +5,25 @@ import {Button} from '../NavBar/Button'
 
 function About()
 {
+    const goToContact = ()=>{
+        var email = "theonteo96@gmail.com";
+        var mailto_link = 'mailto:' + email;
+        window.open(mailto_link, 'emailWindow');
+      };
     return(
     <>
         <div className = 'AboutContainer'>
 
             <div className = 'LeftPanel'>
-                <div className = 'Title'>About</div>
+                <div className = 'Title'>Building Simplicity.</div>
                 <div class="line"></div>
-                <div className = 'SubText'>Hi I am Theon! Currently a Computer Science Undergraduate in DigiPen Singapore.
-
-Starting out from game development, I am currently pursuing software engineering and development with a focus in front-end aspects.
+                <div className = 'SubText'>Hi ! I am currently pursuing software engineering and development with a focus in front-end aspects.
 </div>
 <div className = 'SubText'> My interests are in Front-End Graphics Rendering , Technical Art and Full-stack development.
-
-During my free-time from schoolwork.
-
 </div>
-
-<div className = 'SubText'>
-I enjoy exploring the different aspects of frontend web/app development, and trying out various frameworks , languages or API such as combining 3D rendering in a 2D based website.
+<div className = 'SubTextBold'> Want to know more?
 </div>
-<Button buttonStyle='btn--outline'> Get In Touch</Button>
+<Button buttonStyle='btn--outline' onClick = {goToContact}> Get In Touch!</Button>
 
             </div>
             <div className = 'RightPanel'>

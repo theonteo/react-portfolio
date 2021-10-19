@@ -117,7 +117,7 @@
   
   .social-icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     width: 240px;
   }
