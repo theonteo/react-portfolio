@@ -21,7 +21,6 @@ function Footer()
         </p>
 
         <Button buttonStyle='btn--outline' onClick={goToContact}>Contact Me</Button>
-
       </section>
       <section class='social-media'>
         <div class='social-media-wrap'>
