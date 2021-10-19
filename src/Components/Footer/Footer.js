@@ -1,5 +1,4 @@
 import React from 'react'
-import { Route } from 'react-router'
 import { Button } from "../Interaction/Button"
 import './Footer.css'
 import { Link } from 'react-router-dom'
@@ -7,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Footer()
 {
-  
+
   const goToContact = () =>
   {
     var email = "theonteo96@gmail.com";
@@ -37,7 +36,6 @@ function Footer()
               href={'https://www.linkedin.com/in/theon-teo-80a906101/'}
               class='social-icon-link twitter'
               to='/'
-              target='_blank'
               aria-label='LinkedIn'
             >
               <i class='fab fa-linkedin' />
