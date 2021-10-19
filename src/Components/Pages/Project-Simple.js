@@ -36,7 +36,7 @@ export default function ProjectSimple()
                     <div className='page-bold'>
                         Simple Engine Technical Showcase 2021
                     </div>
-                    <iframe width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
+                    <iframe title = 'rendertest' width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
                     <div className='page-image-tag'>
                         First 3D Render Test for Simple Engine 2021.
                     </div>
@@ -87,15 +87,15 @@ export default function ProjectSimple()
                         <li>Mesh geometry painting</li>
                         Mesh Painting demo video below.
                     </div> 
-                    <iframe width src="https://www.youtube.com/embed/oV1LBBaEWfA"></iframe>
+                    <iframe title = 'rendershading' width src="https://www.youtube.com/embed/oV1LBBaEWfA"></iframe>
                     <div className='page-bold'>
                         Shading and Lighting
                     </div>
-                    <iframe width src="https://www.youtube.com/embed/0BT9SjFj0OU"></iframe>
+                    <iframe title = 'rendertechnical' width src="https://www.youtube.com/embed/0BT9SjFj0OU"></iframe>
                     <div className='page-bold'>
                         Technical Art
                     </div>
-                    <iframe width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
+                    <iframe title = 'render' width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
                     <div className='page-text'>Want to see more?</div>
                     <Button buttonStyle='btn--outline' path='/'  onClick={goToTop} > Return to Home Page</Button>
                     <div className='page-text'></div>

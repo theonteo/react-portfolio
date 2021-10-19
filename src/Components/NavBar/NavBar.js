@@ -56,9 +56,9 @@ function NavBar()
                         </li>
 
                         <li className='nav-item'>
-                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                        <a href = 'resume.pdf'  to='/' className='nav-links' onClick={closeMobileMenu}>
                                 2. Resume.
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                 </div>
