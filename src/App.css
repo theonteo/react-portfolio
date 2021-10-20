@@ -2,7 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: Roboto;
+  font-weight: 100;
+  font-size: 15px;
 }
 
 .home,
@@ -34,7 +36,9 @@
   color: #fff;
   font-size: 100px;
 }
-
+.main {
+background: black;
+}
 .sign-up {
 
   background-position: center;

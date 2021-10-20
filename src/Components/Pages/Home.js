@@ -1,14 +1,15 @@
 import React from 'react';
 import '../../App.css';
-import HeroSection from '../HeroSection';
-import Cards from '../Cards';
-import Footer from '../Footer';
+
+import Footer from '../Footer/Footer';
+import Landing from '../Landing/Landing'
+import LoadingManager from "../../Render/LoadingManager";
 function Home()
 {
     return (
         <>
-            <HeroSection/>
-            <Cards/>
+            <LoadingManager/>
+            <Landing/>
             <Footer/>
         </>
     );
