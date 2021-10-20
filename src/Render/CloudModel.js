@@ -10,7 +10,6 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 import * as THREE from "three";
-import img from "../Images/img-profile.jpg"
 import { MathUtils, Vector2, Vector3 } from "three";
 /******************************************************************************/
 /*!
@@ -71,6 +70,7 @@ export default class CloudModel
             });
     }
 
+    //reorg this part TODO
     updateModel(documentPosition)
     {
 
@@ -112,7 +112,7 @@ export default class CloudModel
     {
         var uniforms = {
             color: { value: new THREE.Color(0xffffff) },
-            texture: { value: new THREE.TextureLoader().load(img) }
+            texture: { value: new THREE.TextureLoader().load( this.texture) }
 
         };
         this.material = new THREE.RawShaderMaterial({
@@ -211,16 +211,16 @@ export default class CloudModel
 
         // instantiate a loader
         const loader = new THREE.TextureLoader();
-        console.log(" startloadeddddddddddddddddddddddddd");
+        console.log(" start load");
         // load a resource
         loader.load(
             // resource URL
-            img,
+            this.texture,
 
             // onLoad callback
             (texture) =>
             {
-                console.log("loadeddddddddddddddddddddddddd");
+                console.log("loaded");
 
                 this.texture = texture;
 

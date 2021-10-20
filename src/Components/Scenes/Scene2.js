@@ -14,7 +14,7 @@ import * as THREE from "three";
 //renderer related
 import CloudModel from "../../Render/CloudModel";
 import Scene from "../Scenes/Scene";
-
+import img from "../../Images/img-profile.jpg"
 
 import { Vector3 } from "three";
 
@@ -32,7 +32,7 @@ class Scene2 extends Scene
 
     //add main room model
     this.cloud = new CloudModel({
-      //texture:img,
+      texture:img,
       scene: this.scene
     });
     this.scene.background = null;
