@@ -1,3 +1,15 @@
+/*****************************************************************************/
+/*!
+\file Projects.js
+\author Theon Teo
+\par email: theonteo96@gmail.com
+\date 2021
+\brief
+This project contains portfolio / web-mobile responsive application
+\Not for distribution
+*/
+/*****************************************************************************/
+
 //store project related images
 import CardImg from '../../Images/img-default.jpg'
 import CardNetworking from '../../Images/img-networking.jpg'
@@ -13,8 +25,6 @@ function Projects()
       <div class="project-bg">
         <ProjectCard>
         </ProjectCard>
-
-
         <div class="project-container">
 
           <div class="project-label">A collection of</div>

@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /*!
-\file Model.js
+\file CloudModel.js
 \author Theon Teo
 \par email: theonteo96@gmail.com
 \date 2021

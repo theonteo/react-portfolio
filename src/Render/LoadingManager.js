@@ -21,7 +21,7 @@ class LoadingManager extends Component
 {
 
     state = {
-        progressWidth: "10%",
+        progressWidth: "0%",
         hideScreen: true
     }
     constructor(_options)
@@ -29,7 +29,7 @@ class LoadingManager extends Component
 
         super(_options);
         this.setState({
-            progressWidth: "30%"
+            progressWidth: "0%"
         });
         this.update();
     }

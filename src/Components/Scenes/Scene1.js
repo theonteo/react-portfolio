@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /*!
-\file Scene_1.js
+\file Scene1.js
 \author Theon Teo
 \par email: theonteo96@gmail.com
 \date 2021

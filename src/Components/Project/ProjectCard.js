@@ -1,3 +1,15 @@
+/*****************************************************************************/
+/*!
+\file ProjectCard.js
+\author Theon Teo
+\par email: theonteo96@gmail.com
+\date 2021
+\brief
+This project contains portfolio / web-mobile responsive application
+\Not for distribution
+*/
+/*****************************************************************************/
+
 import { React } from 'react'
 
 import './ProjectCard.css'
@@ -8,12 +20,11 @@ import imgPortfolio from '../../Images/img-portfolio.jpg'
 
 function ProjectCard()
 {
+  //reset scroll to top
   const goToTop = ()=>{
     document.documentElement.scrollTop = 0;
   };
-
-
-
+  
   return (
 
       <div class="project-container">
