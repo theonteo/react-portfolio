@@ -38,10 +38,14 @@ function ProjectCard()
           <h4 class="project-title">SIMPLE. Engine</h4>
           <div class="project-line"></div>
           <div class="project-details">
-            <p>Built with OpenGL. It is a 2D/3D Proprietary Engine built to house various interactive applications. With the engine undergoing iterations through a span of 2 to 3 years.
-
-              For the engine I primarily focused on Graphics , Technical Art , Tools and Editor with an emphasis on Graphics and Technical Art.
-            </p>
+            <div class="project-details-box">
+              <div class="project-details-box-content">
+                Built with OpenGL. It is a 2D/3D Proprietary Engine built to house various interactive applications. With the engine undergoing iterations through a span of 2 to 3 years.
+              </div>
+              <div class="project-details-box-content">
+                For the engine I primarily focused on Graphics , Technical Art , Tools and Editor with an emphasis on Graphics and Technical Art.
+              </div>
+            </div>
             <div class="project-list-wrapper">
               <div class="project-list">
                 <div class="project-item">OpenGL</div>
@@ -54,8 +58,8 @@ function ProjectCard()
           </div>
           <Button buttonStyle='btn--outline' path='/project-simple' onClick={goToTop} > Explore...</Button>
         </div>
-          <div class="project-img">
-            <img src={imgEngine} alt="" />
+        <div class="project-img">
+          <img src={imgEngine} alt="" />
         </div>
       </div>
       <div class="invert">
@@ -65,12 +69,17 @@ function ProjectCard()
             <h4 class="project-title">Portfolio Website</h4>
             <div class="project-line"></div>
             <div class="project-details">
-              <p>This is the first website I have built from scratch and it is designed to expand my knowledge on frontend development.
 
-                Some of the experiments include real time rendering of 3d browser backgrounds while making the website responsive for web and mobile.
+              <div class="project-details-box">
+                <div class="project-details-box-content">
+                  This is the first website I have built from scratch and it is designed to expand my knowledge on frontend development.
+                </div>
+                <div class="project-details-box-content">
+                  Some of the experiments include real time rendering of 3d browser backgrounds while making the website responsive for web and mobile.
 
-                For the assets of the website - arnold renderer is being used for lights mapping the scene with the map being combined into a mesh.
-              </p>
+                  For the assets of the website - arnold renderer is being used for lights mapping the scene with the map being combined into a mesh.
+                </div>
+              </div>
               <div class="project-list-wrapper">
                 <div class="project-list">
                   <div class="project-item">React</div>

@@ -27,7 +27,11 @@ function NavBar()
         document.documentElement.scrollTop = 0;
         setClick(false);
     };
-
+    const goToContact = ()=>{
+        var email = "theonteo96@gmail.com";
+        var mailto_link = 'mailto:' + email;
+        window.open(mailto_link, 'emailWindow');
+      };
     const showButton = () =>
     {
         if (window.innerWidth <= 960)
@@ -51,7 +55,7 @@ function NavBar()
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        <img src={logo} alt = '' className="logo"></img>
+                        <img src={logo} alt='' className="logo"></img>
                     </Link>
 
                     <div className='menu-icon'
@@ -63,19 +67,23 @@ function NavBar()
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                1. Home.
+                                <div className="nav-links-white">01. </div> Home
                             </Link>
                         </li>
-
                         <li className='nav-item'>
-                        <a href = 'resume.pdf'  to='/' className='nav-links' onClick={closeMobileMenu}>
-                                2. Resume.
+                            <a href='https://github.com/theonteo?tab=repositories' to='/' className='nav-links' onClick={closeMobileMenu}>
+                                <div className="nav-links-white">02. </div> Github
                             </a>
                         </li>
                         <li className='nav-item'>
-                        <a href = 'https://github.com/theonteo?tab=repositories'  to='/' className='nav-links' onClick={closeMobileMenu}>
-                                3. Github.
+                            <a href='resume.pdf' to='/' className='nav-links' onClick={closeMobileMenu}>
+                                <div className="nav-links-white">03. </div> Resume
                             </a>
+                        </li>
+                        <li className='nav-item'>
+                        <Link to='/' className='nav-links' onClick={goToContact}>
+                                <div className="nav-links-white">04. </div> Contact
+                            </Link>
                         </li>
                     </ul>
                 </div>

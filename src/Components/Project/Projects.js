@@ -11,7 +11,7 @@ This project contains portfolio / web-mobile responsive application
 /*****************************************************************************/
 
 //store project related images
-import CardImg from '../../Images/img-default.jpg'
+import CardImg from '../../Images/img-waves.jpg'
 import CardNetworking from '../../Images/img-networking.jpg'
 import CardExterior from '../../Images/img-exterior.jpg'
 import CardItem from "../Cards/CardItem"
@@ -36,23 +36,23 @@ function Projects()
               <CardItem
                 src={CardNetworking}
                 text='Winsock Networking'
-                information='A multiplayer game which uses Winsock for communication between different clients.Primarily in charge of base engine and Networking setup.'
+                information='A multiplayer game which uses Winsock for communication between different clients.'
                 label='Personal'
                 path='/'
                 icon1='fab fa-github'
               />
               <CardItem
                 src={CardExterior}
-                text='Web virtual Showroom'
-                information=''
+                text='Virtual Showroom Website'
+                information='Interactive showroom with panning camera.'
                 label=''
                 path='/'
                 icon1=''
               />
               <CardItem
                 src={CardImg}
-                text='Web Image Point Clouds...'
-                information=''
+                text='Interactive Image Point Clouds '
+                information='Rendering of an image in an interactive point cloud.'
                 label=''
                 path='/'
                 icon1=''

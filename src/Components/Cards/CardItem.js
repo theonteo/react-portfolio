@@ -10,34 +10,39 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './CardItem.css'
+import { Button } from '../Interaction/Button'
 function CardsItem(props)
 {
     return (
         <>
-            <li className = 'cards__item'>
-                <Link className = 'cards__item__link' to= {props.path} >
-                <div className = "cards__item__color">
-                    <figure className = 'cards__item__pic-wrap'>
-                        <img 
-                        src = {props.src}
-                        className = "cards__item__img" alt=''>
-                        </img>
-                    </figure>      
+            <li className='cards__item'>
+                <Link className='cards__item__link' to={props.path} >
+                    <div className="cards__item__color">
+                        <figure className='cards__item__pic-wrap'>
+                            <img
+                                src={props.src}
+                                className="cards__item__img" alt=''>
+                            </img>
+                        </figure>
                     </div>
-                    <div className = "cards__item__info">
-                        <div className = "cards__item__title">
+                    <div className="cards__item__info">
+                        <div className="cards__item__title">
                             {props.text}
                         </div>
                         <div class="project-line"></div>
-                        <h5 className = "cards__item__information">
+                        <h5 className="cards__item__information">
                             {props.information}
                         </h5>
-                        <div className = "cards__item__icon__container">
-                            <i class={ props.icon1 }></i>
+                        <div className="cards__item__icon__container">
+                            <i class={props.icon1}></i>
                         </div>
                     </div>
+                    <div className="cards__item__button">
+                        <Button buttonStyle='btn--outline' > See More...</Button>
+                    </div>
+
                 </Link>
             </li>
         </>

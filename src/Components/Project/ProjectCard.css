@@ -30,7 +30,7 @@ img {
   border-radius: 10px;
   position: relative;
   mix-blend-mode: multiply;
-  transition :all 0.3s ease-out
+  transition: all 0.3s ease-out
 }
 
 .project-bg {}
@@ -84,6 +84,12 @@ img {
   font-size: 2rem;
   margin: 10px 0 10px;
   color: rgb(255, 255, 255);
+  transition: all 0.3s ease-out;
+}
+
+.project-title:hover {
+  color: #f0fffb;
+  transition: all 0.3s ease-out;
 }
 
 .project-line {
@@ -100,6 +106,12 @@ img {
   font-size: 15px;
   line-height: 1.5;
   color: rgb(207, 207, 207);
+  transition: all 0.3s ease-out;
+}
+
+.project-details:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-out;
 }
 
 .project-list-wrapper {
@@ -123,14 +135,26 @@ img {
   font-family: monospace;
 }
 
-p {
+.project-details-box {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.507);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px #00000004);
   text-align: left;
   border-radius: 10px;
-  background: linear-gradient(0.1turn, #131313, #292929);
+  background: linear-gradient(0.1turn, #0000008c, #000000d3);
+  
   padding: 20px 25px;
+}
+
+.project-details-box-content-bold {
+  font-weight: bold;
+}
+
+.project-details-box-content {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: system, -apple-system, BlinkMacSystemFont, Roboto,
+  "Helvetica Neue", "Segoe UI", Arial, sans-serif;
 }
 
 ul {
@@ -143,28 +167,30 @@ li {
   color: #aaa;
   font-family: monospace;
 }
+
 img:hover {
   filter: grayscale(00%) contrast(1) brightness(1);
-  transition:all 0.3s ease-out;
- 
+  transition: all 0.3s ease-out;
 }
+
 .project-img:hover {
   transform: scale(1.05);
   background: #ffffff00;
-  transition:all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
+
 .project-img {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.01));
   filter: drop-shadow(0 6px 20px #00000004);
   background-color: #64ffdb00;
-  background: linear-gradient(0.4turn, #9affe7,#00c093);
+  background: linear-gradient(0.4turn, #9affe7, #00c093);
   position: relative;
   z-index: 1;
   border-radius: 10px;
   grid-column: 6 / -1;
   grid-row: 1 / -1;
-  transition :all 0.3s ease-out
+  transition: all 0.3s ease-out
 }
 
 @media screen and (max-width: 960px) {

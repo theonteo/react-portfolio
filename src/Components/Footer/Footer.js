@@ -30,7 +30,6 @@ function Footer()
         <p className='footer-subscription-heading'>
           Wanna get in touch?
         </p>
-
         <Button buttonStyle='btn--outline' onClick={goToContact}>Contact Me</Button>
       </section>
       <section class='social-media'>
