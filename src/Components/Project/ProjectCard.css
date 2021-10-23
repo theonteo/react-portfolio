@@ -134,27 +134,30 @@ img {
   margin-right: 5%;
   font-family: monospace;
 }
-
+.project-details-box-invert {
+  text-align: right;
+}
+  
 .project-details-box {
+  
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.507);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px #00000004);
   text-align: left;
   border-radius: 10px;
-  background: linear-gradient(0.1turn, #0000008c, #000000d3);
+  background: linear-gradient(0.1turn, #0e0e0ee8, #383838e5);
   
   padding: 20px 25px;
 }
 
 .project-details-box-content-bold {
+  line-height: 1rem;
   font-weight: bold;
 }
 
 .project-details-box-content {
-  margin-top: 15px;
+  line-height: 1.95rem;
   margin-bottom: 15px;
-  font-family: system, -apple-system, BlinkMacSystemFont, Roboto,
-  "Helvetica Neue", "Segoe UI", Arial, sans-serif;
 }
 
 ul {

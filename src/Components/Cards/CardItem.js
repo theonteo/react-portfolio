@@ -15,6 +15,7 @@ import './CardItem.css'
 import { Button } from '../Interaction/Button'
 function CardsItem(props)
 {
+    if(!props.externalLink)
     return (
         <>
             <li className='cards__item'>
@@ -40,10 +41,43 @@ function CardsItem(props)
                         </div>
                     </div>
                     <div className="cards__item__button">
-                        <Button buttonStyle='btn--outline' > See More...</Button>
+                        <Button buttonStyle='btn--outline' externalLink={props.externalLink} > See More...</Button>
                     </div>
 
                 </Link>
+            </li>
+        </>
+    )
+    else
+    return (
+        <>
+            <li className='cards__item'>
+                <a className='cards__item__link' href={props.path} >
+                    <div className="cards__item__color">
+                        <figure className='cards__item__pic-wrap'>
+                            <img
+                                src={props.src}
+                                className="cards__item__img" alt=''>
+                            </img>
+                        </figure>
+                    </div>
+                    <div className="cards__item__info">
+                        <div className="cards__item__title">
+                            {props.text}
+                        </div>
+                        <div class="project-line"></div>
+                        <h5 className="cards__item__information">
+                            {props.information}
+                        </h5>
+                        <div className="cards__item__icon__container">
+                            <i class={props.icon1}></i>
+                        </div>
+                    </div>
+                    <div className="cards__item__button">
+                        <Button buttonStyle='btn--outline' externalLink={props.externalLink} > See More...</Button>
+                    </div>
+
+                </a>
             </li>
         </>
     )

@@ -26,40 +26,39 @@ function Projects()
         <ProjectCard>
         </ProjectCard>
         <div class="project-container">
-
           <div class="project-label">A collection of</div>
           <h4 class="project-title">Noteworthy Projects</h4>
           <div class="project-line"></div>
           <div className='cards__wrapper'>
             <div className='cards__items'>
-
               <CardItem
                 src={CardNetworking}
                 text='Winsock Networking'
                 information='A multiplayer game which uses Winsock for communication between different clients.'
                 label='Personal'
                 path='/'
-                icon1='fab fa-github'
+                icon1=''
               />
               <CardItem
                 src={CardExterior}
                 text='Virtual Showroom Website'
                 information='Interactive showroom with panning camera.'
                 label=''
-                path='/'
+                path='https://inspiring-mcnulty-668b0a.netlify.app/'
                 icon1=''
+                externalLink={true}
               />
               <CardItem
                 src={CardImg}
                 text='Interactive Image Point Clouds '
                 information='Rendering of an image in an interactive point cloud.'
                 label=''
-                path='/'
+                path='https://serene-hermann-c2f53e.netlify.app/'
                 icon1=''
+                externalLink={true}
               />
             </div>
           </div>
-
         </div>
       </div>
     </>
