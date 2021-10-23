@@ -43,7 +43,7 @@ function Projects()
               />
               <CardItem
                 src={CardExterior}
-                text='3D Based Website'
+                text='Web virtual Showroom'
                 information=''
                 label=''
                 path='/'
@@ -51,7 +51,7 @@ function Projects()
               />
               <CardItem
                 src={CardImg}
-                text='More coming up...'
+                text='Web Image Point Clouds...'
                 information=''
                 label=''
                 path='/'

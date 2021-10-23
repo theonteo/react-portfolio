@@ -72,6 +72,11 @@ function NavBar()
                                 2. Resume.
                             </a>
                         </li>
+                        <li className='nav-item'>
+                        <a href = 'https://github.com/theonteo?tab=repositories'  to='/' className='nav-links' onClick={closeMobileMenu}>
+                                3. Github.
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
