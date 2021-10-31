@@ -124,7 +124,7 @@ class Scene1 extends Scene
     const t = document.body.getBoundingClientRect().top;
 
     this.pageLerp = t * 0.001;
-    this.pageLerp2 = t * 0.1;
+    this.pageLerp2 = t * 0.3;
     this.pageLerp3 = t;
 
     //modify camera position

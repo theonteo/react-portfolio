@@ -24,7 +24,7 @@ svg {
 }
 
 img {
-  filter: grayscale(100%) contrast(0.9) brightness(2);
+  filter: grayscale(100%) contrast(1) brightness(1);
   width: 100%;
   vertical-align: middle;
   border-radius: 10px;
@@ -172,7 +172,7 @@ li {
 }
 
 img:hover {
-  filter: grayscale(00%) contrast(1) brightness(1);
+ 
   transition: all 0.3s ease-out;
 }
 
@@ -187,7 +187,7 @@ img:hover {
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.01));
   filter: drop-shadow(0 6px 20px #00000004);
   background-color: #64ffdb00;
-  background: linear-gradient(0.4turn, #9affe7, #00c093);
+ 
   position: relative;
   z-index: 1;
   border-radius: 10px;

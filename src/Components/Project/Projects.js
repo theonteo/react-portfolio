@@ -15,6 +15,7 @@ import CardImg from '../../Images/img-waves.jpg'
 import CardNetworking from '../../Images/img-networking.jpg'
 import CardExterior from '../../Images/img-exterior.jpg'
 import CardItem from "../Cards/CardItem"
+import VideoItem from "../Cards/VideoItem"
 
 import ProjectCard from "./ProjectCard";
 
@@ -60,6 +61,56 @@ function Projects()
             </div>
           </div>
         </div>
+
+        <div class="project-container">
+        <div class="project-label">Seeing things in action</div>
+          <h4 class="project-title">Video Logs</h4>
+          <div class="project-line"></div>
+          <div className='cards__wrapper'>
+            <div className='cards__items'>
+              <VideoItem
+                src={"https://www.youtube.com/embed/jCnMN9iv688" }
+                text='Simple Engine Tech 2021'
+                information='A collection of some of the technology created to run a 3D engine.'
+                label='3D engine'
+                path='/'
+                icon1=''
+                externalLink={true}
+              />
+              <CardItem
+                src={CardExterior}
+                text='Reflection Probe'
+                information='Interactive showroom with panning camera.'
+                label=''
+                path='https://inspiring-mcnulty-668b0a.netlify.app/'
+                icon1=''
+                externalLink={true}
+              />
+              <CardItem
+                src={CardImg}
+                text='Mesh Painting'
+                information='Populate a large area with the quick brush.'
+                label=''
+                path='https://serene-hermann-c2f53e.netlify.app/'
+                icon1=''
+                externalLink={true}
+              />
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </>
   );

@@ -62,7 +62,7 @@ function ProjectCard()
           <Button buttonStyle='btn--outline' path='/project-simple' onClick={goToTop} > Explore...</Button>
         </div>
         <div class="project-img">
-          <img src={imgEngine} alt="" />
+          <img src={imgEngine} alt=""  style = {{ filter:'grayscale(0%)'}}/>
         </div>
       </div>
       <div class="invert">
@@ -102,7 +102,7 @@ function ProjectCard()
             </div>
           </div>
           <div class="project-img">
-            <img src={imgPortfolio} alt="" />
+            <img src={imgPortfolio} alt="" style = {{ filter:'grayscale(0%)'}} />
           </div>
         </div>
       </div>
