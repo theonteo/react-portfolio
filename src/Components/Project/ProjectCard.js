@@ -40,8 +40,8 @@ function ProjectCard()
           <div class="project-details">
             <div class="project-details-box">
               <div class="project-details-box-content">
-                Built with OpenGL. It is a 2D/3D Proprietary Engine built to house various interactive applications.
-                For the engine I primarily focused on   Graphics , Technical Art , Tools and Editor.
+                <b> Built with OpenGL.</b> It is a 2D/3D Proprietary Engine built to house various interactive applications.
+                For the engine I primarily focused on <b>Graphics , Technical Art , Tools and Editor</b>.
               </div>
 
             </div>
@@ -74,8 +74,10 @@ function ProjectCard()
               <div class="project-details-box">
                 <div class="project-details-box-invert">
                   <div class="project-details-box-content">
-                   <b>This is the first website</b>  I have built from scratch and it is designed to expand my knowledge on frontend development.
-                    Some of the experiments include real time rendering of 3d browser backgrounds and interactions
+                  <div class="revert">
+                    This is the  <b>first website</b>  I have built from scratch and it is designed to expand my knowledge on  <b>frontend development</b>.
+                    Some of the experiments include real time rendering of <b>3D backgrounds and interactions.</b>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -35,8 +35,8 @@ function About()
                     <div className='SubTextBold'>Hi, Theon here!
                     </div>
                     <div className='SubText'>
-                        I am currently pursuing software engineering and development with a focus in front-end aspects.
-                        My current interests are in Front-End Graphics Rendering and Full-stack development.
+                        I am currently pursuing software engineering and development with a focus in <b>front-end aspects.</b>
+                        My current interests are in <b>Front-End Graphics Rendering and Full-stack development.</b>
                     </div>
 
                     <div className='AboutButtonsContainer'>
