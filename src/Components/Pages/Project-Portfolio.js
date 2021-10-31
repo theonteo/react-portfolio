@@ -26,26 +26,15 @@ export default function ProjectPortfolio()
             <div className='page-background'>
                 <div className='page-container'>
                     <div className='page-title'>
-                        SIMPLE. Engine
+                        Building a portfolio site
                     </div>
                     <div className='page-label'>
-                        A blog on the creation of our 3D engine
+                        A blog on the creation of the website you're viewing now
                     </div>
                     <div className='page-bold'>
-                        Simple Beginnings
-                    </div>
-                    <div className='page-text'>
-                        Simple Engine is a Proprietary 3D engine built to some run some of our 3D software projects.
-                        Development for the engine began in 2019 and has since been through multiple iterations before the current version you will see below.
-                    </div>
-                    <div class="project-img">
-                        <img src={ImgSimple} alt="" />
-                    </div>
-                    <div className='page-image-tag'>
-                        Editor interface of Simple Engine 2020.
+                        Work In Progress.
                     </div>
                     
-                    <iframe title = 'render' width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
                     <div className='page-text'>Want to see more?</div>
                     <Button buttonStyle='btn--outline' path='/'  onClick={goToTop} > Return to Home Page</Button>
                     <div className='page-text'></div>

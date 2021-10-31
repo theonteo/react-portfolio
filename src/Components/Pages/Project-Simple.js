@@ -26,6 +26,9 @@ export default function ProjectSimple()
         <>
             <div className='page-background'>
                 <div className='page-container'>
+                <div className='page-image-tag'>
+                       ../Blog post
+                    </div>
                     <div className='page-title'>
                         SIMPLE. Engine
                     </div>
@@ -40,7 +43,7 @@ export default function ProjectSimple()
                         Development for the engine began in 2019 and has since been through multiple iterations before the current version you will see below.
                     </div>
                     <div class="project-img">
-                        <img src={ImgSimple} alt="" />
+                        <img src={ImgSimple} alt="" style = {{ filter:'grayscale(0%)'}}/>
                     </div>
                     <div className='page-image-tag'>
                         Editor interface of Simple Engine 2020.
@@ -70,7 +73,7 @@ export default function ProjectSimple()
                         Own developed features for the engine
                     </div>
                     <div class="project-img">
-                        <img src={ImgBeauty} alt="" />
+                        <img src={ImgBeauty} alt=""style = {{ filter:'grayscale(0%)'}} />
                     </div>
                     <div className='page-image-tag'>
                        Test render in engine.

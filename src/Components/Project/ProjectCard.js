@@ -43,7 +43,7 @@ function ProjectCard()
                 Built with OpenGL. It is a 2D/3D Proprietary Engine built to house various interactive applications.
                 For the engine I primarily focused on   Graphics , Technical Art , Tools and Editor.
               </div>
-             
+
             </div>
             <div class="project-list-wrapper">
               <div class="project-list">
@@ -55,10 +55,12 @@ function ProjectCard()
               </div>
             </div>
           </div>
-          <Button buttonStyle='btn--outline' path='/project-simple' onClick={goToTop} > Explore...</Button>
+          <div class="project-button">
+            <Button buttonStyle='btn--outline' path='/project-simple' onClick={goToTop} > Explore...</Button>
+          </div>
         </div>
         <div class="project-img">
-          <img src={imgEngine} alt=""  style = {{ filter:'grayscale(0%)'}}/>
+          <img src={imgEngine} alt="" style={{ filter: 'grayscale(0%)' }} />
         </div>
       </div>
       <div class="invert">
@@ -93,7 +95,7 @@ function ProjectCard()
             </div>
           </div>
           <div class="project-img">
-            <img src={imgPortfolio} alt="" style = {{ filter:'grayscale(0%)'}} />
+            <img src={imgPortfolio} alt="" style={{ filter: 'grayscale(0%)' }} />
           </div>
         </div>
       </div>

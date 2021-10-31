@@ -21,14 +21,13 @@ function VideoItem(props)
                     <div className='cards__item__link' to={props.path} >
 
                         <figure className='video__item__pic-wrap'>
-                        <iframe title = {props.title} src={props.src} style = {{  height: '20vh'}}></iframe>
+                        <iframe title = {props.title} src={props.src} allowfullscreen="allowfullscreen" style = {{  height: '33vh'}}></iframe>
                         </figure>
 
                         <div className="cards__item__info">
                             <div className="cards__item__title">
                                 {props.text}
                             </div>
-                            <div class="project-line"></div>
                             <h5 className="cards__item__information">
                                 {props.information}
                             </h5>

@@ -44,6 +44,7 @@ function Projects()
                 icon1=''
                 buttonText = 'View on Github'
                 externalLink = {true}
+                buttonIcon ='fab fa-github'
               />
               <CardItem
                 src={CardExterior}
@@ -54,6 +55,7 @@ function Projects()
                 icon1=''
                 externalLink={true}
                 buttonText = 'View on Website'
+                buttonIcon = 'fas fa-external-link-alt'
               />
               <CardItem
                 src={CardImg}
@@ -64,6 +66,7 @@ function Projects()
                 icon1=''
                 externalLink={true}
                 buttonText = 'View on Website'
+                buttonIcon = 'fas fa-external-link-alt'
               />
             </div>
           </div>
@@ -83,6 +86,7 @@ function Projects()
                 icon1=''
                 buttonText = 'View blog post'
                 externalLink={false}
+                buttonIcon = 'fas fa-external-link-alt'
               />
               <CardItem
                 src={imgPortfolio}
@@ -93,6 +97,7 @@ function Projects()
                 icon1=''
                 buttonText = 'View blog post'
                 externalLink={false}
+                buttonIcon = 'fas fa-external-link-alt'
               />
             </div>
           </div>

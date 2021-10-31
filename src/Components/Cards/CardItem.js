@@ -32,7 +32,6 @@ function CardsItem(props)
                             <div className="cards__item__title">
                                 {props.text}
                             </div>
-                            <div class="project-line"></div>
                             <h5 className="cards__item__information">
                                 {props.information}
                             </h5>
@@ -64,7 +63,6 @@ function CardsItem(props)
                             <div className="cards__item__title">
                                 {props.text}
                             </div>
-                            <div class="project-line"></div>
                             <h5 className="cards__item__information">
                                 {props.information}
                             </h5>
@@ -73,7 +71,7 @@ function CardsItem(props)
                             </div>
                         </div>
                         <div className="cards__item__button">
-                            <Button buttonStyle='btn--outline' externalLink={props.externalLink}  path = {props.path} > {props.buttonText}</Button>
+                            <Button buttonStyle='btn--outline' externalLink={props.externalLink}  path = {props.path} >  <i class={props.buttonIcon} /> {props.buttonText}</Button>
                         </div>
 
                     </a>

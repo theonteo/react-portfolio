@@ -16,6 +16,7 @@ import Scene2 from '../Scenes/Scene2'
 import Projects from '../Project/Projects'
 import About from '../About/About'
 import './Landing.css'
+import Contact from '../Contact/Contact'
 
 function Landing()
 {
@@ -38,6 +39,13 @@ function Landing()
                     <div className="render-blank">
                         <div className="Projects">
                             <Projects />
+                        </div>
+                    </div>
+                </div>
+                <div className="RenderProjects">
+                    <div className="render-blank">
+                        <div className="Projects">
+                         <Contact/>
                         </div>
                     </div>
                 </div>

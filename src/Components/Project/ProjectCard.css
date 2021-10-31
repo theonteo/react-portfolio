@@ -63,6 +63,9 @@ img {
   }
 }
 
+.project-pagespace {
+  height: 50vh;
+}
 .project-content {
   z-index: 2;
   position: relative;
@@ -197,6 +200,9 @@ img:hover {
 }
 
 @media screen and (max-width: 960px) {
+  .project-button {
+margin-bottom: 10%;
+  }
   .project-container {
     width: 100%;
     margin-left: 0%;

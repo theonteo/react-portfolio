@@ -26,20 +26,12 @@ function Footer()
   };
   return (
     <div className='footer-container'>
-      <section className='footer-subscription'>
-        <p className='footer-subscription-heading'>
-          Wanna get in touch?
-        </p>
-        <Button buttonStyle='btn--outline' onClick={goToContact}>Contact Me</Button>
-      </section>
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
-            <Link to='/' className='social-logo'>
-              Theon
-            </Link>
-          </div>
           <small class='website-rights'>Theon © 2021</small>
+          </div>
+         
           <div class='social-icons'>
             <a
               href={'https://www.linkedin.com/in/theon-teo-80a906101/'}
@@ -49,6 +41,17 @@ function Footer()
             >
               <i class='fab fa-linkedin' />
             </a>
+
+            <a
+              href={'https://github.com/theonteo/'}
+              class='social-icon-link twitter'
+              to='/'
+              aria-label='GitHub'
+            >
+              <i class='fab fa-github' />
+            </a>
+
+
           </div>
         </div>
       </section>

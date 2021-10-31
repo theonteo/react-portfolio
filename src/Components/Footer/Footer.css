@@ -96,6 +96,7 @@
 /* Social Icons */
 
 .social-icon-link {
+  margin: 8px;
   color: #fff;
   font-size: 24px;
 }
@@ -120,6 +121,7 @@
   justify-content: right;
   align-items: center;
   width: 240px;
+
 }
 
 .social-logo {
@@ -132,6 +134,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  
 }
 
 .website-rights {
