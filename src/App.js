@@ -20,6 +20,7 @@ import './App.css';
 import Home from "./Components/Pages/Home"
 
 import ProjectSimple from "./Components/Pages/Project-Simple"
+import ProjectPortfolio from "./Components/Pages/Project-Portfolio"
 //renders html
 function App()
 {
@@ -31,6 +32,7 @@ function App()
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/project-simple' exact component={ProjectSimple} />
+          <Route path='/project-portfolio' exact component={ProjectPortfolio} />
         </Switch>
 
       </Router>

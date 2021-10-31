@@ -40,14 +40,10 @@ function ProjectCard()
           <div class="project-details">
             <div class="project-details-box">
               <div class="project-details-box-content">
-                Built with OpenGL. It is a 2D/3D Proprietary Engine built to house various interactive applications. With the engine undergoing iterations through a span of 2 to 3 years.
+                Built with OpenGL. It is a 2D/3D Proprietary Engine built to house various interactive applications.
+                For the engine I primarily focused on   Graphics , Technical Art , Tools and Editor.
               </div>
-              <div class="project-details-box-content">
-                For the engine I primarily focused:
-              </div>
-              <div class="project-details-box-content-bold">
-                Graphics , Technical Art , Tools and Editor.
-              </div>
+             
             </div>
             <div class="project-list-wrapper">
               <div class="project-list">
@@ -76,13 +72,8 @@ function ProjectCard()
               <div class="project-details-box">
                 <div class="project-details-box-invert">
                   <div class="project-details-box-content">
-                    This is the first website I have built from scratch and it is designed to expand my knowledge on frontend development
-                  </div>
-                  <div class="project-details-box-content">
+                    This is the first website I have built from scratch and it is designed to expand my knowledge on frontend development.
                     Some of the experiments include real time rendering of 3d browser backgrounds and interactions
-                  </div>
-                  <div class="project-details-box-content-bold">
-                    Website responsive for web and mobile
                   </div>
                 </div>
               </div>

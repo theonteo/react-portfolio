@@ -17,6 +17,9 @@ import CardExterior from '../../Images/img-exterior.jpg'
 import CardItem from "../Cards/CardItem"
 import VideoItem from "../Cards/VideoItem"
 
+import imgPortfolio from '../../Images/img-portfolio.jpg'
+import imgEngine from '../../Images/img-engine.jpg'
+
 import ProjectCard from "./ProjectCard";
 
 function Projects()
@@ -37,8 +40,10 @@ function Projects()
                 text='Winsock Networking'
                 information='A multiplayer game which uses Winsock for communication between different clients.'
                 label='Personal'
-                path='/'
+                path='https://github.com/theonteo/multiplayer-udp-winsock'
                 icon1=''
+                buttonText = 'View on Github'
+                externalLink = {true}
               />
               <CardItem
                 src={CardExterior}
@@ -48,6 +53,7 @@ function Projects()
                 path='https://inspiring-mcnulty-668b0a.netlify.app/'
                 icon1=''
                 externalLink={true}
+                buttonText = 'View on Website'
               />
               <CardItem
                 src={CardImg}
@@ -57,19 +63,49 @@ function Projects()
                 path='https://serene-hermann-c2f53e.netlify.app/'
                 icon1=''
                 externalLink={true}
+                buttonText = 'View on Website'
+              />
+            </div>
+          </div>
+        </div>
+        <div class="project-container">
+          <div class="project-label">Expressing inner thoughts</div>
+          <h4 class="project-title">Blog Posts</h4>
+          <div class="project-line"></div>
+          <div className='cards__wrapper'>
+            <div className='cards__items'>
+              <CardItem
+                src={imgEngine}
+                text='Creation of SIMPLE. Engine.'
+                information='Dissecting the different elements of what makes an engine.'
+                label='Personal'
+                path='/project-simple'
+                icon1=''
+                buttonText = 'View blog post'
+                externalLink={false}
+              />
+              <CardItem
+                src={imgPortfolio}
+                text='Portfolio development'
+                information='Development from ideation to development'
+                label=''
+                path='/project-portfolio'
+                icon1=''
+                buttonText = 'View blog post'
+                externalLink={false}
               />
             </div>
           </div>
         </div>
 
         <div class="project-container">
-        <div class="project-label">Seeing things in action</div>
+          <div class="project-label">Seeing things in action</div>
           <h4 class="project-title">Video Logs</h4>
           <div class="project-line"></div>
           <div className='cards__wrapper'>
             <div className='cards__items'>
               <VideoItem
-                src={"https://www.youtube.com/embed/jCnMN9iv688" }
+                src={"https://www.youtube.com/embed/jCnMN9iv688"}
                 text='Simple Engine Tech 2021'
                 information='A collection of some of the technology created to run a 3D engine.'
                 label='3D engine'
@@ -77,40 +113,27 @@ function Projects()
                 icon1=''
                 externalLink={true}
               />
-              <CardItem
-                src={CardExterior}
+              <VideoItem
+                src={'https://www.youtube.com/embed/oV1LBBaEWfA'}
                 text='Reflection Probe'
-                information='Interactive showroom with panning camera.'
+                information=' Placing reflection probes to capture surrounding environments for image based lighting.'
                 label=''
-                path='https://inspiring-mcnulty-668b0a.netlify.app/'
+                path='/'
                 icon1=''
                 externalLink={true}
               />
-              <CardItem
-                src={CardImg}
+              <VideoItem
+                src={'https://www.youtube.com/embed/jCnMN9iv688'}
                 text='Mesh Painting'
-                information='Populate a large area with the quick brush.'
+                information='Populating a large area with the quick brush.'
                 label=''
-                path='https://serene-hermann-c2f53e.netlify.app/'
+                path='/'
                 icon1=''
                 externalLink={true}
               />
             </div>
           </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
       </div>
     </>
   );
