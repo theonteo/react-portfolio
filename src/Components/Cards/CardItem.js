@@ -19,7 +19,7 @@ function CardsItem(props)
         return (
             <>
                 <li className='cards__item'>
-                    <Link className='cards__item__link' to={props.path} >
+                    <Link className='cards__item__link' to={props.path} onClick={props.onClick} >
 
                         <figure className='cards__item__pic-wrap'>
                             <img
@@ -40,9 +40,13 @@ function CardsItem(props)
                             </div>
                         </div>
                         <div className="cards__item__button">
-                            <Button buttonStyle='btn--outline' externalLink={props.externalLink} path = {props.path}>{props.buttonText}</Button>
+                            <Button
+                                buttonStyle='btn--outline'
+                                onClick={props.onClick}
+                                externalLink={props.externalLink}
+                                path={props.path}>
+                                <i class={props.buttonIcon} /> {props.buttonText}</Button>
                         </div>
-
                     </Link>
                 </li>
             </>
@@ -51,7 +55,7 @@ function CardsItem(props)
         return (
             <>
                 <li className='cards__item'>
-                    <a className='cards__item__link' href={props.path} >
+                    <a className='cards__item__link' href={props.path}onClick={props.onClick} >
                         <figure className='cards__item__pic-wrap'>
                             <img
                                 src={props.src}
@@ -71,7 +75,11 @@ function CardsItem(props)
                             </div>
                         </div>
                         <div className="cards__item__button">
-                            <Button buttonStyle='btn--outline' externalLink={props.externalLink}  path = {props.path} >  <i class={props.buttonIcon} /> {props.buttonText}</Button>
+                            <Button buttonStyle='btn--outline'
+                                onClick={props.onClick}
+                                externalLink={props.externalLink}
+                                path={props.path} >
+                                <i class={props.buttonIcon} /> {props.buttonText}</Button>
                         </div>
 
                     </a>

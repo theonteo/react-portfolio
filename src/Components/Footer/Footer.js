@@ -10,26 +10,16 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 import React from 'react'
-import { Button } from "../Interaction/Button"
 import './Footer.css'
-import { Link } from 'react-router-dom'
-
 
 function Footer()
 {
-
-  const goToContact = () =>
-  {
-    var email = "theonteo96@gmail.com";
-    var mailto_link = 'mailto:' + email;
-    window.open(mailto_link, 'emailWindow');
-  };
   return (
     <div className='footer-container'>
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
-          <small class='website-rights'>Theon © 2021</small>
+          <small class='website-rights'>Designed and Built by Theon Teo © 2021</small>
           </div>
          
           <div class='social-icons'>

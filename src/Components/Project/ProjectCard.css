@@ -4,7 +4,9 @@ a {
   text-decoration: none;
   text-decoration-skip-ink: auto;
 }
-
+b{
+  font-weight: bold;
+}
 button {
   border: 0;
   outline: 0;
@@ -48,6 +50,10 @@ img {
   direction: rtl;
 }
 
+.revert {
+  direction: ltr;
+}
+
 .project {
   grid-auto-flow: columns;
   z-index: 2;
@@ -56,7 +62,8 @@ img {
   grid-gap: 0px;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  padding-top: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   align-items: center;
   @media screen and (max-width: 768px) {
     align-items: flex-start;
@@ -66,6 +73,7 @@ img {
 .project-pagespace {
   height: 50vh;
 }
+
 .project-content {
   z-index: 2;
   position: relative;
@@ -137,19 +145,18 @@ img {
   margin-right: 5%;
   font-family: monospace;
 }
+
 .project-details-box-invert {
   text-align: right;
 }
-  
+
 .project-details-box {
-  
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.507);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px #00000004);
   text-align: left;
   border-radius: 10px;
   background: linear-gradient(0.1turn, #0e0e0ee8, #383838e5);
-  
   padding: 20px 25px;
 }
 
@@ -159,8 +166,8 @@ img {
 }
 
 .project-details-box-content {
-  line-height: 1.95rem;
-  margin-bottom: 15px;
+  line-height: 1.5rem;
+
 }
 
 ul {
@@ -175,7 +182,6 @@ li {
 }
 
 img:hover {
- 
   transition: all 0.3s ease-out;
 }
 
@@ -190,7 +196,6 @@ img:hover {
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.01));
   filter: drop-shadow(0 6px 20px #00000004);
   background-color: #64ffdb00;
- 
   position: relative;
   z-index: 1;
   border-radius: 10px;
@@ -199,9 +204,20 @@ img:hover {
   transition: all 0.3s ease-out
 }
 
+.project-button-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-button {
+  margin: 5px;
+}
+
 @media screen and (max-width: 960px) {
   .project-button {
-margin-bottom: 10%;
+    margin-bottom: 10%;
   }
   .project-container {
     width: 100%;
@@ -209,6 +225,8 @@ margin-bottom: 10%;
     margin-right: 0%;
   }
   .project {
+    padding-top: 0%;
+    padding-bottom: 0%;
     display: flex;
     flex-direction: column;
   }

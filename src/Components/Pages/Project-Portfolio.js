@@ -14,7 +14,6 @@ import React from 'react'
 import '../../App.css'
 import './Pages.css'
 import { Button } from '../Interaction/Button'
-import ImgSimple from '../../Images/img-engine.jpg'
 
 export default function ProjectPortfolio()
 {

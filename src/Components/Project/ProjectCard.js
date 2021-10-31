@@ -29,8 +29,8 @@ function ProjectCard()
   return (
 
     <div class="project-container">
-      <div class="project-label">A showcase of</div>
-      <h4 class="project-title">Various Projects</h4>
+      <div class="project-label">../ 02. A showcase of /</div>
+      <h4 class="project-title">Featured Projects</h4>
       <div class="project-line"></div>
       <div class="project">
         <div class="project-content">
@@ -56,7 +56,7 @@ function ProjectCard()
             </div>
           </div>
           <div class="project-button">
-            <Button buttonStyle='btn--outline' path='/project-simple' onClick={goToTop} > Explore...</Button>
+            <Button buttonStyle='btn--outline' path='/project-simple' onClick={goToTop} ><i class="fas fa-sign-in-alt"></i> Explore...</Button>
           </div>
         </div>
         <div class="project-img">
@@ -74,7 +74,7 @@ function ProjectCard()
               <div class="project-details-box">
                 <div class="project-details-box-invert">
                   <div class="project-details-box-content">
-                    This is the first website I have built from scratch and it is designed to expand my knowledge on frontend development.
+                   <b>This is the first website</b>  I have built from scratch and it is designed to expand my knowledge on frontend development.
                     Some of the experiments include real time rendering of 3d browser backgrounds and interactions
                   </div>
                 </div>
@@ -90,6 +90,16 @@ function ProjectCard()
                   <div class="project-item"> three.js</div>
                   <div class="project-item"> webGL</div>
                   <div class="project-item"> Netlify</div>
+                </div>
+              </div>
+            </div>
+            <div class="revert">
+              <div class="project-button-container">
+                <div class="project-button">
+                  <Button buttonStyle='btn--outline' path='/project-portfolio' onClick={goToTop} ><i class="fas fa-sign-in-alt"></i> Explore...</Button>
+                </div>
+                <div class="project-button">
+                  <Button buttonStyle='btn--outline' externalLink={true} path={'https://github.com/theonteo/react-portfolio'}><i class="fab fa-github"></i> GitHub</Button>
                 </div>
               </div>
             </div>

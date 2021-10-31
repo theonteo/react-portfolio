@@ -24,13 +24,18 @@ import ProjectCard from "./ProjectCard";
 
 function Projects()
 {
+  const goToTop = () => 
+  {
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
     <>
       <div class="project-bg">
         <ProjectCard>
         </ProjectCard>
         <div class="project-container">
-          <div class="project-label">A collection of</div>
+          <div class="project-label">../ 03. A collection of /</div>
           <h4 class="project-title">Noteworthy Projects</h4>
           <div class="project-line"></div>
           <div className='cards__wrapper'>
@@ -42,9 +47,10 @@ function Projects()
                 label='Personal'
                 path='https://github.com/theonteo/multiplayer-udp-winsock'
                 icon1=''
-                buttonText = 'View on Github'
-                externalLink = {true}
-                buttonIcon ='fab fa-github'
+                buttonText='View on Github'
+                externalLink={true}
+                buttonIcon='fab fa-github'
+
               />
               <CardItem
                 src={CardExterior}
@@ -54,8 +60,8 @@ function Projects()
                 path='https://inspiring-mcnulty-668b0a.netlify.app/'
                 icon1=''
                 externalLink={true}
-                buttonText = 'View on Website'
-                buttonIcon = 'fas fa-external-link-alt'
+                buttonText='View on Website'
+                buttonIcon='fas fa-external-link-alt'
               />
               <CardItem
                 src={CardImg}
@@ -65,14 +71,14 @@ function Projects()
                 path='https://serene-hermann-c2f53e.netlify.app/'
                 icon1=''
                 externalLink={true}
-                buttonText = 'View on Website'
-                buttonIcon = 'fas fa-external-link-alt'
+                buttonText='View on Website'
+                buttonIcon='fas fa-external-link-alt'
               />
             </div>
           </div>
         </div>
         <div class="project-container">
-          <div class="project-label">Expressing inner thoughts</div>
+          <div class="project-label">../ 04. Expressing inner thoughts /</div>
           <h4 class="project-title">Blog Posts</h4>
           <div class="project-line"></div>
           <div className='cards__wrapper'>
@@ -84,9 +90,10 @@ function Projects()
                 label='Personal'
                 path='/project-simple'
                 icon1=''
-                buttonText = 'View blog post'
+                buttonText='  View blog post'
                 externalLink={false}
-                buttonIcon = 'fas fa-external-link-alt'
+                buttonIcon='fas fa-sign-in-alt'
+                onClick={goToTop}
               />
               <CardItem
                 src={imgPortfolio}
@@ -95,16 +102,17 @@ function Projects()
                 label=''
                 path='/project-portfolio'
                 icon1=''
-                buttonText = 'View blog post'
+                buttonText='  View blog post'
                 externalLink={false}
-                buttonIcon = 'fas fa-external-link-alt'
+                buttonIcon='fas fa-sign-in-alt'
+                onClick={goToTop}
               />
             </div>
           </div>
         </div>
 
         <div class="project-container">
-          <div class="project-label">Seeing things in action</div>
+          <div class="project-label">../ 05. Seeing things in action /</div>
           <h4 class="project-title">Video Logs</h4>
           <div class="project-line"></div>
           <div className='cards__wrapper'>

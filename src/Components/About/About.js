@@ -27,8 +27,9 @@ function About()
     return (
         <>
             <div className='AboutContainer'>
-
                 <div className='LeftPanel'>
+                    
+                <div className='SubTitle'> ../ 01. About Me /</div>
                     <div className='Title'>Building Simplicity.</div>
                     <div class="line"></div>
                     <div className='SubTextBold'>Hi, Theon here!
@@ -37,16 +38,18 @@ function About()
                         I am currently pursuing software engineering and development with a focus in front-end aspects.
                         My current interests are in Front-End Graphics Rendering and Full-stack development.
                     </div>
+
                     <div className='AboutButtonsContainer'>
                         <div className='AboutButtons'>
-                            <Button buttonStyle='btn--outline' onClick={goToContact}> Get In Touch!</Button>
+                            <Button buttonStyle='btn--outline' onClick={goToContact}><i class="far fa-envelope"></i> Get In Touch!</Button>
                         </div>
-                        <Button buttonStyle='btn--outline' externalLink={true} path={'resume.pdf'}> Check out Resume</Button>
+                        <Button buttonStyle='btn--outline'
+                            externalLink={true}
+                            path={'resume.pdf'}>
+                                <i class="fas fa-external-link-alt"></i> Check out Resume</Button>
                         <div className='AboutButtons'>
                         </div>
                     </div>
-                </div>
-                <div className='RightPanel'>
                 </div>
             </div>
         </>);

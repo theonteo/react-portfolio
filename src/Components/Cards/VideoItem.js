@@ -10,9 +10,7 @@ This project contains portfolio / web-mobile responsive application
 */
 /*****************************************************************************/
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './CardItem.css'
-import { Button } from '../Interaction/Button'
 function VideoItem(props)
 {
         return (

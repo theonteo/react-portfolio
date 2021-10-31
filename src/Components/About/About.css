@@ -33,7 +33,11 @@
     width: 100%;
     background-color: rgb(255, 123, 0, 0);
 }
-
+.SubTitle {
+    font-size: 15px;
+    color: #64ffda;
+    font-family: monospace;
+}
 .Title {
     color: rgb(255, 255, 255);
     font-weight: bold;
