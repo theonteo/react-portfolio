@@ -16,6 +16,16 @@ iframe {
   box-shadow: 0 6px 20px #00000036;
 }
 
+a {
+  font-size: 1.1rem;
+  color: #64ffda;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #64ffdb70;
+}
+
 .page-background {
   display: flex;
   text-align: left;
@@ -33,6 +43,7 @@ iframe {
 }
 
 .page-label {
+  padding-top: 5px;
   padding-bottom: 50px;
   color: #64ffda;
   font-family: monospace;
@@ -47,6 +58,7 @@ iframe {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
 .page-bold-nospace {
   font-weight: bold;
   line-height: 30px;
@@ -61,6 +73,26 @@ iframe {
   color: #ffffff;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.page-img {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.01));
+  filter: drop-shadow(0 6px 20px #00000004);
+  background-color: #64ffdb00;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  grid-column: 6 / -1;
+  grid-row: 1 / -1;
+  transition: all 0.3s ease-out;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.page-img:hover {
+  transform: scale(1.025);
+  transition: all 0.3s ease-out;
 }
 
 .page-image-tag {

@@ -19,8 +19,9 @@ import './App.css';
 
 import Home from "./Components/Pages/Home"
 
-import ProjectSimple from "./Components/Pages/Project-Simple"
-import ProjectPortfolio from "./Components/Pages/Project-Portfolio"
+import PageSimple from "./Components/Pages/Page-Simple"
+import PagePrototype from "./Components/Pages/Page-Prototype"
+import PageDesignOpening from "./Components/Pages/Page-DesignOpening"
 //renders html
 function App()
 {
@@ -28,11 +29,11 @@ function App()
     <div className='main'>
       <Router>
         <NavBar />
-
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/project-simple' exact component={ProjectSimple} />
-          <Route path='/project-portfolio' exact component={ProjectPortfolio} />
+          <Route path='/project-simple' exact component={PageSimple} />
+          <Route path='/project-prototype' exact component={PagePrototype} />
+          <Route path='/project-designopening' exact component={PageDesignOpening} />
         </Switch>
 
       </Router>

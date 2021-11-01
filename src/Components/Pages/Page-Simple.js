@@ -113,7 +113,7 @@ export default function ProjectSimple()
                     </div>
                     <iframe title='render' width src="https://www.youtube.com/embed/jCnMN9iv688"></iframe>
                     <div className='page-text'>Want to see more?</div>
-                    <Button buttonStyle='btn--outline' path='/' onClick={goToTop} > Return to Home Page</Button>
+                    <Button buttonStyle='btn--outline' path='/' onClick={goToTop} ><i class="fas fa-sign-in-alt"></i> Return to Home Page</Button>
                     <div className='page-text'></div>
                 </div>
             </div>

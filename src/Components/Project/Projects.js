@@ -12,14 +12,14 @@ This project contains portfolio / web-mobile responsive application
 
 //store project related images
 import CardImg from '../../Images/img-waves.jpg'
-import CardNetworking from '../../Images/img-networking.jpg'
 import CardExterior from '../../Images/img-exterior.jpg'
 import CardPhotoSelector from '../../Images/img-photoselector.jpg'
 import CardItem from "../Cards/CardItem"
 import VideoItem from "../Cards/VideoItem"
 
-import imgPortfolio from '../../Images/img-portfolio.jpg'
+import imgDev from '../../Images/PortfolioDev/dev3.jpg'
 import imgEngine from '../../Images/img-engine.jpg'
+import imgInitial from '../../Images/img-initial.jpg'
 
 import ProjectCard from "./ProjectCard";
 
@@ -97,17 +97,30 @@ function Projects()
                 onClick={goToTop}
               />
               <CardItem
-                src={imgPortfolio}
-                text='Portfolio development'
-                information='Development from ideation to development'
+                src={imgInitial}
+                text='The "Initial" Portfolio Prototype'
+                information='From a roomba to a full blown website.'
                 label=''
-                path='/project-portfolio'
+                path='/project-prototype'
                 icon1=''
                 buttonText='  View blog post'
                 externalLink={false}
                 buttonIcon='fas fa-sign-in-alt'
                 onClick={goToTop}
               />
+               <CardItem
+                src={imgDev}
+                text='Designing the introduction sequence'
+                information='Development from ideation to execution.'
+                label=''
+                path='/project-designopening'
+                icon1=''
+                buttonText='  View blog post'
+                externalLink={false}
+                buttonIcon='fas fa-sign-in-alt'
+                onClick={goToTop}
+              />
+              
             </div>
           </div>
         </div>

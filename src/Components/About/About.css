@@ -17,7 +17,7 @@
 .LeftPanel {
     line-height: normal;
     margin-top: 12.5vh;
-    width: 70%;
+    width: 66%;
 }
 
 .AboutButtonsContainer {
@@ -44,7 +44,13 @@
     font-size: 50px;
     padding-bottom: 10%;
 }
-
+c {
+    padding-left: 3px;
+    color: #64ffda;
+    font-weight: bold;
+    font-size: 50px;
+    padding-bottom: 10%;
+}
 .SubText {
     padding-bottom: 20px;
     font-size: 1rem;
@@ -52,7 +58,7 @@
 
 .SubTextBold {
     padding-bottom: 20px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 

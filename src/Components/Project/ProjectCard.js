@@ -40,7 +40,7 @@ function ProjectCard()
           <div class="project-details">
             <div class="project-details-box">
               <div class="project-details-box-content">
-                <b> Built with OpenGL.</b> It is a 2D/3D Proprietary Engine built to house various interactive applications.
+                <b>  Primarily built with OpenGL and C++.</b> It is a 2D/3D Proprietary Engine built to house various interactive applications. Iterated upon from 2019 to 2021.
               </div>
 
             </div>
@@ -65,11 +65,10 @@ function ProjectCard()
       <div class="invert">
         <div class="project">
           <div class="project-content">
-            <div class="project-label">Frontend Development</div>
+            <div class="project-label">Frontend Development | UI / UX</div>
             <h4 class="project-title">Portfolio Website</h4>
             <div class="project-line"></div>
             <div class="project-details">
-
               <div class="project-details-box">
                 <div class="project-details-box-invert">
                   <div class="project-details-box-content">
@@ -97,7 +96,7 @@ function ProjectCard()
             <div class="revert">
               <div class="project-button-container">
                 <div class="project-button">
-                  <Button buttonStyle='btn--outline' path='/project-portfolio' onClick={goToTop} ><i class="fas fa-sign-in-alt"></i> Explore...</Button>
+                  <Button buttonStyle='btn--outline' path='/project-designopening' onClick={goToTop} ><i class="fas fa-sign-in-alt"></i> Explore...</Button>
                 </div>
                 <div class="project-button">
                   <Button buttonStyle='btn--outline' externalLink={true} path={'https://github.com/theonteo/react-portfolio'}><i class="fab fa-github"></i> GitHub</Button>

@@ -38,7 +38,7 @@ img:hover {
 }
 
 .cards__item__information {
-
+  color: rgba(255, 255, 255, 0.726);
   width: 85%;
   letter-spacing: 0px;
 }
