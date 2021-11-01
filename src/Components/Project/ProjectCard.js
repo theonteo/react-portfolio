@@ -34,14 +34,13 @@ function ProjectCard()
       <div class="project-line"></div>
       <div class="project">
         <div class="project-content">
-          <div class="project-label">Rendering</div>
+          <div class="project-label">Rendering | Tools | Editor</div>
           <h4 class="project-title">SIMPLE. Engine</h4>
           <div class="project-line"></div>
           <div class="project-details">
             <div class="project-details-box">
               <div class="project-details-box-content">
                 <b> Built with OpenGL.</b> It is a 2D/3D Proprietary Engine built to house various interactive applications.
-                For the engine I primarily focused on <b>Graphics , Technical Art , Tools and Editor</b>.
               </div>
 
             </div>

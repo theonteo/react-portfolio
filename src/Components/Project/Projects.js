@@ -14,6 +14,7 @@ This project contains portfolio / web-mobile responsive application
 import CardImg from '../../Images/img-waves.jpg'
 import CardNetworking from '../../Images/img-networking.jpg'
 import CardExterior from '../../Images/img-exterior.jpg'
+import CardPhotoSelector from '../../Images/img-photoselector.jpg'
 import CardItem from "../Cards/CardItem"
 import VideoItem from "../Cards/VideoItem"
 
@@ -41,18 +42,6 @@ function Projects()
           <div className='cards__wrapper'>
             <div className='cards__items'>
               <CardItem
-                src={CardNetworking}
-                text='Winsock Networking'
-                information='A multiplayer game which uses Winsock for communication between different clients.'
-                label='Personal'
-                path='https://github.com/theonteo/multiplayer-udp-winsock'
-                icon1=''
-                buttonText='View on Github'
-                externalLink={true}
-                buttonIcon='fab fa-github'
-
-              />
-              <CardItem
                 src={CardExterior}
                 text='Virtual Showroom Website'
                 information='Interactive showroom with panning camera.'
@@ -73,6 +62,18 @@ function Projects()
                 externalLink={true}
                 buttonText='View on Website'
                 buttonIcon='fas fa-external-link-alt'
+              />
+              <CardItem
+                src={CardPhotoSelector}
+                text='Photo Selector'
+                information='A simple Qt application to select photos'
+                label='Personal'
+                path='https://github.com/theonteo/photo-selector'
+                icon1=''
+                buttonText='View on Github'
+                externalLink={true}
+                buttonIcon='fab fa-github'
+
               />
             </div>
           </div>
