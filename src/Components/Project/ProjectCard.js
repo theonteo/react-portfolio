@@ -17,7 +17,7 @@ import '.././font.css'
 import { Button } from '../Interaction/Button'
 import imgEngine from '../../Images/img-engine.jpg'
 import imgPortfolio from '../../Images/img-portfolio.jpg'
-
+import imgNetworking from '../../Images/img-networking.jpg'
 function ProjectCard()
 {
   //reset scroll to top
@@ -109,6 +109,35 @@ function ProjectCard()
           <div class="project-img">
             <img src={imgPortfolio} alt="" style={{ filter: 'grayscale(0%)' }} />
           </div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-content">
+          <div class="project-label">Rendering | Networking</div>
+          <h4 class="project-title">Winsock UDP Networking</h4>
+          <div class="project-line"></div>
+          <div class="project-details">
+            <div class="project-details-box">
+              <div class="project-details-box-content">
+              A multiplayer game which uses Winsock for communication between different clients..
+              </div>
+
+            </div>
+            <div class="project-list-wrapper">
+              <div class="project-list">
+                <div class="project-item">OpenGL</div>
+                <div class="project-item"> ImGui</div>
+                <div class="project-item"> C++</div>
+                <div class="project-item"> Winsock</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-button">
+          <Button buttonStyle='btn--outline' externalLink={true} path={'https://github.com/theonteo/multiplayer-udp-winsock'}><i class="fab fa-github"></i> GitHub</Button>
+          </div>
+        </div>
+        <div class="project-img">
+          <img src={imgNetworking} alt="" style={{ filter: 'grayscale(0%)' }} />
         </div>
       </div>
     </div>
