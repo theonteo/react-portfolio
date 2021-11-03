@@ -97,7 +97,8 @@ a:hover {
 
 .page-image-tag {
   font-weight: 100;
-  line-height: 30px;
+  line-height: 5px;
+  margin-bottom: 25px;
   font-size: 0.75rem;
   color: #ffffff1f;
 }
