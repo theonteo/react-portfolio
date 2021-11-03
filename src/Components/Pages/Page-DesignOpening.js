@@ -22,6 +22,11 @@ import ImgDev4 from '../../Images/PortfolioDev/dev4.jpg'
 import ImgDev5 from '../../Images/PortfolioDev/dev5.jpg'
 import ImgDev6 from '../../Images/PortfolioDev/dev6.jpg'
 import ImgDev7 from '../../Images/PortfolioDev/dev7.jpg'
+import ImgDev8 from '../../Images/PortfolioDev/dev8.jpg'
+import ImgDev9 from '../../Images/PortfolioDev/dev9.jpg'
+import ImgDev10 from '../../Images/PortfolioDev/dev10.jpg'
+import ImgDev11 from '../../Images/PortfolioDev/dev11.jpg'
+
 export default function ProjectDesignOpening()
 {
     const goToTop = () =>
@@ -65,7 +70,7 @@ export default function ProjectDesignOpening()
                     </div>
                     <div className='page-text'>
                       As more models are being added , I realised that the load time of the website is increasing bit by bit. Hence it was decided
-                      to keep the polygon count low.
+                      to keep the polygon count low. Only 1 texture map is used as a lightmap to light the entire scene.
                     </div>
                     <div class="page-img">
                         <img src={ImgDev3} alt="" style={{ filter: 'grayscale(0%)' }} />
@@ -85,8 +90,20 @@ export default function ProjectDesignOpening()
                     <div class="page-img">
                         <img src={ImgDev5} alt="" style={{ filter: 'grayscale(0%)' }} />
                     </div>
+                    <div className='page-bold-nospace'>
+                     Typography
+                    </div>
+
+
+                    <div className='page-text'>
+                     A version of title card would include an overlay being place in the entire of the viewport.
+                     After initial feedback
+                    </div>
                     <div class="page-img">
                         <img src={ImgDev6} alt="" style={{ filter: 'grayscale(0%)' }} />
+                    </div>
+                    <div className='page-bold-nospace'>
+                     Camera Planning
                     </div>
                     <div class="page-img">
                         <img src={ImgDev7} alt="" style={{ filter: 'grayscale(0%)' }} />
