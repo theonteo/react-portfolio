@@ -117,7 +117,7 @@ function ProjectCard()
           <div class="project-details">
             <div class="project-details-box">
               <div class="project-details-box-content">
-              A multiplayer game which uses Winsock for communication between different clients..
+              A <b>3D multiplayer game</b> which uses Winsock for communication between different clients. Inspired by Agar.io.
               </div>
 
             </div>
