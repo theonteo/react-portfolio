@@ -77,7 +77,7 @@ class Scene1 extends Scene
     //position points
     var posPoints = [];
 
-    posPoints.push(new THREE.Vector3(0.75, 2.879, -0.25));
+    posPoints.push(new THREE.Vector3(0.8, 2.879, -0.25));
     posPoints.push(new THREE.Vector3(2.524, 2.819, -0.256));
     posPoints.push(new THREE.Vector3(4.000, 3.771, -2.23));
     this.spline = new THREE.CatmullRomCurve3(posPoints);
@@ -137,7 +137,7 @@ class Scene1 extends Scene
     this.camLookAt.set(0.0, 0, 0);
 
     this.camDirection.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.05, 1) * -this.lerpedMouse.y * (2.0 - this.pageLerp));
-    this.camSide.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.05, 1) * this.lerpedMouse.x * (2.0 - this.pageLerp));
+    this.camSide.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.0, 1) * this.lerpedMouse.x * (2.0 - this.pageLerp));
     this.camUp.multiplyScalar(MathUtils.clamp(-this.pageLerp, 0.05, 1) * -this.lerpedMouse.y * (3.0 - this.pageLerp));
 
     var index = MathUtils.clamp(-this.pageLerp2, 0.0, 200.0);

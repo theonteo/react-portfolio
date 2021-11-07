@@ -112,6 +112,8 @@ a:hover {
 
 @media screen and (max-width: 960px) {
   .page-container {
-    margin: 15%;
+    display: flex;
+    padding-top: 15%;
+    margin: 10%;
   }
 }
