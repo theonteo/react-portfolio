@@ -40,18 +40,15 @@ export default function ProjectDesignOpening()
                         ../ Blog post /
                     </div>
 
-
-
-
                     <div className='page-title'>
                         Designing an introduction sequence<c>.</c>
                     </div>
                     <div className='page-label'>
                         A blog on the creation of the website you're viewing now
                     </div>
-                   
 
-                  
+
+
                     <div className='page-bold'>
                         Ideation
                     </div>
