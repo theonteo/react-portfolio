@@ -121,12 +121,13 @@ export default function ProjectDesignOpening()
                     <div className='page-text'>
                         A version of title card would include an overlay being place in the entire of the viewport.
                     </div>
-                    <div class="page-img">
-                        <img src={ImgDev6} alt="" style={{ filter: 'grayscale(0%)' }} />
-                    </div>
                     <div className='page-image-tag'>
                         Revision mock up by Kenneth Teo.
                     </div>
+                    <div class="page-img">
+                        <img src={ImgDev6} alt="" style={{ filter: 'grayscale(0%)' }} />
+                    </div>
+                   
                     <div className='page-text'>
                         The final version would consist of the title words being diagetic and modelled into the assets themselves .
                     </div>
