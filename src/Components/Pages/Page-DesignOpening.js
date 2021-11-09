@@ -118,12 +118,13 @@ export default function ProjectDesignOpening()
                     <div class="page-img">
                         <img src={ImgDev10} alt="" style={{ filter: 'grayscale(0%)' }} />
                     </div>
-                    <div className='page-text'>
-                        A version of title card would include an overlay being place in the entire of the viewport.
-                    </div>
                     <div className='page-image-tag'>
                         Revision mock up by Kenneth Teo.
                     </div>
+                    <div className='page-text'>
+                        A version of title card would include an overlay being place in the entire of the viewport.
+                    </div>
+                  
                     <div class="page-img">
                         <img src={ImgDev6} alt="" style={{ filter: 'grayscale(0%)' }} />
                     </div>

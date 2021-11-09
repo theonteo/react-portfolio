@@ -31,7 +31,7 @@ export default function ProjectSimple()
                         ../Blog post
                     </div>
                     <div className='page-title'>
-                        SIMPLE. Engine
+                        SIMPLE. Engine<c>.</c>
                     </div>
                     <div className='page-label'>
                         A blog on the creation of our 3D engine
