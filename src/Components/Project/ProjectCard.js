@@ -60,7 +60,7 @@ function ProjectCard()
               </div>
             </div>
           </div>
-          
+
           <div class="project-button">
             <Button buttonStyle='btn--outline' externalLink={true} path={'https://bobots.io'}><i class="fas fa-external-link-alt"></i> Bobots Website</Button>
           </div>
@@ -194,7 +194,6 @@ function ProjectCard()
               <div class="project-details-box-content">
                 A <b>3D multiplayer game</b> which uses Winsock for communication between different clients. Inspired by Agar.io.
               </div>
-
             </div>
             <div class="project-list-wrapper">
               <div class="project-list">
