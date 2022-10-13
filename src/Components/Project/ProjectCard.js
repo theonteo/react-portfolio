@@ -60,6 +60,7 @@ function ProjectCard()
               </div>
             </div>
           </div>
+          
           <div class="project-button">
             <Button buttonStyle='btn--outline' externalLink={true} path={'https://bobots.io'}><i class="fas fa-external-link-alt"></i> Bobots Website</Button>
           </div>
