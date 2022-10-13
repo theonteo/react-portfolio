@@ -18,6 +18,8 @@ import { Button } from '../Interaction/Button'
 import imgEngine from '../../Images/img-engine.jpg'
 import imgPortfolio from '../../Images/img-portfolio.jpg'
 import imgNetworking from '../../Images/img-networking.jpg'
+import imgBobots from '../../Images/bobots.jpg'
+import imgKenek from '../../Images/kenek.jpg'
 function ProjectCard()
 {
   //reset scroll to top
@@ -32,6 +34,78 @@ function ProjectCard()
       <div class="project-label">../ 02. A showcase of /</div>
       <h4 class="project-title">Featured Projects</h4>
       <div class="project-line"></div>
+      <div class="project">
+        <div class="project-content">
+          <div class="project-label">Web3 | GameFi</div>
+          <h4 class="project-title">Bobots.</h4>
+          <div class="project-line"></div>
+          <div class="project-details">
+            <div class="project-details-box">
+              <div class="project-details-box-content">
+                A <b>3D Web3 project</b> which utilizes 3D NFTs and a web based 3D Game.
+              </div>
+
+            </div>
+            <div class="project-list-wrapper">
+              <div class="project-list">
+                <div class="project-item">React</div>
+                <div class="project-item"> Html</div>
+                <div class="project-item"> CSS</div>
+                <div class="project-item"> Javascript</div>
+              </div>
+              <div class="project-list">
+                <div class="project-item"> three.js</div>
+                <div class="project-item"> webGL</div>
+                <div class="project-item"> Netlify</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-button">
+            <Button buttonStyle='btn--outline' externalLink={true} path={'https://bobots.io'}><i class="fas fa-external-link-alt"></i> Bobots Website</Button>
+          </div>
+        </div>
+        <div class="project-img">
+          <img src={imgBobots} alt="" style={{ filter: 'grayscale(0%)' }} />
+        </div>
+      </div>
+      <div class="invert">
+        <div class="project">
+          <div class="project-content">
+            <div class="project-label">SaaS | Frontend | Fullstack</div>
+            <h4 class="project-title">Kenek</h4>
+            <div class="project-line"></div>
+            <div class="project-details">
+              <div class="project-details-box">
+                <div class="project-details-box-content">
+                  A <b>Software as a Service project</b> for digital name cards.
+                   Businesses can use Kenek to create simple and effective landing pages.
+                </div>
+
+              </div>
+              <div class="project-list-wrapper">
+                <div class="project-list">
+                  <div class="project-item">React</div>
+                  <div class="project-item"> Html</div>
+                  <div class="project-item"> CSS</div>
+                  <div class="project-item"> MUI</div>
+                </div>
+                <div class="project-list">
+                  <div class="project-item"> TypeScript</div>
+                  <div class="project-item"> Axios</div>
+                  <div class="project-item"> Netlify</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-button">
+              <Button buttonStyle='btn--outline' externalLink={true} path={'https://kenek.me'}><i class="fas fa-external-link-alt"></i> Kenek Website</Button>
+            </div>
+          </div>
+          <div class="project-img">
+            <img src={imgKenek} alt="" style={{ filter: 'grayscale(0%)' }} />
+          </div>
+        </div>
+      </div>
+
       <div class="project">
         <div class="project-content">
           <div class="project-label">Rendering | Tools | Editor</div>
@@ -72,9 +146,9 @@ function ProjectCard()
               <div class="project-details-box">
                 <div class="project-details-box-invert">
                   <div class="project-details-box-content">
-                  <div class="revert">
-                    This is the  <b>first website</b>  I have built from scratch and it is designed to expand my knowledge on  <b>frontend development</b>.
-                    Some of the experiments include real time rendering of <b>3D backgrounds and interactions.</b>
+                    <div class="revert">
+                      This is the  <b>first website</b>  I have built from scratch and it is designed to expand my knowledge on  <b>frontend development</b>.
+                      Some of the experiments include real time rendering of <b>3D backgrounds and interactions.</b>
                     </div>
                   </div>
                 </div>
@@ -117,7 +191,7 @@ function ProjectCard()
           <div class="project-details">
             <div class="project-details-box">
               <div class="project-details-box-content">
-              A <b>3D multiplayer game</b> which uses Winsock for communication between different clients. Inspired by Agar.io.
+                A <b>3D multiplayer game</b> which uses Winsock for communication between different clients. Inspired by Agar.io.
               </div>
 
             </div>
@@ -131,13 +205,14 @@ function ProjectCard()
             </div>
           </div>
           <div class="project-button">
-          <Button buttonStyle='btn--outline' externalLink={true} path={'https://github.com/theonteo/multiplayer-udp-winsock'}><i class="fab fa-github"></i> GitHub</Button>
+            <Button buttonStyle='btn--outline' externalLink={true} path={'https://github.com/theonteo/multiplayer-udp-winsock'}><i class="fab fa-github"></i> GitHub</Button>
           </div>
         </div>
         <div class="project-img">
           <img src={imgNetworking} alt="" style={{ filter: 'grayscale(0%)' }} />
         </div>
       </div>
+
     </div>
 
   )

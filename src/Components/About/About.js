@@ -28,17 +28,17 @@ function About()
         <>
             <div className='AboutContainer'>
                 <div className='LeftPanel'>
-                    
-                <div className='SubTitle'> ../ 01. About Me /</div>
+
+                    <div className='SubTitle'> ../ 01. About Me /</div>
                     <div className='Title'>Building Simplicity<c>.</c></div>
                     <div class="line"></div>
                     <div className='SubTextBold'>Hi, Theon here!
                     </div>
                     <div className='SubText'>
-                    I am currently studying <b>Computer Science in Real-Time Interactive Simulation</b> at <b>Digipen Singapore</b>.
-                        </div>
+                        I am currently studying <b>Computer Science in Real-Time Interactive Simulation</b> at <b>Digipen Singapore</b>.
+                    </div>
                     <div className='SubText'>
-                       Pursuing software engineering and development with a focus in <b>front-end aspects.</b>
+                        Pursuing software engineering and development with a focus in <b>front-end aspects.</b>
                         My interests are in <b>Front-End Graphics Rendering and Full-stack development.</b>
                     </div>
 
@@ -49,7 +49,7 @@ function About()
                         <Button buttonStyle='btn--outline'
                             externalLink={true}
                             path={'resume.pdf'}>
-                                <i class="fas fa-external-link-alt"></i> Check out Resume</Button>
+                            <i class="fas fa-external-link-alt"></i> Check out Resume</Button>
                         <div className='AboutButtons'>
                         </div>
                     </div>
